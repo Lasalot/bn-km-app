@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;400;500;700&display=swap");
+
+.App {
+  text-align: center;
+}
+
+html {
+  background-color: #141324;
+  font-family: "Mulish", sans-serif;
+}
+
+h1,
+label {
+  color: white;
+}
