@@ -63,6 +63,13 @@ const SendButton = styled.button`
   :hover{cursor: pointer;}
 `;
 
+const SignOutButton = styled(SendButton)`
+background-color: lightgrey;
+color: black;
+font-weight: 600;
+font-size: 15px
+`
+
 const LabelPadding = styled(Label)`
 margin-top: 20px;
 `
@@ -75,4 +82,4 @@ const InputContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding };
+export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton };
