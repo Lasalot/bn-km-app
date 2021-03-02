@@ -101,6 +101,15 @@ swal.fire({
 
   };
 
+  componentDidMount(props) {
+    swal.fire({
+      title: "Yay you are back again!",
+      text: "Up to add some meters huh?",
+      icon: "success",
+      confirmButtonText: "Ayeaye"
+    })
+  }
+
   render() {
     return (
       <>
