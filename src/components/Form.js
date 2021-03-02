@@ -111,7 +111,7 @@ swal.fire({
             value={this.state.km}
             onChange={(event) => this.setState({ km: event.target.value })}
             type="number"
-            placeholder="KM"
+            placeholder="Kilometers"
           />
 
             <Label>How much time it took you?</Label>
@@ -132,7 +132,7 @@ swal.fire({
             Walk
           </OptionButton>
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
-            Bike
+            ‍Bike
           </OptionButton>
 
           <SendButton type="submit">I am awesome!</SendButton>
