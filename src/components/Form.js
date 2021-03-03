@@ -112,16 +112,16 @@ swal.fire({
             swal.fire('Cancelled')
           }
         })
-
+        this.setState({runActive: "",
+        walkActive: "",
+        bikeActive: "",
+        km: "",
+        time: "",
+        type: ""})
 
 
     }
-    //   this.setState({runActive: "",
-    // walkActive: "",
-    // bikeActive: "",
-    // km: "",
-    // time: "",
-    // type: ""})
+
 
   };
 
