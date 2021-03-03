@@ -58,9 +58,10 @@ const OptionButton = styled.button`
   background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
   padding: 10px;
+  
   :hover {
     cursor: pointer;
-    background-color: gray;
+    background-color: ${(props) => (props.active ? "#e84545" : "gray")};
     color: white;
   };
   :focus {
