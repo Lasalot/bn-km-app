@@ -4,9 +4,10 @@ import 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./App.css";
 import Form from "./components/Form";
-import { SignOutButton } from './components/styledComps';
+import { RoundPicture, SignOutButton } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
 import Logo from "./logo.png";
+
 
 
 firebase.initializeApp(credentials
@@ -39,7 +40,7 @@ function SignIn() {
 
 const LoggedInUserPhoto = () => {
   return (
-    <img alt="loggedinuser" src={auth.currentUser.photoURL}></img>
+    <RoundPicture alt="loggedinuser" src={auth.currentUser.photoURL}></RoundPicture>
   )
 }
 
@@ -51,7 +52,7 @@ const LoggedInUserPhoto = () => {
 
   return (
     <div className="App">
-      <img alt="logo" src={Logo} />
+      <img className="userLogo" alt="logo" src={Logo} />
       <h1>BitNinja Kilometer Tracker!</h1>
       {user ? <LoggedInUserPhoto/> : null}
       <section>

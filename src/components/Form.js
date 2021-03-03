@@ -3,19 +3,21 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton,
-  SendButton
+  LabelPadding, OptionButton, SendButton
 } from "./styledComps";
 
 
 class Form extends Component {
   state = {
-    runActive: "",
+    runActive:"Active",
     walkActive: "",
     bikeActive: "",
     km: "",
     time: "",
-    type: ""
+    type: {
+      mode:"Run",
+      count:"Kilometers"
+    }
   };
 
   setRun = () => {
@@ -23,7 +25,10 @@ class Form extends Component {
       runActive: "active",
       walkActive: "",
       bikeActive: "",
-      type: "Run"
+      type: {
+        mode:"Run",
+        count:"Kilometers"
+      }
     });
   };
 
@@ -32,7 +37,10 @@ class Form extends Component {
       runActive: "",
       walkActive: "active",
       bikeActive: "",
-      type: "Walk"
+      type: {
+        mode:"Walk",
+        count:"Steps"
+      }
     });
   };
 
@@ -41,7 +49,10 @@ class Form extends Component {
       runActive: "",
       walkActive: "",
       bikeActive: "active",
-      type: "Bike"
+      type: {
+        mode:"Bike",
+        count:"Kilometers"
+      }
     });
   };
 
@@ -113,14 +124,15 @@ swal.fire({
   render() {
     return (
       <>
+
       <InputContainer>
         <form onSubmit={this.submitForm}>
-          <Label>How many kilometers?</Label>
+          <Label>How many {this.state.type.count}?</Label>
           <Input
             value={this.state.km}
             onChange={(event) => this.setState({ km: event.target.value })}
             type="number"
-            placeholder="Kilometers"
+            placeholder={this.state.type.count}
           />
 
             <Label>How much time it took you?</Label>
@@ -147,6 +159,7 @@ swal.fire({
           <SendButton type="submit">I am awesome!</SendButton>
         </form>
         </InputContainer>
+
       </>
     );
   }

@@ -1,6 +1,15 @@
 import styled from "styled-components";
 
 
+const RoundPicture = styled.img`
+border-radius: 50%;
+margin-bottom 10px
+`
+
+
+
+
+
 const Input = styled.input`
   background-color: #393e46;
   margin:auto;
@@ -17,7 +26,7 @@ const Input = styled.input`
     outline: none;
   }
   ::placeholder{
-    color:#838383;
+    color:#9d9d9d;
   }
   border:none;
   font-family: "Mulish", sans-serif;
@@ -27,7 +36,7 @@ const Input = styled.input`
 
 const StyledInput = styled(Input)`
   width: 50%;
-  
+
 `;
 
 const Label = styled.label`
@@ -58,7 +67,7 @@ const OptionButton = styled.button`
   background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
   padding: 10px;
-  
+
   :hover {
     cursor: pointer;
     background-color: ${(props) => (props.active ? "#e84545" : "gray")};
@@ -117,6 +126,8 @@ const InputContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+
 `;
 
-export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton };
+export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture };
+
