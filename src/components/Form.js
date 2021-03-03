@@ -97,18 +97,31 @@ swal.fire({
       })
     }
 
-     else {swal.fire({
-        title: "Alrighty!",
-        text: "Nothing happened, just test!",
-        icon: "success",
-        confirmButtonText: "Cool"
-      });
-      this.setState({runActive: "",
-    walkActive: "",
-    bikeActive: "",
-    km: "",
-    time: "",
-    type: ""})}
+     else {
+      swal.fire({
+        title: "Are you sure?",
+        text:"You will not be able to delete this later on",
+        icon: "Warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes I am sure",
+        cancelButtonText: "Noooo!",
+        }).then((result) => {
+          if(result.value){
+            swal.fire('Data sent(not really)!')
+          } else if (result.dismiss === swal.DismissReason.cancel) {
+            swal.fire('Cancelled')
+          }
+        })
+
+
+
+    }
+    //   this.setState({runActive: "",
+    // walkActive: "",
+    // bikeActive: "",
+    // km: "",
+    // time: "",
+    // type: ""})
 
   };
 
