@@ -3,7 +3,7 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, SendButton
+  LabelPadding, OptionButton, SendButton,
 } from "./styledComps";
 
 
@@ -98,7 +98,9 @@ swal.fire({
     }
 
      else {
+      
       swal.fire({
+        
         title: "Are you sure?",
         text:"You will not be able to delete this later on",
         icon: "Warning",
@@ -111,11 +113,13 @@ swal.fire({
           } else if (result.dismiss === swal.DismissReason.cancel) {
             swal.fire('Cancelled')
           }
+          
         })
-
+        
 
 
     }
+    
     //   this.setState({runActive: "",
     // walkActive: "",
     // bikeActive: "",
