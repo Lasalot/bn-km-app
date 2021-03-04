@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import {NavBar, NavButton} from "./styledComps"
+import { NavBar, NavButton } from "./styledComps";
 
 
 
-    
 
 class Navbar extends Component {
-//const Navbar = (props) => {
-    
-    state = {
+       state = {
         achievementActive: "active",
         homeActive: ""
     };
@@ -24,8 +21,8 @@ class Navbar extends Component {
             homeActive: "Active"
         });
     };
-    
-   
+
+
 
   render(){
   return (
@@ -37,13 +34,12 @@ class Navbar extends Component {
         </NavButton>
         <NavButton type="button" onClick={this.setAchievement} active={this.state.achievementActive}>
             Achievement
-        </NavButton> 
+        </NavButton>
        </NavBar>
     </nav>
-    
+
     </>
   );
   }}
 
   export default Navbar
- 

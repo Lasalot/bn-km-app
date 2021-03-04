@@ -4,10 +4,10 @@ import 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./App.css";
 import Form from "./components/Form";
+import Navbar from "./components/Navbar";
 import { RoundPicture, SignOutButton } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
 import Logo from "./logo.png";
-import Navbar from "./components/Navbar";
 
 
 
@@ -40,9 +40,12 @@ function SignIn() {
 }
 
 const LoggedInUserPhoto = () => {
-  return (
+  if(!auth.currentUser.photoURL){
+    return (<h1>No picture has been found</h1>)
+  } else {return (
     <RoundPicture alt="loggedinuser" src={auth.currentUser.photoURL}></RoundPicture>
-  )
+  )}
+
 }
 
  function App() {
