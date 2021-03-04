@@ -7,6 +7,7 @@ import Form from "./components/Form";
 import { RoundPicture, SignOutButton } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
 import Logo from "./logo.png";
+import Navbar from "./components/Navbar";
 
 
 
@@ -49,9 +50,11 @@ const LoggedInUserPhoto = () => {
 
   const[user] = useAuthState(auth)
 
-
   return (
     <div className="App">
+      <section>
+      {user ? <Navbar/> : null}
+      </section>
       <img className="userLogo" alt="logo" src={Logo} />
       <h1>BitNinja Kilometer Tracker!</h1>
       {user ? <LoggedInUserPhoto/> : null}

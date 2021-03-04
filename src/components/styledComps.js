@@ -94,7 +94,8 @@ const SendButton = styled.button`
   border-radius: 5px;
   color: white;
   :hover{cursor: pointer;
-background-color: #179609;}
+background-color: #179609;
+font-family:}
   border: none;
   font-family: "Mulish", sans-serif;
   font-weight: 200;
@@ -129,5 +130,41 @@ const InputContainer = styled.div`
 
 `;
 
-export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture };
+const NavBar = styled.div`
+width: 100%;
+height: 3rem;
+line-height: 3rem;
+margin: none;
+`;
+
+ 
+ const NavButton = styled.button`
+ background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
+  color: ${(props) => (props.active ? "white" : "white")};
+ width: 49%;
+ display: inline-block;
+ border-style: none solid;
+ border-width: thin;
+ color: white;
+ height: 3rem;
+ font-weight: ${(props) => (props.active ? "600" : "200")};
+ :hover{
+   cursor:pointer;
+  background-color: ${(props) => (props.active ? "#e84545" : "gray")};
+   font-family: "Mulish", sans-serif;
+  font-weight: 600;
+ }
+ :active {
+  outline:none;
+  border:none;
+  
+}
+:focus {
+  outline:none
+};
+ font-family: "Mulish", sans-serif;
+  font-size: 1rem;
+ `;
+
+export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton };
 

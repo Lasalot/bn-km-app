@@ -13,3 +13,24 @@ h1,
 label {
   color: white;
 }
+
+body{
+  margin: 0;
+}
+.swal2-title, .swal2-content{
+  color: white !important;
+}
+
+.swal2-success-circular-line-right, .swal2-success-circular-line-left, .swal2-popup, .swal2-success-fix{
+  background-color: #393e46!important;
+}
+.swal2-success-line-tip, .swal2-success-line-long, .swal2-confirm{
+  background-color: #29bc64 !important;
+}
+.swal2-success-ring{
+border: .25em solid rgba(41,188,100,.3) !important;
+}
+.swal2-icon.swal2-success{
+  color:#29bc64 !important;
+  border-color:#29bc64 !important;
+}
