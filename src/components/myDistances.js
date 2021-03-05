@@ -13,7 +13,7 @@ const [ready, setReady] = useState(false)
 const user = props.currUser
   useEffect(() => {
 
-    axios.get('http://localhost:8080/api/getalldistance', {
+    axios.get('http://localhost:8080/api/getuserdata', {
       user: user
     }).then(res => {
     setData(res.data)
