@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  position: relative;
 }
 section button{
   height: 4rem;
@@ -18,7 +19,9 @@ html {
   background-color: #141324;
   font-family: "Mulish", sans-serif;
 }
-
+.userLogo{
+  margin-top: 2rem;
+}
 h1,
 label {
   color: white;
@@ -26,6 +29,7 @@ label {
 
 body{
   margin: 0;
+  position: relative;
 }
 .swal2-title, .swal2-content{
   color: white !important;

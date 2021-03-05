@@ -3,7 +3,16 @@ import styled from "styled-components";
 
 const RoundPicture = styled.img`
 border-radius: 50%;
-margin-bottom 10px
+margin-bottom 10px;
+position: absolute;
+top: 4rem;
+right: 2rem;
+@media screen and (max-width: 600px){
+  position: absolute;
+  top: 4rem;
+  right: 0.3rem;
+  width: 20%;
+}
 `
 
 
@@ -13,6 +22,10 @@ margin-bottom 10px
 const Input = styled.input`
   background-color: #393e46;
   margin:auto;
+  @media screen and (max-width: 600px){
+    width: 90%;
+    
+  }
   color: #838383;
   display: inline-block;
   width: 25%;
@@ -42,6 +55,10 @@ const StyledInput = styled(Input)`
 const Label = styled.label`
   background-color: #222831;
   color: white;
+  @media screen and (max-width: 600px){
+    width: 89.5%;
+    border-radius: 5px 5px 0px 0px; 
+  }
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -67,7 +84,13 @@ const OptionButton = styled.button`
   background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
   padding: 10px;
-
+  @media screen and (max-width: 600px){
+    width: 31%;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
   :hover {
     cursor: pointer;
     background-color: ${(props) => (props.active ? "#e84545" : "gray")};
@@ -90,6 +113,15 @@ const SendButton = styled.button`
   background-color: #29bc64;
   width: 25%;
   height: 3rem;
+  @media screen and (max-width: 600px){
+    width: 95%;
+    height: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
+    padding-right: 0;
+    text-align: center;
+  }
   margin-top: 2rem;
   border-radius: 5px;
   color: white;
@@ -118,7 +150,7 @@ font-family: "Mulish", sans-serif;
 `
 
 const LabelPadding = styled(Label)`
-margin-top: 20px;
+
 `
 
 const InputContainer = styled.div`
@@ -135,13 +167,24 @@ width: 100%;
 height: 3rem;
 line-height: 3rem;
 margin: none;
+position: fixed;
+top: 0;
+background-color: #141324;
+padding-bottom: 2px;
+z-index: 1;
 `;
-
- 
  const NavButton = styled.button`
  background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
  width: 30%;
+ @media screen and (max-width: 600px){
+   width: 30%;
+   margin-left: 2px;
+   margin-right: 2px;
+   font-size: 1rem;
+   position: sticky;
+   top: 0;
+ }
  margin-left: 0.5rem;
  margin-right: 0.5rem;
  display: inline-block;
