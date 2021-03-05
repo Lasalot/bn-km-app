@@ -1,24 +1,32 @@
+import axios from "axios";
 import React, { Component } from "react";
 import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, SendButton,
+  LabelPadding, OptionButton, SendButton
 } from "./styledComps";
 
 
 class Form extends Component {
-  state = {
-    runActive:"Active",
-    walkActive: "",
-    bikeActive: "",
-    km: "",
-    time: "",
-    type: {
-      mode:"Run",
-      count:"Kilometers"
-    }
-  };
+  constructor(props){
+    super(props)
+    this.state = {
+      runActive:"Active",
+      walkActive: "",
+      bikeActive: "",
+      km: "",
+      time: "",
+      type: {
+        mode:"Run",
+        count:"Kilometers"
+      }
+    };
+  }
+
+
+
+
 
   setRun = () => {
     this.setState({
@@ -98,29 +106,73 @@ swal.fire({
     }
 
      else {
-      
+
       swal.fire({
-        
+
         title: "Are you sure?",
         text:"You will not be able to delete this later on",
-        icon: "Warning",
+        icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Yes I am sure",
         cancelButtonText: "Noooo!",
         }).then((result) => {
           if(result.value){
-            swal.fire('Data sent(not really)!')
+            if(this.state.type.mode === "Walk"){axios.post('http://localhost:8080/api/distance', {
+              steps: this.state.km,
+              who: this.props.currUser,
+              time: this.state.time,
+              activity_type: this.state.type.mode
+            });
+            setTimeout(() => {
+              this.setState({
+                runActive:"Active",
+      walkActive: "",
+      bikeActive: "",
+      km: "",
+      time: "",
+      type: {
+        mode:"Run",
+        count:"Kilometers"
+      }
+              })
+            }, 2000)} else if (this.state.type.mode === "Run" || "Bike") { console.log("bike or run")
+
+              axios.post('http://localhost:8080/api/distance', {
+              kilometers: this.state.km,
+              who: this.props.currUser,
+              time: this.state.time,
+              activity_type: this.state.type.mode
+            });
+            setTimeout(() => {
+              swal.fire({
+                title: "Success!",
+                text:"Data has been sent!(BIKERUN)",
+                icon: "success"
+              })
+              this.setState({
+                runActive:"Active",
+      walkActive: "",
+      bikeActive: "",
+      km: "",
+      time: "",
+      type: {
+        mode:"Run",
+        count:"Kilometers"
+      }
+              })
+            }, 2000)
+
+            }
+
+
+
           } else if (result.dismiss === swal.DismissReason.cancel) {
             swal.fire('Cancelled')
+
           }
-          
+
         })
-        this.setState({runActive: "",
-        walkActive: "",
-        bikeActive: "",
-        km: "",
-        time: "",
-        type: ""})
+
 
 
     }
@@ -128,14 +180,14 @@ swal.fire({
 
   };
 
-  componentDidMount(props) {
-    swal.fire({
-      title: "Yay you are back again!",
-      text: "Up to add some meters huh?",
-      icon: "success",
-      confirmButtonText: "Ayeaye"
-    })
-  }
+  // componentDidMount(props) {
+  //   swal.fire({
+  //     title: "Yay you are back again!",
+  //     text: "Up to add some meters huh?",
+  //     icon: "success",
+  //     confirmButtonText: "Ayeaye"
+  //   })
+  // }
 
   render() {
     return (
@@ -171,6 +223,7 @@ swal.fire({
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
             ‍Bike
           </OptionButton>
+
 
           <SendButton type="submit">I am awesome!</SendButton>
         </form>

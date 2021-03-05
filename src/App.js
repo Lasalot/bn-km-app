@@ -14,7 +14,7 @@ import Logo from "./logo.png";
 firebase.initializeApp(credentials
 )
 const auth = firebase.auth()
-const firestore = firebase.firestore();
+// const firestore = firebase.firestore();
 
 
 
@@ -40,6 +40,7 @@ function SignIn() {
 }
 
 const LoggedInUserPhoto = () => {
+
   if(!auth.currentUser.photoURL){
     return (<h1>No picture has been found</h1>)
   } else {return (
@@ -62,9 +63,10 @@ const LoggedInUserPhoto = () => {
       <h1>BitNinja Kilometer Tracker!</h1>
       {user ? <LoggedInUserPhoto/> : null}
       <section>
-      {user ? <Form/> : <SignIn/>}
+      {user ? <Form currUser = {auth.currentUser.displayName}/> : <SignIn/>}
       </section>
       {user ? <SignOutButton onClick={() => signOut()}>Sign Out</SignOutButton> : null }
+
     </div>
   );
 }
