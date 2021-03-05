@@ -3,7 +3,17 @@
 .App {
   text-align: center;
 }
-
+section button{
+  height: 4rem;
+  width: 14rem;
+  font-family: "Mulish", sans-serif;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20%;
+  background-color: #e84535;
+  font-weight: 400;
+  color: white;
+}
 html {
   background-color: #141324;
   font-family: "Mulish", sans-serif;

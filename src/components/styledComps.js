@@ -141,12 +141,15 @@ margin: none;
  const NavButton = styled.button`
  background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
- width: 49%;
+ width: 30%;
+ margin-left: 0.5rem;
+ margin-right: 0.5rem;
  display: inline-block;
- border-style: none solid;
- border-width: thin;
+ border: none;
  color: white;
  height: 3rem;
+ margin-top: 0;
+ border-radius: 5;
  font-weight: ${(props) => (props.active ? "600" : "200")};
  :hover{
    cursor:pointer;
