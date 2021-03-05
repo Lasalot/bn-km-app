@@ -13,6 +13,7 @@ class Form extends Component {
     super(props)
     this.state = {
       runActive:"Active",
+      secretpass:"",
       walkActive: "",
       bikeActive: "",
       km: "",
@@ -121,13 +122,15 @@ swal.fire({
               steps: this.state.km,
               who: this.props.currUser,
               time: this.state.time,
-              activity_type: this.state.type.mode
+              activity_type: this.state.type.mode,
+              password: this.state.secretpass
             });
             setTimeout(() => {
               this.setState({
                 runActive:"Active",
       walkActive: "",
       bikeActive: "",
+      secretpass: "",
       km: "",
       time: "",
       type: {
@@ -141,7 +144,8 @@ swal.fire({
               kilometers: this.state.km,
               who: this.props.currUser,
               time: this.state.time,
-              activity_type: this.state.type.mode
+              activity_type: this.state.type.mode,
+              password: this.state.secretpass
             });
             setTimeout(() => {
               swal.fire({
@@ -153,6 +157,7 @@ swal.fire({
                 runActive:"Active",
       walkActive: "",
       bikeActive: "",
+      secretpass:"",
       km: "",
       time: "",
       type: {
@@ -228,6 +233,7 @@ swal.fire({
           <SendButton type="submit">I am awesome!</SendButton>
         </form>
         </InputContainer>
+        <Input onChange={(event) => this.setState({secretpass: event.target.value})} placeholder="ultratitkosatomjelszo" tpye="text"/>
 
       </>
     );

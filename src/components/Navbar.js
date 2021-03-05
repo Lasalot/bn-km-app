@@ -7,20 +7,31 @@ import { NavBar, NavButton } from "./styledComps";
 class Navbar extends Component {
        state = {
         achievementActive: "active",
-        homeActive: ""
+        homeActive: "",
+        myDistancesActive: ""
     };
     setAchievement = () => {
         this.setState({
             achievementActive: "Active",
-            homeActive: ""
+            homeActive: "",
+            myDistancesActive: ""
         });
     };
     setHome = () => {
         this.setState({
             achievementActive: "",
-            homeActive: "Active"
+            homeActive: "Active",
+            myDistancesActive: ""
         });
     };
+
+    setMyDistances = () => {
+        this.setState({
+            achievementActive: "",
+            homeActive: "",
+            myDistancesActive: "Active"
+        });
+    }
 
 
 
@@ -34,6 +45,9 @@ class Navbar extends Component {
         </NavButton>
         <NavButton type="button" onClick={this.setAchievement} active={this.state.achievementActive}>
             Achievement
+        </NavButton>
+        <NavButton type="button" onClick={this.setMyDistances} active={this.state.myDistancesActive}>
+            My distances
         </NavButton>
        </NavBar>
     </nav>
