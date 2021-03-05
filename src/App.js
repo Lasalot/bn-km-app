@@ -4,6 +4,7 @@ import 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import "./App.css";
 import Form from "./components/Form";
+import MyDistances from "./components/myDistances";
 import Navbar from "./components/Navbar";
 import { RoundPicture, SignOutButton } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
@@ -62,8 +63,16 @@ const LoggedInUserPhoto = () => {
       <img className="userLogo" alt="logo" src={Logo} />
       <h1>BitNinja Kilometer Tracker!</h1>
       {user ? <LoggedInUserPhoto/> : null}
+
+
       <section>
-      {user ? <Form currUser = {auth.currentUser.displayName}/> : <SignIn/>}
+      {user ?
+      <>
+      <Form currUser = {auth.currentUser.displayName}/>
+      <h1>My Distances oldal része lesz :</h1>
+      <MyDistances currUser = {auth.currentUser.displayName}/>
+
+      </> : <SignIn/>}
       </section>
       {user ? <SignOutButton onClick={() => signOut()}>Sign Out</SignOutButton> : null }
 
