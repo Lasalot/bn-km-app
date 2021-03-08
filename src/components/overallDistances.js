@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import OverallDistancesModel from "./models/overallDistancesModel";
-import { Table, tableHead} from "./styledComps";
+import { Table } from "./styledComps";
 
 
 function OverallDistances(props) {

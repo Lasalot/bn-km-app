@@ -14,7 +14,7 @@ const [nextGoal, setNextGoal] = useState("")
 
 //Get data about all distances (in KM) then set achievements accordingly
 useEffect(() => {
-  axios.get('http://95.179.200.165:8080/api/getoveralldistance').then(res => {
+  axios.get('http://localhost:8080/api/getoveralldistance').then(res => {
     setSumDistance(parseInt(res.data,10))
   })
 }, [sumDistance])

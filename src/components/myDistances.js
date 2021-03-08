@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Distances from "./models/myDistancesModel";
-import { Table, tableHead, tH, tR } from "./styledComps"
+import { Table } from "./styledComps";
 
 
 
