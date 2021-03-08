@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Distances from "./models/myDistancesModel";
+import OverallDistancesModel from "./models/overallDistancesModel";
 
 
 
-function MyDistances(props) {
+function OverallDistances(props) {
 
 
 const [data, setData] = useState()
@@ -13,10 +13,7 @@ const [ready, setReady] = useState(false)
 
   useEffect(() => {
 
-    axios.post('http://localhost:8080/api/getuserdata', {
-      user: props.currUser
-
-    }).then(res => {
+    axios.get('http://localhost:8080/api/getalldistance').then(res => {
     setData(res.data)
     setReady(true)
 
@@ -25,7 +22,7 @@ const [ready, setReady] = useState(false)
     }, []);
 
     function dataMapping(item) {
-      return <Distances key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} time={item.time} mode={item.activity_type}/>
+      return <OverallDistancesModel key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} time={item.time} mode={item.activity_type}/>
     }
 
     return (
@@ -38,11 +35,13 @@ const [ready, setReady] = useState(false)
 <th>Time</th>
 </tr>
 </thead>
+
         {ready ? <>{data.map(dataMapping)}</> : null }
+
         </table>
 
 
     )
 }
 
-export default MyDistances;
+export default OverallDistances;

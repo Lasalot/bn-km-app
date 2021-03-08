@@ -1,10 +1,10 @@
 import React from "react";
 
 
-function Distances(entries) {
-
+function OverallDistancesModel(entries) {
   return (
-  <tbody>
+   <tbody>
+
 
 <tr>
 <td>{entries.who}</td>
@@ -13,8 +13,9 @@ function Distances(entries) {
 <td>{entries.time}</td>
 
 </tr>
-  </tbody>
+
+   </tbody>
   );
 }
 
-export default Distances;
+export default OverallDistancesModel;

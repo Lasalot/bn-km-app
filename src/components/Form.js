@@ -107,76 +107,101 @@ swal.fire({
     }
 
      else {
+       if(this.state.secretpass !== "bitninja"){
+         swal.fire({
+           title: "Wrong jelsaw!",
+           icon: "warning"
+         })
+       } else {
+        swal.fire({
 
-      swal.fire({
+          title: "Are you sure?",
+          text:"You will not be able to delete this later on",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonText: "Yes I am sure",
+          cancelButtonText: "Noooo!",
+          }).then((result) => {
+            if(result.value){
+              if(this.state.type.mode === "Walk"){axios.post('http://localhost:8080/api/distance', {
+                steps: this.state.km,
+                who: this.props.currUser,
+                time: this.state.time,
+                activity_type: this.state.type.mode,
+                password: this.state.secretpass
+              });
+              setTimeout(() => {
+                swal.fire({
+                  title: "Success!",
+                  text:"Data has been sent!",
+                  icon: "success"
+                })
+                this.setState({
+                  runActive:"Active",
+        walkActive: "",
+        bikeActive: "",
+        secretpass: "",
+        km: "",
+        time: "",
+        type: {
+          mode:"Run",
+          count:"Kilometers"
+        }
 
-        title: "Are you sure?",
-        text:"You will not be able to delete this later on",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Yes I am sure",
-        cancelButtonText: "Noooo!",
-        }).then((result) => {
-          if(result.value){
-            if(this.state.type.mode === "Walk"){axios.post('http://localhost:8080/api/distance', {
-              steps: this.state.km,
-              who: this.props.currUser,
-              time: this.state.time,
-              activity_type: this.state.type.mode,
-              password: this.state.secretpass
-            });
-            setTimeout(() => {
-              this.setState({
-                runActive:"Active",
-      walkActive: "",
-      bikeActive: "",
-      secretpass: "",
-      km: "",
-      time: "",
-      type: {
-        mode:"Run",
-        count:"Kilometers"
-      }
-              })
-            }, 2000)} else if (this.state.type.mode === "Run" || "Bike") { console.log("bike or run")
+                })
 
-              axios.post('http://localhost:8080/api/distance', {
-              kilometers: this.state.km,
-              who: this.props.currUser,
-              time: this.state.time,
-              activity_type: this.state.type.mode,
-              password: this.state.secretpass
-            });
-            setTimeout(() => {
-              swal.fire({
-                title: "Success!",
-                text:"Data has been sent!(BIKERUN)",
-                icon: "success"
-              })
-              this.setState({
-                runActive:"Active",
-      walkActive: "",
-      bikeActive: "",
-      secretpass:"",
-      km: "",
-      time: "",
-      type: {
-        mode:"Run",
-        count:"Kilometers"
-      }
-              })
-            }, 2000)
+              }, 2000)
+              setTimeout(() => {
+                window.location.reload(false)
+              }, 4000)
+            } else if (this.state.type.mode === "Run" || "Bike") { console.log("bike or run")
+
+                axios.post('http://localhost:8080/api/distance', {
+                kilometers: this.state.km,
+                who: this.props.currUser,
+                time: this.state.time,
+                activity_type: this.state.type.mode,
+                password: this.state.secretpass
+              });
+              setTimeout(() => {
+                swal.fire({
+                  title: "Success!",
+                  text:"Data has been sent!",
+                  icon: "success"
+                })
+                this.setState({
+                  runActive:"Active",
+        walkActive: "",
+        bikeActive: "",
+        secretpass:"",
+        km: "",
+        time: "",
+        type: {
+          mode:"Run",
+          count:"Kilometers"
+        }
+                })
+
+              }, 2000);
+
+              setTimeout(() => {
+                window.location.reload(false)
+              }, 4000)
+
+              }
+
+
+
+            } else if (result.dismiss === swal.DismissReason.cancel) {
+              swal.fire('Cancelled')
 
             }
 
+          })
+
+       }
 
 
-          } else if (result.dismiss === swal.DismissReason.cancel) {
-            swal.fire('Cancelled')
-
-          }
-
-        })
 
 
 
@@ -205,6 +230,7 @@ swal.fire({
             value={this.state.km}
             onChange={(event) => this.setState({ km: event.target.value })}
             type="number"
+            min="1"
             placeholder={this.state.type.count}
           />
 

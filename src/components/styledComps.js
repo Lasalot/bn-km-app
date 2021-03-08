@@ -24,7 +24,7 @@ const Input = styled.input`
   margin:auto;
   @media screen and (max-width: 600px){
     width: 90%;
-    
+
   }
   color: #838383;
   display: inline-block;
@@ -57,7 +57,7 @@ const Label = styled.label`
   color: white;
   @media screen and (max-width: 600px){
     width: 89.5%;
-    border-radius: 5px 5px 0px 0px; 
+    border-radius: 5px 5px 0px 0px;
   }
   margin-left: auto;
   margin-right: auto;
@@ -166,7 +166,6 @@ const NavBar = styled.div`
 width: 100%;
 height: 3rem;
 line-height: 3rem;
-margin: none;
 position: fixed;
 top: 0;
 background-color: #141324;
@@ -176,7 +175,7 @@ z-index: 1;
  const NavButton = styled.button`
  background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};
- width: 30%;
+ width: 15%;
  @media screen and (max-width: 600px){
    width: 30%;
    margin-left: 2px;
@@ -203,7 +202,7 @@ z-index: 1;
  :active {
   outline:none;
   border:none;
-  
+
 }
 :focus {
   outline:none
@@ -212,5 +211,9 @@ z-index: 1;
   font-size: 1rem;
  `;
 
-export { Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton };
+ const Achievement = styled.img`
+ opacity: ${(props) => (props.active ? "1" : "0.1")}
+ `
+
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton };
 
