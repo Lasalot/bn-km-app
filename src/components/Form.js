@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { Component } from "react";
 import swal from "sweetalert2";
 import {
-  Input,
-  InputContainer, Label,
-  LabelPadding, OptionButton, SendButton
+    Input,
+    InputContainer, Label,
+    LabelPadding, OptionButton, SendButton
 } from "./styledComps";
 
 
