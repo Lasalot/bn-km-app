@@ -4,13 +4,11 @@ import React from "react";
 function OverallDistancesModel(entries) {
   return (
    <tbody>
-
-
-<tr>
-<td>{entries.who}</td>
-<td>{entries.mode}</td>
-<td>{entries.kilometers} {entries.steps}km</td>
-<td>{entries.time}</td>
+<tr class="classTrBody">
+<td class="classTd">{entries.who}</td>
+<td class="classTd dark">{entries.mode}</td>
+<td class="classTd dark2">{entries.kilometers} {entries.steps}km</td>
+<td class="classTd dark3">{entries.time}</td>
 
 </tr>
 

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import OverallDistancesModel from "./models/overallDistancesModel";
-
+import { Table, tableHead} from "./styledComps";
 
 
 function OverallDistances(props) {
@@ -26,19 +26,19 @@ const [ready, setReady] = useState(false)
     }
 
     return (
-      <table>
-        <thead>
-        <tr>
-<th>Name</th>
-<th>Activity Type</th>
-<th>Kilometers</th>
-<th>Time</th>
+      <Table>
+        <tableHead>
+        <tr class="classTr">
+<th class="classTh">Name</th>
+<th class="classTh">Activity Type</th>
+<th class="classTh">Kms</th>
+<th class="classTh">Time</th>
 </tr>
-</thead>
-
+</tableHead>
+<tr class="classTr">
         {ready ? <>{data.map(dataMapping)}</> : null }
-
-        </table>
+</tr>
+        </Table>
 
 
     )

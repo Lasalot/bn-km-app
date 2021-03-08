@@ -212,8 +212,19 @@ z-index: 1;
  `;
 
  const Achievement = styled.img`
- opacity: ${(props) => (props.active ? "1" : "0.1")}
+ opacity: ${(props) => (props.active ? "1" : "0.1")};
  `
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton };
+ const Table = styled.table`
+ width: 95%;
+ background-color: #141324;
+ `
+const tableHead = styled.thead`
+background-color: blue;
+width: 70%;
+`
+
+
+
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, tableHead};
 
