@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ach1 from "../img/1_achi.png";
 import { Achievement } from "./styledComps";
 
-function Achievements(){
+function Achievements(props){
 
 const [firstAchi, setFirstAchi] = useState()
 const [secondAchi, setSecondAchi] = useState("")
@@ -42,13 +42,16 @@ if(sumDistance >= 300) {
 
 }
 
+const leftDistance = parseInt(nextGoal,10)-parseInt(sumDistance,10)
+
   return (
 
+<>
+<button onClick={props.form}>Upload Awesomeness</button>
 <div>
-
     <h1>Company wide achievements</h1>
-    <p>Overall distance {sumDistance}km.</p>
-    <p>Next goal is {nextGoal}km : 200/{sumDistance}</p>
+    <h2>{sumDistance}km collected Together, Come on only {leftDistance} KMs to unlock the next milestone!</h2>
+    <p>Next goal is {nextGoal}km : {nextGoal}/{sumDistance}</p>
     <div>
     {sumDistance ?
     <div onLoad={() => RevealAchi()}>
@@ -61,6 +64,7 @@ if(sumDistance >= 300) {
 
     </div>
     </div>
+    </>
   )
 
 

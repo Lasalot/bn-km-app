@@ -4,16 +4,16 @@ import { NavBar, NavButton } from "./styledComps";
 
 
 class Navbar extends Component {
-       state = {
-        achievementActive: "",
+        state = {
+        teamTracker: "",
         homeActive: "active",
         myDistancesActive: "",
         upladFormActive: ""
     };
-    setAchievement = () => {
-        this.props.achievements();
+    setTeamTracker = () => {
+        this.props.teamtracker();
         this.setState({
-            achievementActive: "active",
+            teamTracker: "active",
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: ""
@@ -23,7 +23,7 @@ class Navbar extends Component {
         this.props.home();
 
         this.setState({
-            achievementActive: "",
+            teamTracker: "",
             homeActive: "active",
             myDistancesActive: "",
             upladFormActive: ""
@@ -34,7 +34,7 @@ class Navbar extends Component {
         this.props.mydistances();
 
         this.setState({
-            achievementActive: "",
+            teamTracker: "",
             homeActive: "",
             myDistancesActive: "active",
             upladFormActive: ""
@@ -44,7 +44,7 @@ class Navbar extends Component {
         this.props.form();
 
         this.setState({
-            achievementActive: "",
+            teamTracker: "",
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: "active"
@@ -58,16 +58,16 @@ class Navbar extends Component {
     <>
     <nav>
        <NavBar>
-       <NavButton type="button" onClick={this.setHome} active={this.state.homeActive}>
+       <NavButton type="button" onClick={this.setHome} active={this.props.isHomeActive}>
        Home
         </NavButton>
-        <NavButton type="button" onClick={this.setAchievement} active={this.state.achievementActive}>
-            Achievements
+        <NavButton type="button" onClick={this.setTeamTracker} active={this.state.teamTracker}>
+            Team Tracker
         </NavButton>
         <NavButton type="button" onClick={this.setMyDistances}  active={this.state.myDistancesActive}>
-            My distances
+            My Profile
         </NavButton>
-        <NavButton type="button" onClick={this.setUploadForm}  active={this.state.upladFormActive}>
+        <NavButton type="button" onClick={this.setUploadForm}  active={this.props.isFormActive}>
            Upload Form
         </NavButton>
         <NavButton type="button" onClick={() => this.props.logOut()} >

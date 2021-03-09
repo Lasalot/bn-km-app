@@ -8,6 +8,7 @@ import {
 } from "./styledComps";
 
 
+
 class Form extends Component {
   constructor(props){
     super(props)
@@ -18,7 +19,6 @@ class Form extends Component {
       bikeActive: "",
       rollerActive:"",
       km: "",
-      time: "",
       type: {
         mode:"Run",
         count:"Kilometers"
@@ -143,7 +143,7 @@ swal.fire({
               if(this.state.type.mode === "Walk"){axios.post('http://localhost:8080/api/distance', {
                 steps: this.state.km,
                 who: this.props.currUser,
-                time: this.state.time,
+
                 activity_type: this.state.type.mode,
                 password: this.state.secretpass
               });
@@ -160,7 +160,6 @@ swal.fire({
         rollerActive:"",
         secretpass: "",
         km: "",
-        time: "",
         type: {
           mode:"Run",
           count:"Kilometers"
@@ -177,7 +176,6 @@ swal.fire({
                 axios.post('http://localhost:8080/api/distance', {
                 kilometers: this.state.km,
                 who: this.props.currUser,
-                time: this.state.time,
                 activity_type: this.state.type.mode,
                 password: this.state.secretpass
               });
@@ -194,7 +192,6 @@ swal.fire({
         secretpass:"",
         rollerActive:"",
         km: "",
-        time: "",
         type: {
           mode:"Run",
           count:"Kilometers"
@@ -244,26 +241,9 @@ swal.fire({
 
       <InputContainer>
         <form onSubmit={this.submitForm}>
-          <Label>How many {this.state.type.count}?</Label>
-          <Input
-            value={this.state.km}
-            onChange={(event) => this.setState({ km: event.target.value })}
-            type="number"
-            min="1"
-            placeholder={this.state.type.count}
-          />
-
-            <Label>How much time it took you?</Label>
-            <Input
-              value={this.state.time}
-              onChange={(event) => this.setState({ time: event.target.value })}
-              type="time" step="1"
-
-            />
 
 
-
-          <LabelPadding>How?</LabelPadding>
+        <LabelPadding>How?</LabelPadding>
           <OptionButton type="button" onClick={this.setRun} active={this.state.runActive}>
             Run
           </OptionButton>
@@ -276,6 +256,21 @@ swal.fire({
           <OptionButton type="button" onClick={this.setRoller} active={this.state.rollerActive}>
             Roller Skates
           </OptionButton>
+
+          <Label>How many {this.state.type.count}?</Label>
+          <Input
+            value={this.state.km}
+            onChange={(event) => this.setState({ km: event.target.value })}
+            type="number"
+            min="1"
+            placeholder={this.state.type.count}
+          />
+
+
+
+
+
+
 
 
           <SendButton type="submit">I am awesome!</SendButton>

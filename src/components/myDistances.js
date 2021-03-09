@@ -10,12 +10,12 @@ function MyDistances(props) {
 
 const [data, setData] = useState()
 const [ready, setReady] = useState(false)
-
+const currentUser = props.currUser
 
   useEffect(() => {
 
     axios.post('http://localhost:8080/api/getuserdata', {
-      user: props.currUser
+      user: currentUser
 
     }).then(res => {
     setData(res.data)
@@ -32,11 +32,11 @@ const [ready, setReady] = useState(false)
     return (
       <Table>
         <thead>
-        <tr class="classTr">
-        <th class="classTh">Name</th>
-<th class="classTh modeClass">Activity Type</th>
-<th class="classTh">Kms</th>
-<th class="classTh modeClass">Time</th>
+        <tr className="classTr">
+        <th className="classTh">Name</th>
+<th className="classTh modeClass">Activity Type</th>
+<th className="classTh">Kms</th>
+<th className="classTh modeClass">Time</th>
 </tr>
 </thead>
 <tbody>

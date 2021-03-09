@@ -79,6 +79,7 @@ const OptionButton = styled.button`
   margin-top: 0.5rem;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+  margin-bottom: 0.5rem;
   width: 6.2%;
   height: 4rem;
   background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
@@ -122,7 +123,7 @@ const SendButton = styled.button`
     padding-right: 0;
     text-align: center;
   }
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   border-radius: 5px;
   color: white;
   :hover{cursor: pointer;

@@ -28,11 +28,11 @@ const [ready, setReady] = useState(false)
     return (
       <Table>
         <thead>
-        <tr class="classTr">
-<th class="classTh">Name</th>
-<th class="classTh">Activity Type</th>
-<th class="classTh">Kms</th>
-<th class="classTh">Time</th>
+        <tr className="classTr">
+<th className="classTh">Name</th>
+<th className="classTh">Activity Type</th>
+<th className="classTh">Kms</th>
+<th className="classTh">Time</th>
 </tr>
 </thead>
 <tbody>

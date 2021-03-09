@@ -24,66 +24,65 @@ html {
   margin-top: 5rem;
 }
 h1,
+h2,
 label {
   color: white;
 }
-.classTh{
-  background-color:#393e46;
+.classTh {
+  background-color: #393e46;
   width: 5%;
   height: 2rem;
   padding-top: 2%;
   padding-bottom: 1%;
-  color:white;
+  color: white;
   font-family: "Mulish", sans-serif;
   font-weight: 800;
-  font-size:1rem;
+  font-size: 1rem;
   text-align: center;
   border-radius: 5px 5px 0px 0px;
-
 }
 
-
-@media screen and (max-width: 600px){
-  .classTd{
-  min-width: 5rem !important;
-  border-radius: 10px !important;
-  text-align: center!important;
+@media screen and (max-width: 600px) {
+  .classTd {
+    min-width: 5rem !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+  }
+  .classTh {
+    min-width: 5rem !important;
+  }
 }
-.classTh{
-  min-width: 5rem !important;
-}
-}
-.dark{
+.dark {
   background-color: #505050 !important;
 }
-.dark2{
+.dark2 {
   background-color: #363636 !important;
 }
-.dark3{
+.dark3 {
   background-color: #1f1f1f !important;
 }
-.classTd{
-  background-color:#696969;
- width:5%;
+.classTd {
+  background-color: #696969;
+  width: 5%;
   height: 2rem;
   padding-top: 1%;
   padding-bottom: 1%;
-  color:white;
+  color: white;
   font-family: "Mulish", sans-serif;
   font-weight: 500;
-  font-size:1rem;
+  font-size: 1rem;
   text-align: left;
   padding-left: 1%;
   border-radius: 0px 20px 20px 20px;
 }
-.classTr{
+.classTr {
   text-align: center;
-  width:100%;
+  width: 100%;
   margin-bottom: -1rem;
 }
-.classTrBody{
+.classTrBody {
   text-align: center;
-  width:100%;
+  width: 100%;
 }
 body {
   margin: 0;

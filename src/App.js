@@ -69,69 +69,68 @@ const LoggedInUserPhoto = () => {
 
  function App() {
 const HomeActive = () => {
-setHome(true)
-setForm(false)
-setMyDistances(false)
-setAchievement(false)
+setHome("active")
+setForm("")
+setMyDistances("")
+setTeamTrackerActive("")
 }
 
 const FormActive = () => {
-  setHome(false)
-setForm(true)
-setMyDistances(false)
-setAchievement(false)
+  setHome("")
+setForm("active")
+setMyDistances("")
+setTeamTrackerActive("")
 }
 
 const MyDistancesActive = () => {
-  setHome(false)
-  setForm(false)
-  setMyDistances(true)
-  setAchievement(false)
+  setHome("")
+  setForm("")
+  setMyDistances("active")
+  setTeamTrackerActive("")
 }
 
-const AchievementsActive = () => {
-  setHome(false)
-  setForm(false)
-  setMyDistances(false)
-  setAchievement(true)
+const TeamTrackerActive = () => {
+  setHome("")
+  setForm("")
+  setMyDistances("")
+  setTeamTrackerActive("active")
 }
 
 
 
 
   const[user] = useAuthState(auth)
-  const [home, setHome] = useState(true)
-  const [form,setForm] = useState(false)
-  const [myDistances,setMyDistances] = useState(false)
-  const [achievements, setAchievement] = useState(false)
+  const [home, setHome] = useState("active")
+  const [form,setForm] = useState("")
+  const [myDistances,setMyDistances] = useState("")
+  const [teamTracker, setTeamTrackerActive] = useState("")
 
 
 
 
 //All component which can be shown , based on their state
   const Components = () => {
-   if (home === true) {
+   if (home === "active") {
      return (
      <>
-     <h1>Company wide distances</h1>
-       <OverallDistances/>
+     <Achievements form={FormActive}/>
        </>
      );
 
-   } else if (form === true) {
+   } else if (form === "active") {
      return(
        <>
        <Form currUser={auth.currentUser.displayName}/>
        </>
      )
-   } else if (myDistances === true) {
+   } else if (myDistances === "active") {
      return(<>
      <MyDistances currUser={auth.currentUser.displayName}/>
      </>)
-   } else if (achievements === true) {
+   } else if (teamTracker === "active") {
      return (
        <>
-  <Achievements/>
+  <OverallDistances/>
        </>
      )
    }
@@ -144,7 +143,7 @@ const AchievementsActive = () => {
     <div className="App">
 
       <section>
-      {user ? <Navbar home={HomeActive} form={FormActive} mydistances={MyDistancesActive} achievements={AchievementsActive}  logOut={SignOut}/> : null}
+      {user ? <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null}
       </section>
       <img  className="userLogo" alt="logo" src={Logo} />
       <h1>BitNinja Kilometer Tracker!</h1>
