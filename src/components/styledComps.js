@@ -79,7 +79,7 @@ const OptionButton = styled.button`
   margin-top: 0.5rem;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
-  width: 8.4%;
+  width: 6.2%;
   height: 4rem;
   background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
   color: ${(props) => (props.active ? "white" : "white")};

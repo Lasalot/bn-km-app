@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { Component } from "react";
 import swal from "sweetalert2";
 import {
-    Input,
-    InputContainer, Label,
-    LabelPadding, OptionButton, SendButton
+  Input,
+  InputContainer, Label,
+  LabelPadding, OptionButton, SendButton
 } from "./styledComps";
 
 
@@ -16,6 +16,7 @@ class Form extends Component {
       secretpass:"",
       walkActive: "",
       bikeActive: "",
+      rollerActive:"",
       km: "",
       time: "",
       type: {
@@ -34,6 +35,7 @@ class Form extends Component {
       runActive: "active",
       walkActive: "",
       bikeActive: "",
+      rollerActive:"",
       type: {
         mode:"Run",
         count:"Kilometers"
@@ -46,6 +48,7 @@ class Form extends Component {
       runActive: "",
       walkActive: "active",
       bikeActive: "",
+      rollerActive:"",
       type: {
         mode:"Walk",
         count:"Steps"
@@ -58,8 +61,22 @@ class Form extends Component {
       runActive: "",
       walkActive: "",
       bikeActive: "active",
+      rollerActive:"",
       type: {
         mode:"Bike",
+        count:"Kilometers"
+      }
+    });
+  };
+
+  setRoller = () => {
+    this.setState({
+      runActive: "",
+      walkActive: "",
+      bikeActive: "",
+      rollerActive: "active",
+      type: {
+        mode:"Roller Skates",
         count:"Kilometers"
       }
     });
@@ -140,6 +157,7 @@ swal.fire({
                   runActive:"Active",
         walkActive: "",
         bikeActive: "",
+        rollerActive:"",
         secretpass: "",
         km: "",
         time: "",
@@ -154,7 +172,7 @@ swal.fire({
               setTimeout(() => {
                 window.location.reload(false)
               }, 4000)
-            } else if (this.state.type.mode === "Run" || "Bike") { console.log("bike or run")
+            } else if (this.state.type.mode === "Run" || "Bike" || "Roller Skates") {
 
                 axios.post('http://localhost:8080/api/distance', {
                 kilometers: this.state.km,
@@ -174,6 +192,7 @@ swal.fire({
         walkActive: "",
         bikeActive: "",
         secretpass:"",
+        rollerActive:"",
         km: "",
         time: "",
         type: {
@@ -253,6 +272,9 @@ swal.fire({
           </OptionButton>
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
             ‍Bike
+          </OptionButton>
+          <OptionButton type="button" onClick={this.setRoller} active={this.state.rollerActive}>
+            Roller Skates
           </OptionButton>
 
 
