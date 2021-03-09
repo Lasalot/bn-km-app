@@ -31,17 +31,17 @@ const [ready, setReady] = useState(false)
 
     return (
       <Table>
-        <tableHead>
+        <thead>
         <tr class="classTr">
         <th class="classTh">Name</th>
 <th class="classTh modeClass">Activity Type</th>
 <th class="classTh">Kms</th>
 <th class="classTh modeClass">Time</th>
 </tr>
-</tableHead>
-<tr class="classTr">
+</thead>
+<tbody>
         {ready ? <>{data.map(dataMapping)}</> : null }
-        </tr>
+</tbody>
         </Table>
 
 

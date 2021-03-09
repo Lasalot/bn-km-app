@@ -219,12 +219,12 @@ z-index: 1;
  width: 95%;
  background-color: #141324;
  `
-const tableHead = styled.thead`
+const TableHead = styled.thead`
 background-color: blue;
 width: 70%;
 `
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, tableHead};
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead };
 

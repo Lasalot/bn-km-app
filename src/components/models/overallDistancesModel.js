@@ -3,7 +3,7 @@ import React from "react";
 
 function OverallDistancesModel(entries) {
   return (
-   <tbody>
+
 <tr class="classTrBody">
 <td class="classTd">{entries.who}</td>
 <td class="classTd dark">{entries.mode}</td>
@@ -12,7 +12,7 @@ function OverallDistancesModel(entries) {
 
 </tr>
 
-   </tbody>
+
   );
 }
 
