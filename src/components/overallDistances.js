@@ -22,7 +22,7 @@ const [ready, setReady] = useState(false)
     }, []);
 
     function dataMapping(item) {
-      return <OverallDistancesModel key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} time={item.time} mode={item.activity_type}/>
+      return <OverallDistancesModel key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} mode={item.activity_type}/>
     }
 
     return (
@@ -32,7 +32,7 @@ const [ready, setReady] = useState(false)
 <th className="classTh">Name</th>
 <th className="classTh">Activity Type</th>
 <th className="classTh">Kms</th>
-<th className="classTh">Time</th>
+
 </tr>
 </thead>
 <tbody>

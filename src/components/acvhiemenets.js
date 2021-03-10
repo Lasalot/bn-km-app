@@ -9,7 +9,7 @@ const [firstAchi, setFirstAchi] = useState()
 const [secondAchi, setSecondAchi] = useState("")
 const [thirdAchi, setThirdAchi] = useState("")
 const [sumDistance, setSumDistance] = useState("")
-const [nextGoal, setNextGoal] = useState("")
+const [nextGoal, setNextGoal] = useState("100")
 
 
 //Get data about all distances (in KM) then set achievements accordingly

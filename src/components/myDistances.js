@@ -26,7 +26,7 @@ const currentUser = props.currUser
     }, []);
 
     function dataMapping(item) {
-      return <Distances key={item.id} kilometers={item.kilometers} who={item.who} time={item.time} mode={item.activity_type}/>
+      return <Distances key={item.id} kilometers={item.kilometers} who={item.who} mode={item.activity_type}/>
     }
 
     return (
@@ -36,7 +36,7 @@ const currentUser = props.currUser
         <th className="classTh">Name</th>
 <th className="classTh modeClass">Activity Type</th>
 <th className="classTh">Kms</th>
-<th className="classTh modeClass">Time</th>
+
 </tr>
 </thead>
 <tbody>

@@ -18,6 +18,7 @@ class Form extends Component {
       walkActive: "",
       bikeActive: "",
       rollerActive:"",
+      file:null,
       km: "",
       type: {
         mode:"Run",
@@ -82,7 +83,42 @@ class Form extends Component {
     });
   };
 
+  checkFileSize=(event)=>{
+    let files = event.target.files
+    let size = 10000000 //bytes in binary
+    let err = "";
+    for(var x = 0; x<files.length; x++) {
+    if (files[x].size > size) {
+     err += files[x].type+'is too large, please pick a smaller file\n';
+   }
+ };
+ if (err !== '') {
+    event.target.value = null
+    console.log(err)
+    return false
+}
+
+return true;
+
+}
+
+  fileChangeHandler = (event) => {
+    if(this.checkFileSize(event)){
+      this.setState({
+        file: event.target.files[0],
+        loaded:0
+      })
+    } else {
+      swal.fire({
+        icon: "error",
+        text: "File is too big"
+      })
+    }
+
+  }
+
   submitForm = (e) => {
+
     e.preventDefault();
     if (!this.state.km &&
       !this.state.time &&
@@ -106,14 +142,7 @@ class Form extends Component {
         confirmButtonText: "Not cool"
       })
     }
-    else if (!this.state.time) {
-      swal.fire({
-        title: "Time is missing is missing",
-        text: "Nothing happened, just test!",
-        icon: "error",
-        confirmButtonText: "Not cool"
-      })
-    }
+
     else if(!this.state.type) {
 swal.fire({
         title: "Type is missing is missing",
@@ -140,13 +169,16 @@ swal.fire({
           cancelButtonText: "Noooo!",
           }).then((result) => {
             if(result.value){
-              if(this.state.type.mode === "Walk"){axios.post('http://localhost:8080/api/distance', {
+              if(this.state.type.mode === "Walk"){
+                const data = new FormData();
+                data.append('file', this.state.file);
+
+                axios.post('http://localhost:8080/api/distance', {
                 steps: this.state.km,
                 who: this.props.currUser,
-
                 activity_type: this.state.type.mode,
-                password: this.state.secretpass
-              });
+                password: this.state.secretpass});
+                axios.post('http://localhost:8080/api/upload', data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -159,6 +191,7 @@ swal.fire({
         bikeActive: "",
         rollerActive:"",
         secretpass: "",
+        file:null,
         km: "",
         type: {
           mode:"Run",
@@ -172,6 +205,8 @@ swal.fire({
                 window.location.reload(false)
               }, 4000)
             } else if (this.state.type.mode === "Run" || "Bike" || "Roller Skates") {
+              const data = new FormData();
+              data.append('file', this.state.file);
 
                 axios.post('http://localhost:8080/api/distance', {
                 kilometers: this.state.km,
@@ -179,6 +214,7 @@ swal.fire({
                 activity_type: this.state.type.mode,
                 password: this.state.secretpass
               });
+              axios.post('http://localhost:8080/api/upload', data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -189,6 +225,7 @@ swal.fire({
                   runActive:"Active",
         walkActive: "",
         bikeActive: "",
+        file:null,
         secretpass:"",
         rollerActive:"",
         km: "",
@@ -265,6 +302,8 @@ swal.fire({
             min="1"
             placeholder={this.state.type.count}
           />
+          <Label>Upload the proof</Label>
+          <Input onChange={this.fileChangeHandler} type="file" name="proof"/>
 
 
 
