@@ -15,9 +15,13 @@ right: 2rem;
 }
 `
 
-
-
-
+const loadingBarDiv = styled.div`
+      height: 20px;
+      width: 50%;
+      backgroundColor: #e0e0de;
+      borderRadius: 50px;
+      margin: auto;
+      `
 
 const Input = styled.input`
   background-color: #393e46;
@@ -217,15 +221,17 @@ z-index: 1;
  `
 
  const Table = styled.table`
- width: 95%;
+ @media screen and (max-width: 600px){
+   width: 100%;
+ }
+ width: 60%;
  background-color: #141324;
  `
 const TableHead = styled.thead`
 background-color: blue;
-width: 70%;
 `
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead };
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv };
 

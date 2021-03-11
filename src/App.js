@@ -67,7 +67,10 @@ const LoggedInUserPhoto = () => {
 
 }
 
+
+
  function App() {
+
 const HomeActive = () => {
 setHome("active")
 setForm("")
@@ -137,7 +140,7 @@ const TeamTrackerActive = () => {
 
   }
 
-
+  
   return (
 
     <div className="App">
