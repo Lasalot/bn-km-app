@@ -4,7 +4,7 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, SendButton
+  LabelPadding, OptionButton, SendButton, UploadLabel
 } from "./styledComps";
 
 
@@ -302,8 +302,9 @@ swal.fire({
             min="1"
             placeholder={this.state.type.count}
           />
-          <Label>Upload the proof</Label>
-          <Input onChange={this.fileChangeHandler} type="file" name="proof"/>
+          <UploadLabel for="fileElem">- Select a photo </UploadLabel>
+          <Input style={{display:"none"}} id="fileElem" onChange={this.fileChangeHandler} type="file" name="proof"/>
+
 
 
 

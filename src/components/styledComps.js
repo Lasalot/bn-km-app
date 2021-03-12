@@ -75,6 +75,12 @@ const Label = styled.label`
   text-align: left;
 `;
 
+const UploadLabel = styled(Label)`
+:hover {
+  background-color: #e84545
+}
+`
+
 const OptionButton = styled.button`
   display: inline-block;
   font-family: "Mulish", sans-serif;
@@ -233,5 +239,5 @@ background-color: blue;
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv };
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel };
 
