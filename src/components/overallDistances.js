@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import OverallDistancesModel from "./models/overallDistancesModel";
-import { Table } from "./styledComps";
+import { Table, InputContainerAch } from "./styledComps";
 
 
 function OverallDistances(props) {
@@ -26,12 +26,13 @@ const [ready, setReady] = useState(false)
     }
 
     return (
+      <InputContainerAch>
       <Table>
         <thead>
         <tr className="classTr">
-<th className="classTh">Name</th>
-<th className="classTh">Activity Type</th>
-<th className="classTh">Kms</th>
+<th className="classTh headColor1">Name</th>
+<th className="classTh headColor2">Activity Type</th>
+<th className="classTh headColor3">Kms</th>
 
 </tr>
 </thead>
@@ -43,7 +44,7 @@ const [ready, setReady] = useState(false)
 
 </tbody>
         </Table>
-
+        </InputContainerAch>
 
     )
 }

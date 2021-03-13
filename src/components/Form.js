@@ -4,8 +4,9 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, SendButton, UploadLabel
+  LabelPadding, OptionButton, SendButton, UploadLabel, OptionButtonR
 } from "./styledComps";
+
 
 
 
@@ -290,9 +291,9 @@ swal.fire({
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
             ‍Bike
           </OptionButton>
-          <OptionButton type="button" onClick={this.setRoller} active={this.state.rollerActive}>
+          <OptionButtonR type="button" onClick={this.setRoller} active={this.state.rollerActive}>
             Roller Skate
-          </OptionButton>
+          </OptionButtonR>
 
           <Label>How many {this.state.type.count}?</Label>
           <Input
@@ -302,7 +303,7 @@ swal.fire({
             min="1"
             placeholder={this.state.type.count}
           />
-          <UploadLabel for="fileElem">- Select a photo </UploadLabel>
+          <UploadLabel for="fileElem"> <div style={{paddingTop: "1rem"}}><div className="uploadTitle">Select a photo</div> </div></UploadLabel>
           <Input style={{display:"none"}} id="fileElem" onChange={this.fileChangeHandler} type="file" name="proof"/>
 
 
@@ -314,10 +315,11 @@ swal.fire({
 
 
           <SendButton type="submit">I am awesome!</SendButton>
+          
         </form>
         </InputContainer>
         <Input onChange={(event) => this.setState({secretpass: event.target.value})} placeholder="ultratitkosatomjelszo" tpye="text"/>
-
+        
       </>
     );
   }

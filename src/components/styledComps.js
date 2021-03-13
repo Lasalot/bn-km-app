@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import uploadImg from "../img/uploadImg.jpg";
+import uploadImgBlur from "../img/uploadImg-blur.jpg"
 
 const RoundPicture = styled.img`
 border-radius: 50%;
@@ -24,7 +25,8 @@ const loadingBarDiv = styled.div`
       `
 
 const Input = styled.input`
-  background-color: #393e46;
+background-color: rgba(255,255,255, 0.04);
+margin-top: 0.1rem !important;
   margin:auto;
   @media screen and (max-width: 600px){
     width: 90%;
@@ -32,7 +34,7 @@ const Input = styled.input`
   }
   color: #838383;
   display: inline-block;
-  width: 25%;
+  width: 88.3%;
   height: 2rem;
   border-radius: 5px;
   z-index: 1;
@@ -52,23 +54,25 @@ const Input = styled.input`
 `;
 
 const StyledInput = styled(Input)`
-  width: 50%;
+  width: 100%;
 
 `;
 
 const Label = styled.label`
-  background-color: #222831;
+background-color: rgba(255,255,255, 0.1);
   color: white;
   @media screen and (max-width: 600px){
-    width: 89.5%;
+    width: 93.8%;
     border-radius: 5px 5px 0px 0px;
   }
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: 25%;
+  width: 90%;
   border-radius: 5px;
-  padding: 0.6rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.3rem;
+  padding-top: 0.5rem;
   font-weight: 500;
   font-family: "Mulish", sans-serif;
   font-weight: 400;
@@ -77,10 +81,99 @@ const Label = styled.label`
 
 const UploadLabel = styled(Label)`
 :hover {
-  background-color: #e84545
+  transition: background-image 0.5s ease-in-out;
+  
+  background-image: url(${uploadImgBlur});
+  font-weight: 400;u
+  border: solid;
+border-width: 1px;
 }
-`
+text-align: center;
+height: 5rem;
+background-image: url(${uploadImg});
+background-size: cover;
+background-position: center;
+font-size: 2rem;
 
+font-family: "Mulish", sans-serif;
+  font-weight: 300;
+  margin-bottom: 2rem;
+`
+const OptionButtonR = styled.button`
+  display: inline-block;
+  position: relative;
+  top: -0.95rem;
+  font-family: "Mulish", sans-serif;
+  font-weight: 200;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.6rem;
+  width: 23%;
+  height: 4rem;
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
+  color: ${(props) => (props.active ? "white" : "white")};
+  @media screen and (max-width: 600px){
+    width: 23%;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    top: -0.65rem;
+  }
+  :hover {
+    cursor: pointer;
+    background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
+    color: white;
+  };
+  :focus {
+    outline:none
+  };
+  :active {
+    outline:none;
+  }
+  border: none;
+  font-size: 1.5rem;
+`;
+const UploadMainButton = styled.button`
+display: inline-block;
+  font-family: "Mulish", sans-serif;
+  font-weight: 200;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.5rem;
+  width: 40%;
+  height: 4rem;
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
+  color: ${(props) => (props.active ? "white" : "rgba(255,255,255, 0.7);")};
+  padding: 10px;
+  @media screen and (max-width: 600px){
+    width: 60%;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+  :hover {
+    cursor: pointer;background: rgb(232,69,69);
+    background: ${(props) => (props.active ? "linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%);" : "linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%);")};
+    color: white;
+  };
+  :focus {
+    outline:none
+  };
+  :active {
+    outline:none;
+  }
+  border: 5px solid;
+  border-image-source: linear-gradient(90deg, rgba(232,69,69,1), rgba(242,247,0,1));
+  border-image-slice: 1;
+  border-radius: 5px;
+  font-size: 1.5rem;
+`
 const OptionButton = styled.button`
   display: inline-block;
   font-family: "Mulish", sans-serif;
@@ -90,13 +183,13 @@ const OptionButton = styled.button`
   margin-left: 0.2rem;
   margin-right: 0.2rem;
   margin-bottom: 0.5rem;
-  width: 6.2%;
+  width: 21.5%;
   height: 4rem;
-  background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
   color: ${(props) => (props.active ? "white" : "white")};
   padding: 10px;
   @media screen and (max-width: 600px){
-    width: 31%;
+    width: 23%;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 1rem;
@@ -104,7 +197,7 @@ const OptionButton = styled.button`
   }
   :hover {
     cursor: pointer;
-    background-color: ${(props) => (props.active ? "#e84545" : "gray")};
+    background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
     color: white;
   };
   :focus {
@@ -121,28 +214,32 @@ const SendButton = styled.button`
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #29bc64;
-  width: 25%;
+  background: rgb(232,69,69);
+    background: linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%);
+  width: 91%;
   height: 3rem;
   @media screen and (max-width: 600px){
     width: 95%;
     height: 5rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1rem;
+    font-size: 2rem;
     padding-right: 0;
     text-align: center;
+    font-weight: 400;
   }
   margin-top: 0.5rem;
   border-radius: 5px;
-  color: white;
+  color: black;
   :hover{cursor: pointer;
-background-color: #179609;
+    background: #e84545;
+    transition: color 0.3s ease-in-out;
+    color: white !important;
 font-family:}
   border: none;
   font-family: "Mulish", sans-serif;
   font-weight: 200;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
 `;
 
 const SignOutButton = styled(SendButton)`
@@ -163,13 +260,31 @@ font-family: "Mulish", sans-serif;
 const LabelPadding = styled(Label)`
 
 `
-
-const InputContainer = styled.div`
-
-  width: 100%
-  margin-left: auto;
+const InputContainerAch = styled.div`
+width: 50%;
+margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgba(255,255,255, 0.05);
+  border-radius: 10px;
+  @media screen and (max-width: 600px){
+    width:95%;
+  }
+  `
+const InputContainer = styled.div`
+width: 30%;
+margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgba(255,255,255, 0.05);
+  border-radius: 10px;
+  @media screen and (max-width: 600px){
+    width:95%;
+  }
 
 `;
 
@@ -179,16 +294,16 @@ height: 3rem;
 line-height: 3rem;
 position: fixed;
 top: 0;
-background-color: #141324;
+background-color: rgba(255,255,255, 0.05);
 padding-bottom: 2px;
 z-index: 1;
 `;
  const NavButton = styled.button`
- background-color: ${(props) => (props.active ? "#e84545" : "#393e46")};
-  color: ${(props) => (props.active ? "white" : "white")};
+ background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
+  color: ${(props) => (props.active ? "black" : "white")};
  width: 15%;
  @media screen and (max-width: 600px){
-   width: 30%;
+   width: 4rem;
    margin-left: 2px;
    margin-right: 2px;
    font-size: 1rem;
@@ -199,14 +314,14 @@ z-index: 1;
  margin-right: 0.5rem;
  display: inline-block;
  border: none;
- color: white;
+ 
  height: 3rem;
  margin-top: 0;
  border-radius: 5;
  font-weight: ${(props) => (props.active ? "600" : "200")};
  :hover{
    cursor:pointer;
-  background-color: ${(props) => (props.active ? "#e84545" : "gray")};
+   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
    font-family: "Mulish", sans-serif;
   font-weight: 600;
  }
@@ -224,14 +339,19 @@ z-index: 1;
 
  const Achievement = styled.img`
  opacity: ${(props) => (props.active ? "1" : "0.1")};
+ @media screen and (max-width: 600px){
+  width:100%;
+ }
+ display:inline-block;
+ width:100%;
  `
 
  const Table = styled.table`
  @media screen and (max-width: 600px){
-   width: 100%;
+   width: 95%;
  }
- width: 60%;
- background-color: #141324;
+ width: 90%;
+ background-color: rgba(255,255,255, 0.01);
  `
 const TableHead = styled.thead`
 background-color: blue;
@@ -239,5 +359,5 @@ background-color: blue;
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel };
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton };
 

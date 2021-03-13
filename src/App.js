@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 import OverallDistances from "./components/overallDistances";
 import { RoundPicture } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
-import Logo from "./logo.png";
+import Logo from "./logopoc.png";
 
 firebase.initializeApp(credentials
 )
@@ -129,6 +129,7 @@ const TeamTrackerActive = () => {
    } else if (myDistances === "active") {
      return(<>
      <MyDistances currUser={auth.currentUser.displayName}/>
+     
      </>)
    } else if (teamTracker === "active") {
      return (
@@ -149,7 +150,9 @@ const TeamTrackerActive = () => {
       {user ? <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null}
       </section>
       <img  className="userLogo" alt="logo" src={Logo} />
+      <div>
       <h1>BitNinja Kilometer Tracker!</h1>
+      </div>
       {user ? <LoggedInUserPhoto/> : null}
       <section>
       {user ? <Components/>

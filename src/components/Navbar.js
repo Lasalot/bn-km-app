@@ -58,7 +58,7 @@ class Navbar extends Component {
     <>
     <nav>
        <NavBar>
-       <NavButton type="button" onClick={this.setHome} active={this.props.isHomeActive}>
+       <NavButton className="homeClassNav" type="button" onClick={this.setHome} active={this.props.isHomeActive}>
        Home
         </NavButton>
         <NavButton type="button" onClick={this.setTeamTracker} active={this.state.teamTracker}>

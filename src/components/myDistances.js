@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Distances from "./models/myDistancesModel";
-import { Table } from "./styledComps";
+import { Table, InputContainerAch } from "./styledComps";
 
 
 
@@ -30,12 +30,14 @@ const currentUser = props.currUser
     }
 
     return (
+      
+      <InputContainerAch>
       <Table>
         <thead>
         <tr className="classTr">
-        <th className="classTh">Name</th>
-<th className="classTh modeClass">Activity Type</th>
-<th className="classTh">Kms</th>
+        <th className="classTh headColor1">Name</th>
+<th className="classTh modeClass headColor2">Activity Type</th>
+<th className="classTh headColor3">Kms</th>
 
 </tr>
 </thead>
@@ -43,7 +45,7 @@ const currentUser = props.currUser
         {ready ? <>{data.map(dataMapping)}</> : null }
 </tbody>
         </Table>
-
+        </InputContainerAch>
 
     )
 }

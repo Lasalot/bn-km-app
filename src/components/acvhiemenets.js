@@ -7,7 +7,7 @@ import doneRightAch from "../img/far-right-done.png";
 import currMidAch from "../img/middle-current.png";
 import doneMidAch from "../img/middle-done.png";
 import ProgressBar from "./loadingbar";
-import { Achievement } from "./styledComps";
+import { Achievement, InputContainerAch, UploadMainButton } from "./styledComps";
 
 function Achievements(props){
 
@@ -71,16 +71,17 @@ setNextGoal("300")
 
 const leftDistance = parseInt(nextGoal,10)-parseInt(sumDistance,10)
 const progressData = [
-  { bgcolor: "#e84545", completed: Math.ceil(((nextGoal-leftDistance)/nextGoal)*100)},
+  {completed: Math.ceil(((nextGoal-leftDistance)/nextGoal)*100)},
 ];
   return (
 
 <>
-<button onClick={props.form}>Upload Awesomeness</button>
+<InputContainerAch>
+<UploadMainButton onClick={props.form}>Upload Awesomeness</UploadMainButton>
 <div>
   <div>
-    <h1 className="achievementTitle">Company wide achievements:</h1>
-    <h2 className="achievementTitle">{sumDistance}km collected Together, Come on only {leftDistance} KMs to unlock the next milestone!</h2>
+    <h1 className="achievementTitleTop">So far we have done: </h1>
+    <h2 className="achievementTitleTop">{sumDistance}Kms Together, we only need {leftDistance} Kms to unlock the next milestone!</h2>
     </div>
  <div className="progressbar">
       {progressData.map((item, idx) => (
@@ -90,7 +91,7 @@ const progressData = [
 
     <div>
     {sumDistance ?
-    <div onLoad={() => RevealAchi()}>
+    <div className="achievementContainer" onLoad={() => RevealAchi()}>
 
         <p className="achievementTitle"> First achievement 100km<br></br><Achievement active={firstAchi} src={achiImg.first}/></p>
         <p className="achievementTitle"> Second achievement 200km <br></br><Achievement active={secondAchi} src={achiImg.middle}/></p>
@@ -101,8 +102,9 @@ const progressData = [
 
         : null}
 
+  </div>
     </div>
-    </div>
+    </InputContainerAch>
     </>
   )
 
