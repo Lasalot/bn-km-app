@@ -22,6 +22,7 @@ html {
 }
 .userLogo {
   margin-top: 5rem;
+  width: 20%;
 }
 h1,
 h2,
@@ -40,7 +41,13 @@ label {
   font-size: 1rem;
   text-align: center;
 }
-
+.NavDiv{
+  margin: auto;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #2b2b2b;
+  position: relative;
+}
 @media screen and (max-width: 600px) {
   .classTd {
     min-width: 5rem !important;
@@ -51,6 +58,15 @@ label {
   }
   .achievementTitleTop{
     font-size: 1rem !important;
+  }
+  .userLogo{
+    margin-top: 5rem;
+    width: 50%;
+  }
+  .NavDiv{
+    width: 90%;
+    padding:0.5rem;
+    padding-top: 0rem !important;
   }
 }
 .dark { 

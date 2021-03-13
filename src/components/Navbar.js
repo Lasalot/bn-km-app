@@ -58,6 +58,7 @@ class Navbar extends Component {
     <>
     <nav>
        <NavBar>
+           <div className="NavDiv">
        <NavButton className="homeClassNav" type="button" onClick={this.setHome} active={this.props.isHomeActive}>
        Home
         </NavButton>
@@ -67,12 +68,13 @@ class Navbar extends Component {
         <NavButton type="button" onClick={this.setMyDistances}  active={this.state.myDistancesActive}>
             My Profile
         </NavButton>
-        <NavButton type="button" onClick={this.setUploadForm}  active={this.props.isFormActive}>
-           Upload Form
+        <NavButton className="homeClassNav" type="button" onClick={this.setUploadForm}  active={this.props.isFormActive}>
+           Upload
         </NavButton>
         <NavButton type="button" onClick={() => this.props.logOut()} >
             Sign Out
         </NavButton>
+        </div>
        </NavBar>
     </nav>
 

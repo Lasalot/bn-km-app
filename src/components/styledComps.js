@@ -6,11 +6,11 @@ const RoundPicture = styled.img`
 border-radius: 50%;
 margin-bottom 10px;
 position: absolute;
-top: 4rem;
+top: 5.5rem;
 right: 2rem;
 @media screen and (max-width: 600px){
   position: absolute;
-  top: 4rem;
+  top: 5rem;
   right: 0.3rem;
   width: 20%;
 }
@@ -294,31 +294,32 @@ height: 3rem;
 line-height: 3rem;
 position: fixed;
 top: 0;
-background-color: rgba(255,255,255, 0.05);
 padding-bottom: 2px;
 z-index: 1;
+@media screen and (max-width: 600px){
+  height: 4rem;
+  
+}
 `;
  const NavButton = styled.button`
  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
   color: ${(props) => (props.active ? "black" : "white")};
- width: 15%;
+ width: 19%;
  @media screen and (max-width: 600px){
-   width: 4rem;
+   width: 18%;
    margin-left: 2px;
    margin-right: 2px;
    font-size: 1rem;
-   position: sticky;
    top: 0;
  }
  margin-left: 0.5rem;
  margin-right: 0.5rem;
  display: inline-block;
  border: none;
- 
  height: 3rem;
  margin-top: 0;
  border-radius: 5;
- font-weight: ${(props) => (props.active ? "600" : "200")};
+ font-weight: ${(props) => (props.active ? "400" : "200")};
  :hover{
    cursor:pointer;
    background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
