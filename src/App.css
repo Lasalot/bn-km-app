@@ -25,7 +25,7 @@ html {
   font-family: "Mulish", sans-serif;
 }
 .userLogo {
-  margin-top: 5rem;
+  margin-top: 1rem;
   width: 20%;
 }
 h1,
@@ -59,6 +59,21 @@ label {
   position: fixed;
   height: 100%;
 }
+
+button:focus {outline:0;}
+.hiddenButton{
+  background-color:transparent;
+  width:51%;
+  height:100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin-top:0;
+}
+.mobileDivBig{
+  width:100%;
+  background-color:red;
+}
 .logOut{
   position: absolute;
   bottom: 0px;
@@ -72,13 +87,27 @@ label {
   font-weight: 200;
   color: rgba(255,255,255, 0.2);
   width: 12rem;
-
+}
+.loggedInDivDesktop{
+  text-align: left;
+  font-weight: 200;
+  color: rgba(255,255,255, 0.2);
+  width: 15rem;
+  height: 3rem;
+}
+.loggedInUserDesktop{
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  display: inline-block;
+  text-align: right;
+  margin-top: -1rem;
 }
 .loggedInUser{
   color: rgba(255, 255, 255, 0.2);
   font-size: 0.7rem;
   display: inline-block;
   text-align: right;
+  margin-bottom: 0;
 }
 .loggedInUserName{
   display: inline-block;
@@ -98,6 +127,45 @@ label {
   width:7rem;
   text-align: right;
   display: inline-block;
+  height:2.5rem;
+}
+.backDivDesktop{
+  width:4rem;
+  padding-left: 0.5rem;
+  text-align: left;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.2);
+}
+.loginUserDivDesktop{
+  width:10rem;
+  text-align: right;
+  display: inline-block;
+}
+.brandingDesktop{
+  font-weight: 200;
+  font-size: 0.6rem;
+  margin: auto;
+  padding-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+.brandingContainerDesktop{
+  position: absolute;
+  bottom: 2rem;
+  width: 15rem;
+  text-align: center;
+}
+.brandingMobile{
+  font-weight: 200;
+  font-size: 0.6rem;
+  margin: auto;
+  padding-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.2);
+}
+.brandingContainerMobile{
+  position: absolute;
+  bottom: 3rem;
+  width: 11rem;
+  text-align: center;
 }
 @media screen and (max-width: 600px) {
   .classTd {

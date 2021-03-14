@@ -7,9 +7,6 @@ var i = 0;
 function MobileNavbar(){
     var currentStyle = document.getElementById("testDiv").style.display;
     var currentNav = document.getElementById("desktopNav").style.display;
-    console.log(document.getElementById("testDiv").style.display);
-    
-    
     if (currentStyle === "block"){
     reverse();
     }
@@ -138,32 +135,46 @@ this.setState({
     <>
     <nav>
         <mobileNav>
-        <div className="navDivMobileMain">
-        <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> Menu</button>
-        </div>
-        <div id="testDiv"className="navDivMobile">
-        <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
-        <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
-       Home
-        </MobileNavButton>
-        <MobileNavButton type="button" onClick={this.setTeamTrackerM} active={this.state.teamTracker}>
-            Team Tracker
-            </MobileNavButton>
-        <MobileNavButton type="button" onClick={this.setMyDistancesM}  active={this.state.myDistancesActive}>
-            My Profile
-            </MobileNavButton>
-        <MobileNavButton type="button" onClick={this.setUploadFormM}  active={this.props.isFormActive}>
-           Upload
-           </MobileNavButton>
-        <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
-            Sign Out
-            </MobileNavButton>
-            
-</div>
+            <div className="navDivMobileMain">
+                <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> Menu</button>
+            </div>
+            <div id="testDiv"className="navDivMobile">
+                
+                <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
+                <button type="button" className="hiddenButton" onClick={MobileNavbar} active={this.props.mobileNavActive}></button>
+                <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
+                    Home
+                </MobileNavButton>
+                <MobileNavButton type="button" onClick={this.setTeamTrackerM} active={this.state.teamTracker}>
+                    Team Tracker
+                </MobileNavButton>
+                <MobileNavButton type="button" onClick={this.setMyDistancesM}  active={this.state.myDistancesActive}>
+                    My Profile
+                 </MobileNavButton>
+                <MobileNavButton type="button" onClick={this.setUploadFormM}  active={this.props.isFormActive}>
+                    Upload
+                </MobileNavButton>
+                <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
+                    Sign Out
+                </MobileNavButton>
+                
+                <div className="brandingContainerMobile">
+                    <p className="brandingMobile">Proudly made by Taki and Márk</p>
+                </div>
+            </div>
         </mobileNav>
 
        <NavBar>
            <div id="desktopNav"className="NavDiv">
+            <div className="loggedInDivDesktop">
+            <div className="backDivDesktop">
+                <p className="loggedInUserDesktop">Logged In:</p>
+            </div>
+            <div className="loginUserDivDesktop">
+                <UserName/>
+            </div>
+
+            </div>
        <NavButton className="homeClassNav" type="button" onClick={this.setHome} active={this.props.isHomeActive}>
        Home
         </NavButton>
@@ -179,7 +190,12 @@ this.setState({
         <NavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
             Sign Out
         </NavButton>
+        <div className="brandingContainerDesktop">
+        <p className="brandingDesktop">Proudly made by Taki and Márk</p>
         </div>
+        </div>
+        
+     
        </NavBar>
     </nav>
 
