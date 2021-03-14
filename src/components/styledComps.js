@@ -15,7 +15,6 @@ right: 2rem;
   width: 20%;
 }
 `
-
 const loadingBarDiv = styled.div`
       height: 20px;
       width: 50%;
@@ -289,40 +288,41 @@ margin-left: auto;
 `;
 
 const NavBar = styled.div`
-width: 100%;
-height: 3rem;
+width: 20%;
+height: 100%;
 line-height: 3rem;
-position: fixed;
+position: absolute;
 top: 0;
 padding-bottom: 2px;
 z-index: 1;
 @media screen and (max-width: 600px){
   height: 4rem;
-  
+  display: none;
 }
-`;
+`
+const mobileNav = styled.div`
+position: fixed;
+top: 0;
+text-align: left
+`
  const NavButton = styled.button`
- background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
-  color: ${(props) => (props.active ? "black" : "white")};
- width: 19%;
- @media screen and (max-width: 600px){
-   width: 18%;
-   margin-left: 2px;
-   margin-right: 2px;
-   font-size: 1rem;
-   top: 0;
- }
- margin-left: 0.5rem;
- margin-right: 0.5rem;
- display: inline-block;
- border: none;
+ border: solid;
+ border-width 1px;
+ border-color: rgba(255,255,255, 0.08);
+  color: ${(props) => (props.active ? "#939393" : "#666666")};
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.07)" : "rgba(255,255,255, 0.03);")};
+ width: 15rem;
+ display: block;
  height: 3rem;
+
+ padding-top: 1rem;
+ margin-bottom: 0.1rem;
  margin-top: 0;
- border-radius: 5;
+ border-radius: 0;
+ text-align: left;
  font-weight: ${(props) => (props.active ? "400" : "200")};
  :hover{
    cursor:pointer;
-   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
    font-family: "Mulish", sans-serif;
   font-weight: 600;
  }
@@ -337,7 +337,38 @@ z-index: 1;
  font-family: "Mulish", sans-serif;
   font-size: 1rem;
  `;
+ const MobileNavButton = styled.button`
+ border: solid;
+ border-width: 1px;
+ border-color: rgba(255,255,255, 0.08);
+  color: ${(props) => (props.active ? "#939393" : "#666666")};
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.07)" : "rgba(255,255,255, 0.03);")};
+ width: 11.5rem;
+ display: block;
+ height: 2rem;
+ padding-bottom: 2rem;
+ padding-top: 1rem;
+ margin-bottom: 0.1rem;
+ margin-top: 0;
+ border-radius: 0;
+ text-align: left;
+ font-weight: ${(props) => (props.active ? "400" : "200")};
+ :hover{
+   cursor:pointer;
+   font-family: "Mulish", sans-serif;
+  font-weight: 600;
+ }
+ :active {
+  outline:none;
+  border:none;
 
+}
+:focus {
+  outline:none
+};
+ font-family: "Mulish", sans-serif;
+  font-size: 1rem;
+ `;
  const Achievement = styled.img`
  opacity: ${(props) => (props.active ? "1" : "0.1")};
  @media screen and (max-width: 600px){
@@ -360,5 +391,5 @@ background-color: blue;
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton };
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, mobileNav, MobileNavButton };
 
