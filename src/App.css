@@ -26,7 +26,13 @@ html {
 }
 .userLogo {
   margin-top: 1rem;
-  width: 20%;
+  width: 15%;
+}
+.welcomeMessage{
+  text-align: right;
+  color: rgba(255,255,255, 0.3) !important;
+  font-weight: 200;
+  margin-top: 0;
 }
 h1,
 h2,
@@ -63,6 +69,7 @@ label {
 @media screen and (min-width: 1921px) {
 .rollerFix{
  font-size: 0.7rem !important;
+ margin-top: 2px !important;
   
 }}
 @media screen and (max-width: 481px){
@@ -198,7 +205,7 @@ margin-bottom: 0.5rem !important;
     font-size: 1rem !important;
   }
   .userLogo{
-    margin-top: 5rem;
+    margin-top: 1rem;
     width: 50%;
   }
   .NavDiv{
