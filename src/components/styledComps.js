@@ -194,7 +194,7 @@ const OptionButton = styled.button`
     color: white;
   };
   :focus {
-    outline:none
+    outline:none;
   };
   :active {
     outline:none;
@@ -305,7 +305,7 @@ text-align: left
  width: 15rem;
  display: block;
  height: 3rem;
-
+border: none;
  padding-top: 1rem;
  margin-bottom: 0.1rem;
  margin-top: 0;
@@ -340,6 +340,7 @@ text-align: left
  margin-top: 0;
  border-radius: 0;
  text-align: left;
+ border: none;
  font-weight: ${(props) => (props.active ? "400" : "200")};
  :hover{
    cursor:pointer;
