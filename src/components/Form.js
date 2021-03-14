@@ -291,7 +291,7 @@ swal.fire({
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
             ‍Bike
           </OptionButton>
-          <OptionButtonR type="button" onClick={this.setRoller} active={this.state.rollerActive}>
+          <OptionButtonR className="rollerFix" type="button" onClick={this.setRoller} active={this.state.rollerActive}>
             Roller Skate
           </OptionButtonR>
 

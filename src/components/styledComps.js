@@ -141,7 +141,7 @@ display: inline-block;
   width: 40%;
   height: 4rem;
   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
-  color: ${(props) => (props.active ? "white" : "rgba(255,255,255, 0.7);")};
+  color: white;
   padding: 10px;
   @media screen and (max-width: 600px){
     width: 60%;
@@ -300,11 +300,8 @@ top: 0;
 text-align: left
 `
  const NavButton = styled.button`
- border: solid;
- border-width 1px;
- border-color: rgba(255,255,255, 0.08);
   color: ${(props) => (props.active ? "#939393" : "#666666")};
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.07)" : "rgba(255,255,255, 0.03);")};
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.03)" : "rgba(255,255,255, 0);")};
  width: 15rem;
  display: block;
  height: 3rem;
@@ -332,11 +329,8 @@ text-align: left
   font-size: 1rem;
  `;
  const MobileNavButton = styled.button`
- border: solid;
- border-width: 1px;
- border-color: rgba(255,255,255, 0.08);
   color: ${(props) => (props.active ? "#939393" : "#666666")};
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.07)" : "rgba(255,255,255, 0.03);")};
+  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.03)" : "rgba(255,255,255, 0);")};
  width: 11.5rem;
  display: block;
  height: 2rem;

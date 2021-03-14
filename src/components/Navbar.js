@@ -16,7 +16,7 @@ function MobileNavbar(){
     for (let i = 0; i < 50; i++) {
         setTimeout(function timer() {
             document.getElementById("testDiv").style.width = i + "%";
-        }, i * 5);
+        }, i * 3);
       }
       widthVar = 50;
       i = 0;
@@ -28,7 +28,7 @@ function reverse(){
     document.getElementById("testDiv").style.width = widthVar + "%";
     widthVar--;
     if (0 < widthVar) {
-      setTimeout(reverse, 5);
+      setTimeout(reverse, 3);
     }
     if(widthVar == 0){
         document.getElementById("testDiv").style.display = "none";
@@ -136,11 +136,11 @@ this.setState({
     <nav>
         <mobileNav>
             <div className="navDivMobileMain">
-                <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> Menu</button>
+                <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> <p className="menuSymbol">≡</p><p className="menuText">Menu</p> </button>
             </div>
             <div id="testDiv"className="navDivMobile">
                 
-                <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
+                <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">- Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
                 <button type="button" className="hiddenButton" onClick={MobileNavbar} active={this.props.mobileNavActive}></button>
                 <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
                     Home
