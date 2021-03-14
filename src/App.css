@@ -59,10 +59,15 @@ label {
   position: fixed;
   height: 100%;
 }
+
 @media screen and (min-width: 1921px) {
 .rollerFix{
-  position: relative;
-  top: 0rem !important;
+ font-size: 0.7rem !important;
+  
+}}
+@media screen and (max-width: 481px){
+.rollerFix{
+  font-size: 0.9rem !important;
 }}
 button:focus {outline:0;}
 button{border:none;}
@@ -74,6 +79,7 @@ button{border:none;}
   right: 0;
   top: 0;
   margin-top:0;
+  z-index: 100;
 }
 .mobileDivBig{
   width:100%;
@@ -84,7 +90,6 @@ button{border:none;}
   bottom: 0px;
   background-color: rgba(255, 0, 0, 0.05)  !important;
   font-weight: 600 !important;
-  text-align: center !important;
   padding-bottom: 1rem;
 }
 .loggedInDiv{
@@ -116,22 +121,29 @@ button{border:none;}
   margin-bottom: 0;
   
 }
+.testNameFix{
+  width: 8rem;
+  position: relative;
+  right: 0.2rem;
+  display: inline-block;
+}
 .loggedInUserName{
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
   margin-top: -1rem;
   margin-left: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
+  word-break: keep-all;
 }
 .backDiv{
-  width:4rem;
+  width:25%;
   text-align: left;
   display: inline-block;
   color: rgba(255, 255, 255, 0.2);
 }
 .loginUserDiv{
-  width:7rem;
+  width: 75%;
   text-align: right;
   display: inline-block;
   height:2.5rem;
@@ -174,7 +186,7 @@ margin-bottom: 0.5rem !important;
   width: 11rem;
   text-align: center;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1130px) {
   .classTd {
     min-width: 5rem !important;
     text-align: center !important;
@@ -238,17 +250,28 @@ margin-bottom: 0.5rem !important;
     background-color: rgba(255,255,255, 0.1);
     margin-top: 0;
     text-align: left;
-    width: 30rem;
+    width: 100%;
     padding: 0.2rem;
     height: 2.5rem;
     border-radius: 0;
+  }
+  .achievementTitle{
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+    display:block !important;
+    width: 30%;
+    text-align:center;
+    margin: auto;
   }
 }
 
 .navDivMobile{
   display: none;
+  z-index: 1;
 }
-
+.brokenShit{
+  display: none !important;
+}
 .dark { 
   background-color: rgba(255,255,255, 0.05) !important;
 }
@@ -319,7 +342,6 @@ body {
   font-weight: 300;
   display:inline-block;
   width: 30%;
-  text-align:center;
 }
 .achievementContainer{
   width:90%;
@@ -328,6 +350,7 @@ body {
   margin-top: 1rem;
   padding-top: 0.5rem;
   border-radius:10px;
+  text-align: center;
 }
 table {
   background-color: white;

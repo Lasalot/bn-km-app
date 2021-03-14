@@ -4,7 +4,7 @@ import uploadImgBlur from "../img/uploadImg-blur.jpg"
 
 const RoundPicture = styled.img`
 display: inline-block;
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1130px){
   width: 2.5rem;
   margin-top: 1rem;
 }
@@ -21,9 +21,8 @@ const Input = styled.input`
 background-color: rgba(255,255,255, 0.04);
 margin-top: 0.1rem !important;
   margin:auto;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width: 90%;
-
   }
   color: #838383;
   display: inline-block;
@@ -54,7 +53,7 @@ const StyledInput = styled(Input)`
 const Label = styled.label`
 background-color: rgba(255,255,255, 0.1);
   color: white;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width: 93.8%;
     border-radius: 5px 5px 0px 0px;
   }
@@ -107,7 +106,7 @@ const OptionButtonR = styled.button`
   height: 4rem;
   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
   color: ${(props) => (props.active ? "white" : "white")};
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width: 23%;
     margin-left: 2px;
     margin-right: 2px;
@@ -143,12 +142,18 @@ display: inline-block;
   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
   color: white;
   padding: 10px;
-  @media screen and (max-width: 600px){
-    width: 60%;
+  @media screen and (max-width: 1130px){
+    width: 60% !important;
     margin-left: 2px;
     margin-right: 2px;
     font-size: 1rem;
     margin-top: 0.2rem;
+  }
+  @media screen and (max-width: 1382px){
+    height: 6rem;
+  }
+  @media screen and (max-width: 945px){
+    width: 13rem;
   }
   :hover {
     cursor: pointer;background: rgb(232,69,69);
@@ -181,7 +186,7 @@ const OptionButton = styled.button`
   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
   color: ${(props) => (props.active ? "white" : "white")};
   padding: 10px;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width: 23%;
     margin-left: 2px;
     margin-right: 2px;
@@ -200,7 +205,7 @@ const OptionButton = styled.button`
     outline:none;
   }
   border: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
 `;
 
 const SendButton = styled.button`
@@ -211,7 +216,7 @@ const SendButton = styled.button`
     background: linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%);
   width: 91%;
   height: 3rem;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width: 95%;
     height: 5rem;
     margin-left: auto;
@@ -262,12 +267,12 @@ margin-left: auto;
   padding-bottom: 2rem;
   background-color: rgba(255,255,255, 0.05);
   border-radius: 10px;
-  @media screen and (max-width: 600px){
+  @media screen and (max-width: 1130px){
     width:95%;
   }
   `
 const InputContainer = styled.div`
-width: 30%;
+width: 45%;
 margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
@@ -275,10 +280,12 @@ margin-left: auto;
   padding-bottom: 2rem;
   background-color: rgba(255,255,255, 0.05);
   border-radius: 10px;
-  @media screen and (max-width: 600px){
-    width:95%;
+  @media screen and (max-width: 1130px){
+    width:95% !important;
   }
-
+  @media screen and (max-width: 1530px){
+    width:60%;
+  }
 `;
 
 const NavBar = styled.div`
@@ -289,7 +296,7 @@ position: absolute;
 top: 0;
 padding-bottom: 2px;
 z-index: 1;
-@media screen and (max-width: 600px){
+@media screen and (max-width: 1130px){
   height: 4rem;
   display: none;
 }
@@ -331,7 +338,7 @@ border: none;
  const MobileNavButton = styled.button`
   color: ${(props) => (props.active ? "#939393" : "#666666")};
   background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.03)" : "rgba(255,255,255, 0);")};
- width: 11.5rem;
+ width: 35rem;
  display: block;
  height: 2rem;
  padding-bottom: 2rem;
@@ -360,7 +367,7 @@ border: none;
  `;
  const Achievement = styled.img`
  opacity: ${(props) => (props.active ? "1" : "0.1")};
- @media screen and (max-width: 600px){
+ @media screen and (max-width: 1130px){
   width:100%;
   display: block;
  }
@@ -369,7 +376,7 @@ border: none;
  `
 
  const Table = styled.table`
- @media screen and (max-width: 600px){
+ @media screen and (max-width: 1130px){
    width: 95%;
  }
  width: 90%;

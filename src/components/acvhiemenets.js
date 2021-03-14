@@ -96,7 +96,7 @@ const progressData = [
         <p className="achievementTitle"> First achievement 100km<br></br><Achievement active={firstAchi} src={achiImg.first}/></p>
         <p className="achievementTitle"> Second achievement 200km <br></br><Achievement active={secondAchi} src={achiImg.middle}/></p>
         <p className="achievementTitle"> Third achievement 300km <br></br><Achievement active={thirdAchi} src={achiImg.last}/></p>
-        <p style={{display:"none"}} className="achievementTitle"> Leave it here or the whole thing will be broken<Achievement active={thirdAchi} src={currLeftAch}/></p>
+        <p style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={thirdAchi} src={currLeftAch}/></p>
         <br></br>
         </div>
 

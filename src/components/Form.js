@@ -289,17 +289,17 @@ swal.fire({
 
         <LabelPadding>How?</LabelPadding>
           <OptionButton type="button" onClick={this.setRun} active={this.state.runActive}>
-            Run
+          Run
           </OptionButton>
           <OptionButton type="button" onClick={this.setWalk} active={this.state.walkActive}>
-            Walk
+          Walk
           </OptionButton>
           <OptionButton type="button" onClick={this.setBike} active={this.state.bikeActive}>
             ‍Bike
           </OptionButton>
-          <OptionButtonR className="rollerFix" type="button" onClick={this.setRoller} active={this.state.rollerActive}>
-            Roller Skate
-          </OptionButtonR>
+          <OptionButton className="rollerFix" type="button" onClick={this.setRoller} active={this.state.rollerActive}>
+          RollerSkate
+          </OptionButton>
 
           <Label>How many {this.state.type.count}?</Label>
           <Input

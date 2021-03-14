@@ -140,7 +140,7 @@ this.setState({
             </div>
             <div id="testDiv"className="navDivMobile">
                 
-                <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">- Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
+                <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><div className="testNameFix"><p className="loggedInUser"><UserName/></p></div></div></div></button>
                 <button type="button" className="hiddenButton" onClick={MobileNavbar} active={this.props.mobileNavActive}></button>
                 <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
                     Home
