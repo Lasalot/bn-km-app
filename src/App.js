@@ -66,7 +66,9 @@ const LoggedInUserPhoto = () => {
   )}
 
 }
-
+const UserName = () => {
+  return(<p className="loggedInUserName">{auth.currentUser.displayName}</p>);
+}
 
 
  function App() {
@@ -153,7 +155,6 @@ const TeamTrackerActive = () => {
       <div>
       <h1>BitNinja Kilometer Tracker!</h1>
       </div>
-      {user ? <LoggedInUserPhoto/> : null}
       <section>
       {user ? <Components/>
        : <SignIn/>}
@@ -165,4 +166,5 @@ const TeamTrackerActive = () => {
 }
 
 
-export default App;
+export default  App;
+export { LoggedInUserPhoto, UserName }

@@ -3,16 +3,10 @@ import uploadImg from "../img/uploadImg.jpg";
 import uploadImgBlur from "../img/uploadImg-blur.jpg"
 
 const RoundPicture = styled.img`
-border-radius: 50%;
-margin-bottom 10px;
-position: absolute;
-top: 5.5rem;
-right: 2rem;
+display: inline-block;
 @media screen and (max-width: 600px){
-  position: absolute;
-  top: 5rem;
-  right: 0.3rem;
-  width: 20%;
+  width: 2.5rem;
+  margin-top: 1rem;
 }
 `
 const loadingBarDiv = styled.div`

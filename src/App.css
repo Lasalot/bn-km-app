@@ -67,7 +67,38 @@ label {
   text-align: center !important;
   padding-bottom: 1rem;
 }
+.loggedInDiv{
+  text-align: left;
+  font-weight: 200;
+  color: rgba(255,255,255, 0.2);
+  width: 12rem;
 
+}
+.loggedInUser{
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+  display: inline-block;
+  text-align: right;
+}
+.loggedInUserName{
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: -1rem;
+  margin-left: 0.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.backDiv{
+  width:4rem;
+  text-align: left;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.2);
+}
+.loginUserDiv{
+  width:7rem;
+  text-align: right;
+  display: inline-block;
+}
 @media screen and (max-width: 600px) {
   .classTd {
     min-width: 5rem !important;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { NavBar, NavButton, mobileNav, MobileNavButton } from "./styledComps";
+import { LoggedInUserPhoto, UserName } from "../App"
 
 var widthVar = 50;
 var i = 0;
@@ -141,7 +142,7 @@ this.setState({
         <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> Menu</button>
         </div>
         <div id="testDiv"className="navDivMobile">
-        <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}>Back</button>
+        <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><p className="loggedInUser"><UserName/></p></div></div></button>
         <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
        Home
         </MobileNavButton>
