@@ -64,9 +64,8 @@ label {
   position: relative;
   top: 0rem !important;
 }}
-
 button:focus {outline:0;}
-
+button{border:none;}
 .hiddenButton{
   background-color:transparent;
   width:51%;
@@ -152,12 +151,12 @@ button:focus {outline:0;}
   font-weight: 200;
   font-size: 0.6rem;
   margin: auto;
-  padding-bottom: 0.5rem;
+margin-bottom: 0.5rem !important;
   color: rgba(255, 255, 255, 0.2);
 }
 .brandingContainerDesktop{
   position: absolute;
-  bottom: 2rem;
+  bottom: 2.8rem;
   width: 15rem;
   text-align: center;
 }
@@ -210,8 +209,8 @@ button:focus {outline:0;}
     position: absolute;
     height: 100%;
     overflow: hidden;
-    position: fixed;
     text-align: left;
+    top: 0;
   }
   .dropDownButton{
     background-color: rgba(255,255,255, 0.01);

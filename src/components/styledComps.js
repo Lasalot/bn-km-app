@@ -362,6 +362,7 @@ border: none;
  opacity: ${(props) => (props.active ? "1" : "0.1")};
  @media screen and (max-width: 600px){
   width:100%;
+  display: block;
  }
  display:inline-block;
  width:100%;
