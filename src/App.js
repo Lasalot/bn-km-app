@@ -115,46 +115,61 @@ const TeamTrackerActive = () => {
 
 //All component which can be shown , based on their state
   const Components = () => {
-   if (home === "active") {
-     return (
-     <>
-     <Achievements form={FormActive}/>
-       </>
-     );
+    const gottenEmail = []
+    gottenEmail.push(auth.currentUser.email)
+    const ws = "@web-szerver.hu"
+    const bn = "@bitninja.io"
+    const filteredEmailBn = gottenEmail.filter(function (str) { return str.includes(bn)})
+    const filteredEmailWs = gottenEmail.filter(function (str) { return str.includes(ws)})
+    console.log(filteredEmailBn, filteredEmailWs)
 
-   } else if (form === "active") {
-     return(
-       <>
-       <Form currUser={auth.currentUser.displayName}/>
-       </>
-     )
-   } else if (myDistances === "active") {
-     return(<>
-     <MyDistances currUser={auth.currentUser.displayName}/>
-     
-     </>)
-   } else if (teamTracker === "active") {
-     return (
-       <>
-  <OverallDistances/>
-       </>
-     )
-   }
+
+if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
+
+  if (home === "active") {
+    return (
+    <>
+    <Achievements form={FormActive}/>
+      </>
+    );
+
+  } else if (form === "active") {
+    return(
+      <>
+      <Form currUser={auth.currentUser.displayName}/>
+      </>
+    )
+  } else if (myDistances === "active") {
+    return(<>
+    <MyDistances currUser={auth.currentUser.displayName}/>
+
+    </>)
+  } else if (teamTracker === "active") {
+    return (
+      <>
+ <OverallDistances/>
+      </>
+    )
+  }
+} else {
+  auth.signOut()
+  window.location.replace("https://freefrontend.com/assets/img/403-forbidden-html-templates/403-Access-Forbidden-HTML-Template.gif");
+
+}
+
 
   }
 
-  
+
   return (
 
     <div className="App">
 
-      <section>
-      {user ? <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null}
-      </section>
       <img  className="userLogo" alt="logo" src={Logo} />
       <div>
       <h1>BitNinja Kilometer Tracker!</h1>
       </div>
+      {user ?  <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
       <section>
       {user ? <Components/>
        : <SignIn/>}

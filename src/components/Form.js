@@ -4,7 +4,7 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, SendButton, UploadLabel, OptionButtonR
+  LabelPadding, OptionButton, OptionButtonR, SendButton, UploadLabel
 } from "./styledComps";
 
 
@@ -20,6 +20,7 @@ class Form extends Component {
       bikeActive: "",
       rollerActive:"",
       file:null,
+      fileName: "",
       km: "",
       type: {
         mode:"Run",
@@ -84,6 +85,8 @@ class Form extends Component {
     });
   };
 
+
+
   checkFileSize=(event)=>{
     let files = event.target.files
     let size = 10000000 //bytes in binary
@@ -107,7 +110,8 @@ return true;
     if(this.checkFileSize(event)){
       this.setState({
         file: event.target.files[0],
-        loaded:0
+        loaded:0,
+        fileName: event.target.files[0].name
       })
     } else {
       swal.fire({
@@ -273,6 +277,8 @@ swal.fire({
   //   })
   // }
 
+
+
   render() {
     return (
       <>
@@ -303,7 +309,7 @@ swal.fire({
             min="1"
             placeholder={this.state.type.count}
           />
-          <UploadLabel for="fileElem"> <div style={{paddingTop: "1rem"}}><div className="uploadTitle">Select a photo</div> </div></UploadLabel>
+          <UploadLabel for="fileElem"> <div style={{paddingTop: "1rem"}}><div className="uploadTitle">{this.state.file ? <>Selected:{this.state.fileName}</> : "Upload a photo"}</div> </div></UploadLabel>
           <Input style={{display:"none"}} id="fileElem" onChange={this.fileChangeHandler} type="file" name="proof"/>
 
 
@@ -315,11 +321,11 @@ swal.fire({
 
 
           <SendButton type="submit">I am awesome!</SendButton>
-          
+
         </form>
         </InputContainer>
         <Input onChange={(event) => this.setState({secretpass: event.target.value})} placeholder="ultratitkosatomjelszo" tpye="text"/>
-        
+
       </>
     );
   }
