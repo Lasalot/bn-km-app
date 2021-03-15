@@ -1,6 +1,6 @@
 import styled from "styled-components";
+import uploadImgBlur from "../img/uploadImg-blur.jpg";
 import uploadImg from "../img/uploadImg.jpg";
-import uploadImgBlur from "../img/uploadImg-blur.jpg"
 
 const RoundPicture = styled.img`
 display: inline-block;
@@ -74,7 +74,7 @@ background-color: rgba(255,255,255, 0.1);
 const UploadLabel = styled(Label)`
 :hover {
   transition: background-image 0.5s ease-in-out;
-  
+
   background-image: url(${uploadImgBlur});
   font-weight: 400;u
   border: solid;
@@ -301,7 +301,7 @@ z-index: 1;
   display: none;
 }
 `
-const mobileNav = styled.div`
+const MobileNav = styled.div`
 position: fixed;
 top: 0;
 text-align: left
@@ -388,5 +388,5 @@ background-color: blue;
 
 
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, mobileNav, MobileNavButton };
+export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
 

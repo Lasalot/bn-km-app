@@ -129,25 +129,25 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
   if (home === "active") {
     return (
     <>
-    <Achievements form={FormActive}/>
+    <Achievements email={auth.currentUser.email} form={FormActive}/>
       </>
     );
 
   } else if (form === "active") {
     return(
       <>
-      <Form currUser={auth.currentUser.displayName}/>
+      <Form email={auth.currentUser.email} currUser={auth.currentUser.displayName}/>
       </>
     )
   } else if (myDistances === "active") {
     return(<>
-    <MyDistances currUser={auth.currentUser.displayName}/>
+    <MyDistances  email={auth.currentUser.email} currUser={auth.currentUser.displayName}/>
 
     </>)
   } else if (teamTracker === "active") {
     return (
       <>
- <OverallDistances/>
+ <OverallDistances email={auth.currentUser.email}/>
       </>
     )
   }
@@ -167,7 +167,7 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
       <h1 className="welcomeMessage">Track the Kilometers!</h1>
       <img  className="userLogo" alt="logo" src={Logo} />
       <div>
-      
+
       </div>
       {user ?  <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
       <section>
@@ -182,4 +182,5 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
 
 
 export default  App;
-export { LoggedInUserPhoto, UserName }
+export { LoggedInUserPhoto, UserName };
+

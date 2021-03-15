@@ -4,7 +4,7 @@ import swal from "sweetalert2";
 import {
   Input,
   InputContainer, Label,
-  LabelPadding, OptionButton, OptionButtonR, SendButton, UploadLabel
+  LabelPadding, OptionButton, SendButton, UploadLabel
 } from "./styledComps";
 
 
@@ -15,7 +15,6 @@ class Form extends Component {
     super(props)
     this.state = {
       runActive:"Active",
-      secretpass:"",
       walkActive: "",
       bikeActive: "",
       rollerActive:"",
@@ -158,13 +157,7 @@ swal.fire({
     }
 
      else {
-       if(this.state.secretpass !== "bitninja"){
-         swal.fire({
-           title: "Wrong jelsaw!",
-           icon: "warning"
-         })
-       } else {
-        swal.fire({
+               swal.fire({
 
           title: "Are you sure?",
           text:"You will not be able to delete this later on",
@@ -173,17 +166,20 @@ swal.fire({
           confirmButtonText: "Yes I am sure",
           cancelButtonText: "Noooo!",
           }).then((result) => {
+            const email = this.props.email
             if(result.value){
               if(this.state.type.mode === "Walk"){
                 const data = new FormData();
                 data.append('file', this.state.file);
 
-                axios.post('http://localhost:8080/api/distance', {
+
+                axios.post(`http://localhost:8080/api/distance`, {
                 steps: this.state.km,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
-                password: this.state.secretpass});
-                axios.post('http://localhost:8080/api/upload', data);
+                email: email
+                });
+                axios.post(`http://localhost:8080/api/upload?email=${email}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -195,8 +191,6 @@ swal.fire({
         walkActive: "",
         bikeActive: "",
         rollerActive:"",
-        secretpass: "",
-        file:null,
         km: "",
         type: {
           mode:"Run",
@@ -206,9 +200,7 @@ swal.fire({
                 })
 
               }, 2000)
-              setTimeout(() => {
-                window.location.reload(false)
-              }, 4000)
+
             } else if (this.state.type.mode === "Run" || "Bike" || "Roller Skates") {
               const data = new FormData();
               data.append('file', this.state.file);
@@ -217,9 +209,10 @@ swal.fire({
                 kilometers: this.state.km,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
-                password: this.state.secretpass
+                email: email
+
               });
-              axios.post('http://localhost:8080/api/upload', data);
+              axios.post(`http://localhost:8080/api/upload?email=${email}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -230,8 +223,6 @@ swal.fire({
                   runActive:"Active",
         walkActive: "",
         bikeActive: "",
-        file:null,
-        secretpass:"",
         rollerActive:"",
         km: "",
         type: {
@@ -242,9 +233,7 @@ swal.fire({
 
               }, 2000);
 
-              setTimeout(() => {
-                window.location.reload(false)
-              }, 4000)
+
 
               }
 
@@ -253,11 +242,12 @@ swal.fire({
             } else if (result.dismiss === swal.DismissReason.cancel) {
               swal.fire('Cancelled')
 
+
             }
 
           })
 
-       }
+
 
 
 
@@ -324,7 +314,7 @@ swal.fire({
 
         </form>
         </InputContainer>
-        <Input onChange={(event) => this.setState({secretpass: event.target.value})} placeholder="ultratitkosatomjelszo" tpye="text"/>
+
 
       </>
     );

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Distances from "./models/myDistancesModel";
-import { Table, InputContainerAch } from "./styledComps";
+import { InputContainerAch, Table } from "./styledComps";
 
 
 
@@ -15,6 +15,7 @@ const currentUser = props.currUser
   useEffect(() => {
 
     axios.post('http://localhost:8080/api/getuserdata', {
+      email: props.email,
       user: currentUser
 
     }).then(res => {
@@ -30,7 +31,7 @@ const currentUser = props.currUser
     }
 
     return (
-      
+
       <InputContainerAch>
       <Table>
         <thead>

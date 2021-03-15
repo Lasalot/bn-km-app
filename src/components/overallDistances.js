@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import OverallDistancesModel from "./models/overallDistancesModel";
-import { Table, InputContainerAch } from "./styledComps";
+import { InputContainerAch, Table } from "./styledComps";
 
 
 function OverallDistances(props) {
@@ -13,7 +13,11 @@ const [ready, setReady] = useState(false)
 
   useEffect(() => {
 
-    axios.get('http://localhost:8080/api/getalldistance').then(res => {
+    axios.get('http://localhost:8080/api/getalldistance', {
+      params: {
+        email: props.email
+      }
+    }).then(res => {
     setData(res.data)
     setReady(true)
 

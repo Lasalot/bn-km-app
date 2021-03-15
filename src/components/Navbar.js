@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { NavBar, NavButton, mobileNav, MobileNavButton } from "./styledComps";
-import { LoggedInUserPhoto, UserName } from "../App"
+import { UserName } from "../App";
+import { MobileNav, MobileNavButton, NavBar, NavButton } from "./styledComps";
 
 var widthVar = 50;
 var i = 0;
@@ -10,8 +10,8 @@ function MobileNavbar(){
     if (currentStyle === "block"){
     reverse();
     }
-    
-    if (currentStyle != "block"){
+
+    if (currentStyle !== "block"){
     document.getElementById("testDiv").style.display = "block";
     for (let i = 0; i < 50; i++) {
         setTimeout(function timer() {
@@ -21,7 +21,7 @@ function MobileNavbar(){
       widthVar = 50;
       i = 0;
       document.getElementById("menuButton").style.display = "none";
-}; 
+};
 }
 
 function reverse(){
@@ -30,7 +30,7 @@ function reverse(){
     if (0 < widthVar) {
       setTimeout(reverse, 3);
     }
-    if(widthVar == 0){
+    if(widthVar === 0){
         document.getElementById("testDiv").style.display = "none";
         document.getElementById("menuButton").style.display = "block";
     }
@@ -122,7 +122,7 @@ class Navbar extends Component {
         });
     }
 setMobile = () => {
-    
+
 this.setState({
     mobileNavActive: "active"
 });
@@ -134,12 +134,12 @@ this.setState({
   return (
     <>
     <nav>
-        <mobileNav>
+        <MobileNav>
             <div className="navDivMobileMain">
                 <button type="button" id="menuButton" className="dropDownButton" onClick={MobileNavbar} active={this.props.mobileNavActive}> <p className="menuSymbol">≡</p><p className="menuText">Menu</p> </button>
             </div>
             <div id="testDiv"className="navDivMobile">
-                
+
                 <button type="button" className="dropDownButtonBack" onClick={MobileNavbar} active={this.props.mobileNavActive}><div><div className="backDiv">Back</div><div className="loginUserDiv"><div className="testNameFix"><p className="loggedInUser"><UserName/></p></div></div></div></button>
                 <button type="button" className="hiddenButton" onClick={MobileNavbar} active={this.props.mobileNavActive}></button>
                 <MobileNavButton type="button" onClick={this.setHomeM} active={this.props.isHomeActive}>
@@ -157,12 +157,12 @@ this.setState({
                 <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
                     Sign Out
                 </MobileNavButton>
-                
+
                 <div className="brandingContainerMobile">
                     <p className="brandingMobile">Proudly made by Taki and Márk</p>
                 </div>
             </div>
-        </mobileNav>
+        </MobileNav>
 
        <NavBar>
            <div id="desktopNav"className="NavDiv">
@@ -194,8 +194,8 @@ this.setState({
         <p className="brandingDesktop">Proudly made by Taki and Márk</p>
         </div>
         </div>
-        
-     
+
+
        </NavBar>
     </nav>
 
