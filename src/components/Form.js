@@ -167,6 +167,7 @@ swal.fire({
           cancelButtonText: "Noooo!",
           }).then((result) => {
             const email = this.props.email
+            const user = this.props.currUser
             if(result.value){
               if(this.state.type.mode === "Walk"){
                 const data = new FormData();
@@ -179,7 +180,7 @@ swal.fire({
                 activity_type: this.state.type.mode,
                 email: email
                 });
-                axios.post(`http://localhost:8080/api/upload?email=${email}`, data);
+                axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -191,6 +192,8 @@ swal.fire({
         walkActive: "",
         bikeActive: "",
         rollerActive:"",
+        file:null,
+        fileName:"",
         km: "",
         type: {
           mode:"Run",
@@ -199,7 +202,7 @@ swal.fire({
 
                 })
 
-              }, 2000)
+              }, 3000)
 
             } else if (this.state.type.mode === "Run" || "Bike" || "Roller Skates") {
               const data = new FormData();
@@ -212,7 +215,7 @@ swal.fire({
                 email: email
 
               });
-              axios.post(`http://localhost:8080/api/upload?email=${email}`, data);
+              axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -224,6 +227,8 @@ swal.fire({
         walkActive: "",
         bikeActive: "",
         rollerActive:"",
+        fileName:"",
+        file:null,
         km: "",
         type: {
           mode:"Run",
@@ -231,7 +236,7 @@ swal.fire({
         }
                 })
 
-              }, 2000);
+              }, 3000);
 
 
 
@@ -297,6 +302,7 @@ swal.fire({
             onChange={(event) => this.setState({ km: event.target.value })}
             type="number"
             min="1"
+            max="300"
             placeholder={this.state.type.count}
           />
           <UploadLabel for="fileElem"> <div style={{paddingTop: "1rem"}}><div className="uploadTitle">{this.state.file ? <>Selected:{this.state.fileName}</> : "Upload a photo"}</div> </div></UploadLabel>

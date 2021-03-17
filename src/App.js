@@ -109,7 +109,7 @@ const TeamTrackerActive = () => {
   const [form,setForm] = useState("")
   const [myDistances,setMyDistances] = useState("")
   const [teamTracker, setTeamTrackerActive] = useState("")
-  const [mobile, setMobileNavActive] = useState("")
+
 
 
 
@@ -121,7 +121,7 @@ const TeamTrackerActive = () => {
     const bn = "@bitninja.io"
     const filteredEmailBn = gottenEmail.filter(function (str) { return str.includes(bn)})
     const filteredEmailWs = gottenEmail.filter(function (str) { return str.includes(ws)})
-    console.log(filteredEmailBn, filteredEmailWs)
+
 
 
 if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {

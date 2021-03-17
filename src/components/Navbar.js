@@ -6,7 +6,6 @@ var widthVar = 50;
 var i = 0;
 function MobileNavbar(){
     var currentStyle = document.getElementById("testDiv").style.display;
-    var currentNav = document.getElementById("desktopNav").style.display;
     if (currentStyle === "block"){
     reverse();
     }

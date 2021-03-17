@@ -70,7 +70,7 @@ label {
 .rollerFix{
  font-size: 0.7rem !important;
  margin-top: 2px !important;
-  
+
 }}
 @media screen and (max-width: 481px){
 .rollerFix{
@@ -126,7 +126,7 @@ button{border:none;}
   display: inline-block;
   text-align: right;
   margin-bottom: 0;
-  
+
 }
 .testNameFix{
   width: 8rem;
@@ -279,7 +279,7 @@ margin-bottom: 0.5rem !important;
 .brokenShit{
   display: none !important;
 }
-.dark { 
+.dark {
   background-color: rgba(255,255,255, 0.05) !important;
 }
 .dark2 {
@@ -419,4 +419,8 @@ background: linear-gradient(90deg, rgba(235,121,49,1) 0%, rgba(239,188,23,1) 100
   background: rgb(239,188,23);
 background: linear-gradient(90deg, rgba(239,188,23,1) 0%, rgba(242,247,0,1) 100%);
 color: black;
+}
+
+h5 {
+  color:white
 }
