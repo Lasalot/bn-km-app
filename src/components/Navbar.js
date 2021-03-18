@@ -3,7 +3,6 @@ import { UserName } from "../App";
 import { MobileNav, MobileNavButton, NavBar, NavButton } from "./styledComps";
 
 var widthVar = 50;
-var i = 0;
 function MobileNavbar(){
     var currentStyle = document.getElementById("testDiv").style.display;
     if (currentStyle === "block"){
@@ -18,7 +17,6 @@ function MobileNavbar(){
         }, i * 3);
       }
       widthVar = 50;
-      i = 0;
       document.getElementById("menuButton").style.display = "none";
 };
 }

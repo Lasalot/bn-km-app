@@ -46,6 +46,7 @@ const currentUser = props.currUser
         {ready ? <>{data.map(dataMapping)}</> : null }
 </tbody>
         </Table>
+        <div className="sumDistanceContainer"> Overall you have done: <div className="sumDistance"> 12345 </div></div>
         </InputContainerAch>
 
     )
