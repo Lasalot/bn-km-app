@@ -20,10 +20,10 @@ class Form extends Component {
       rollerActive:"",
       file:null,
       fileName: "",
-      km: "",
+      meters: "",
       type: {
         mode:"Run",
-        count:"Kilometers"
+        count:"Meters"
       }
     };
   }
@@ -40,7 +40,7 @@ class Form extends Component {
       rollerActive:"",
       type: {
         mode:"Run",
-        count:"Kilometers"
+        count:"Meters"
       }
     });
   };
@@ -66,7 +66,7 @@ class Form extends Component {
       rollerActive:"",
       type: {
         mode:"Bike",
-        count:"Kilometers"
+        count:"Meters"
       }
     });
   };
@@ -124,24 +124,22 @@ return true;
   submitForm = (e) => {
 
     e.preventDefault();
-    if (!this.state.km &&
+    if (!this.state.meters &&
       !this.state.time &&
       !this.state.type) {
         swal.fire({
         title: "Everything is missing",
-        text: "Nothing happened, just test!",
         icon: "error",
         confirmButtonText: "Not cool"
       })
 
     }
     else if (
-      !this.state.km
+      !this.state.meters
 
     ) {
       swal.fire({
-        title: "KM is missing",
-        text: "Nothing happened, just test!",
+        title: "Meter is missing",
         icon: "error",
         confirmButtonText: "Not cool"
       })
@@ -175,7 +173,7 @@ swal.fire({
 
 
                 axios.post(`http://localhost:8080/api/distance`, {
-                steps: this.state.km,
+                steps: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
@@ -194,10 +192,10 @@ swal.fire({
         rollerActive:"",
         file:null,
         fileName:"",
-        km: "",
+        meters: "",
         type: {
           mode:"Run",
-          count:"Kilometers"
+          count:"Meters"
         }
 
                 })
@@ -209,7 +207,7 @@ swal.fire({
               data.append('file', this.state.file);
 
                 axios.post('http://localhost:8080/api/distance', {
-                kilometers: this.state.km,
+                kilometers: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
@@ -229,10 +227,10 @@ swal.fire({
         rollerActive:"",
         fileName:"",
         file:null,
-        km: "",
+        meters: "",
         type: {
           mode:"Run",
-          count:"Kilometers"
+          count:"Meters"
         }
                 })
 
@@ -298,11 +296,10 @@ swal.fire({
 
           <Label>How many {this.state.type.count}?</Label>
           <Input
-            value={this.state.km}
-            onChange={(event) => this.setState({ km: event.target.value })}
+            value={this.state.meters}
+            onChange={(event) => this.setState({ meters: event.target.value })}
             type="number"
             min="1"
-            max="300"
             placeholder={this.state.type.count}
           />
           <UploadLabel for="fileElem"> <div style={{paddingTop: "1rem"}}><div className="uploadTitle">{this.state.file ? <>Selected:{this.state.fileName}</> : "Upload a photo"}</div> </div></UploadLabel>

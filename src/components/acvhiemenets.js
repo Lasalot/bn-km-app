@@ -33,7 +33,7 @@ useEffect(() => {
   }).then(res => {
     if (res.data === "")
     {setSumDistance("0")} else
-    {setSumDistance(parseInt(res.data,10))}
+    {setSumDistance(parseFloat(res.data))}
 
   })
 }, [sumDistance])
@@ -91,7 +91,7 @@ setAchiActive({
 }
 
 
-const leftDistance = parseInt(nextGoal,10)-parseInt(sumDistance,10)
+const leftDistance = parseInt(nextGoal,10)-parseFloat(sumDistance)
 const progressData = [
   {completed: Math.ceil(((nextGoal-leftDistance)/nextGoal)*100)},
 ];
