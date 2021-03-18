@@ -10,6 +10,7 @@ function MyDistances(props) {
 
 const [data, setData] = useState()
 const [ready, setReady] = useState(false)
+const [sumKm, setSumKM] = useState("")
 const currentUser = props.currUser
 
   useEffect(() => {
@@ -26,8 +27,18 @@ const currentUser = props.currUser
       })
     }, []);
 
+const SumKilometer = (props) => {
+  const prasedKm = parseFloat(props.sumkm,4)
+  setSumKM(prasedKm)
+  return null
+}
+
     function dataMapping(item) {
-      return <Distances key={item.id} kilometers={item.kilometers} who={item.who} mode={item.activity_type}/>
+
+      return (<>
+      <Distances key={item.id} kilometers={item.kilometers} who={item.who} mode={item.activity_type}/> <SumKilometer sumkm={item.sumkilometer}/>
+      </>)
+
     }
 
     return (
@@ -46,7 +57,7 @@ const currentUser = props.currUser
         {ready ? <>{data.map(dataMapping)}</> : null }
 </tbody>
         </Table>
-        <div className="sumDistanceContainer"> Overall you have done: <div className="sumDistance"> 12345 </div></div>
+        <div className="sumDistanceContainer"> Overall you have done: <div className="sumDistance"> {sumKm}km </div></div>
         </InputContainerAch>
 
     )

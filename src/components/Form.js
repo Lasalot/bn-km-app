@@ -207,7 +207,7 @@ swal.fire({
               data.append('file', this.state.file);
 
                 axios.post('http://localhost:8080/api/distance', {
-                kilometers: this.state.meters,
+                meters: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
@@ -315,7 +315,7 @@ swal.fire({
 
           <SendButton type="submit">I am awesome!</SendButton>
 
-         
+
 
         </form>
         </InputContainer>

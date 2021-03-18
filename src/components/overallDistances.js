@@ -37,7 +37,7 @@ const [ready, setReady] = useState(false)
 <th className="classTh headColor1">Name</th>
 <th className="classTh headColor2">Activity Type</th>
 <th className="classTh headColor3">Kms</th>
-a
+
 </tr>
 </thead>
 <tbody>
