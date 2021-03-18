@@ -117,12 +117,11 @@ const progressData = [
     <div>
     {sumDistance ?
     <div className="achievementContainer" onLoad={() => RevealAchi()}>
-        <h1>Achievements</h1>
-        <h5>Distances:</h5>
-        <p className="achievementTitle"> 1. 420km<br></br><Achievement active={achiActive.firstAchi} src={achiImg.first}/></p>
-        <p className="achievementTitle">2. 2245km <br></br><Achievement active={achiActive.secondAchi} src={achiImg.middle}/></p>
-        <p className="achievementTitle"> 3. 6400km <br></br><Achievement active={achiActive.thirdAchi} src={achiImg.last}/></p>
-        <p style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={achiActive.thirdAchi} src={UnknownAchi}/></p>
+        <h1 className="mainAchTitle">Achievements</h1>
+        <div className="achievementTitle"><p className="mainTitle">420km</p> <br></br><div className="subTitle">Let's get from Debrecen to Bratislava!</div><br></br><Achievement active={achiActive.firstAchi} src={achiImg.first}/></div>
+        <div className="achievementTitle"><p className="mainTitle">2245km </p><br></br> <div className="subTitle">Let's get around Hungary!</div><br></br><Achievement active={achiActive.secondAchi} src={achiImg.middle}/></div>
+        <div className="achievementTitle"><p className="mainTitle">6400km </p><br></br> <div className="subTitle">Let's get over the Great Wall of China!</div><br></br><Achievement active={achiActive.thirdAchi} src={achiImg.last}/></div>
+        <div style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={achiActive.thirdAchi} src={UnknownAchi}/></div>
         <br></br>
         </div>
 
