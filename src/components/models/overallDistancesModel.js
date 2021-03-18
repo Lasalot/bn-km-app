@@ -2,7 +2,7 @@ import React from "react";
 
 
 function OverallDistancesModel(entries) {
-  const kilometers = parseFloat(entries.kilometers,4)
+  const kilometers = parseFloat(entries.kilometers).toFixed(2)
   return (
 
 <tr className="classTrBody">

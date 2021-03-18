@@ -91,7 +91,7 @@ setAchiActive({
 }
 
 
-const leftDistance = parseInt(nextGoal,10)-parseFloat(sumDistance)
+const leftDistance = parseInt(nextGoal,10).toFixed(2)-parseFloat(sumDistance).toFixed(2)
 const progressData = [
   {completed: Math.ceil(((nextGoal-leftDistance)/nextGoal)*100)},
 ];
@@ -103,7 +103,7 @@ const progressData = [
 <div>
   <div>
     <h1 className="achievementTitleTop">So far we have done: </h1>
-    <h2 className="achievementTitleTop">{sumDistance}Kms Together, we only need {leftDistance} Kms to unlock the next milestone!</h2>
+    <h2 className="achievementTitleTop">{parseFloat(sumDistance).toFixed(2)}Kms Together, we only need {leftDistance} Kms to unlock the next milestone!</h2>
     </div>
 
      <div className="progressbar">

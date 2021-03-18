@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 import OverallDistances from "./components/overallDistances";
 import { RoundPicture } from './components/styledComps';
 import credentials from "./firebaseLogin/credentials";
-import Logo from "./logopoc.png";
+import Logo from "./logopcnew.png";
 
 firebase.initializeApp(credentials
 )

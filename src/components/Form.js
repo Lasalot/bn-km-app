@@ -79,7 +79,7 @@ class Form extends Component {
       rollerActive: "active",
       type: {
         mode:"Roller Skates",
-        count:"Kilometers"
+        count:"Meters"
       }
     });
   };
