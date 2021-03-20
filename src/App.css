@@ -269,7 +269,8 @@ margin-bottom: 0.5rem !important;
     width: 30%;
     text-align:center;
     margin: auto;
-    
+    position: relative;
+    z-index: -1;
   }
 }
 
@@ -437,6 +438,8 @@ p {
 background: linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%) !important;
   border-radius : inherit;
   text-align: right;
+  position: relative;
+  z-index: -1;
   background-image: url("./img/uploadImg.jpg");
 }
 .uploadTitle{
