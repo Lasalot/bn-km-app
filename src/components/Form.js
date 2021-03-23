@@ -14,6 +14,7 @@ class Form extends Component {
   constructor(props){
     super(props)
     this.state = {
+      countedKm: null,
       runActive:"Active",
       walkActive: "",
       bikeActive: "",
@@ -38,6 +39,7 @@ class Form extends Component {
       walkActive: "",
       bikeActive: "",
       rollerActive:"",
+
       type: {
         mode:"Run",
         count:"Meters"
@@ -63,6 +65,7 @@ class Form extends Component {
       runActive: "",
       walkActive: "",
       bikeActive: "active",
+
       rollerActive:"",
       type: {
         mode:"Bike",
@@ -77,6 +80,7 @@ class Form extends Component {
       walkActive: "",
       bikeActive: "",
       rollerActive: "active",
+
       type: {
         mode:"Roller Skates",
         count:"Meters"
@@ -121,6 +125,24 @@ return true;
 
   }
 
+  metersEventHandler = (event) => {
+    this.setState({
+      meters: event.target.value,
+    })
+    if (this.state.type.mode === "Walk"){
+      this.setState({
+        countedKm:(((this.state.meters*0.62)/1000)*10).toFixed(3),
+      })
+    } else (
+
+      this.setState({
+        countedKm:((this.state.meters/1000)*10).toFixed(3),
+      })
+
+    )
+
+  }
+
   submitForm = (e) => {
 
     e.preventDefault();
@@ -148,7 +170,6 @@ return true;
     else if(!this.state.type) {
 swal.fire({
         title: "Type is missing is missing",
-        text: "Nothing happened, just test!",
         icon: "error",
         confirmButtonText: "Not cool"
       })
@@ -158,7 +179,7 @@ swal.fire({
                swal.fire({
 
           title: "Are you sure?",
-          text:"You will not be able to delete this later on",
+          text:`You are about to upload ${this.state.countedKm} Kms of ${this.state.type.mode} `,
           icon: "warning",
           showCancelButton: true,
           confirmButtonText: "Yes I am sure",
@@ -172,13 +193,13 @@ swal.fire({
                 data.append('file', this.state.file);
 
 
-                axios.post(`http://localhost:8080/api/distance`, {
+                axios.post(`https://runzybackend.com/api/distance`, {
                 steps: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
                 });
-                axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
+                axios.post(`https://runzybackend.com/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -206,14 +227,14 @@ swal.fire({
               const data = new FormData();
               data.append('file', this.state.file);
 
-                axios.post('http://localhost:8080/api/distance', {
+                axios.post('https://runzybackend.com/api/distance', {
                 meters: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
 
               });
-              axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
+              axios.post(`https://runzybackend.com/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -297,7 +318,7 @@ swal.fire({
           <Label>How many {this.state.type.count}?</Label>
           <Input
             value={this.state.meters}
-            onChange={(event) => this.setState({ meters: event.target.value })}
+            onChange={this.metersEventHandler}
             type="number"
             min="1"
             placeholder={this.state.type.count}

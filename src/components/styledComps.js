@@ -385,8 +385,19 @@ border: none;
 const TableHead = styled.thead`
 background-color: blue;
 `
+const StyledSpan = styled.span`
+float: right;
+margin-right: 10%;
+display: inline-block;
+transition: transform .2s;
+:hover {
+  cursor: pointer;
+  transform: scale(1.5)
 
 
+}
+`
 
-export { Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
+
+export { StyledSpan, Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
 

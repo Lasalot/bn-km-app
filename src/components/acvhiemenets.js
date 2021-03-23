@@ -24,9 +24,10 @@ const [achiActive, setAchiActive] = useState({
 
 
 
+
 //Get data about all distances (in KM) then set achievements accordingly
 useEffect(() => {
-  axios.get('http://localhost:8080/api/getoveralldistance', {
+  axios.get('https://runzybackend.com/api/getoveralldistance', {
     params: {
       email: props.email
     }
@@ -35,63 +36,62 @@ useEffect(() => {
     {setSumDistance("0")} else
     {setSumDistance(parseFloat(res.data))}
 
+  });
+  if(sumDistance >= 6400) {
+    console.log("6400")
+    setNextGoal("12000")
+  setAchiActive({
+    firstAchi:"Active",
+    secondAchi:"Active",
+    thirdAchi:"Active"
   })
+
+    setAchiImg({
+      first: Achifirst,
+      middle: Achisecond,
+      last: Achithird
+    })
+  } else if (sumDistance >= 2245) {
+    console.log("2245")
+    setAchiActive({
+      firstAchi: "Active",
+      secondAchi:"Active"
+    })
+    setNextGoal("6400")
+    setAchiImg({
+      first: Achifirst,
+      middle: Achisecond,
+      last: UnknownAchi
+    })
+
+  } else if (sumDistance >= 420) {
+    console.log("420")
+    setAchiActive({
+      firstAchi:"Active"
+    })
+    setNextGoal("2245")
+    setAchiImg({
+      first: Achifirst,
+      middle: UnknownAchi,
+      last: UnknownAchi
+    })
+  } else if (sumDistance === 0) {
+  console.log(sumDistance)
+    setAchiImg({
+      first: UnknownAchi,
+      middle: UnknownAchi,
+      last: UnknownAchi
+    })
+  }
+
 }, [sumDistance])
 
-function RevealAchi() {
 
-if(sumDistance >= 6400) {
-  setNextGoal("12000")
-setAchiActive({
-  firstAchi:"Active",
-  secondAchi:"Active",
-  thirdAchi:"Active"
-})
 
-  setAchiImg({
-    first: Achifirst,
-    middle: Achisecond,
-    last: Achithird
-  })
-} else if (sumDistance >= 2245) {
-
-  setAchiActive({
-    firstAchi: "Active",
-    secondAchi:"Active"
-  })
-  setNextGoal("6500")
-  setAchiImg({
-    first: Achifirst,
-    middle: Achisecond,
-    last: UnknownAchi
-  })
-
-} else if (sumDistance >= 420) {
-  setAchiActive({
-    firstAchi:"Active"
-  })
-  setNextGoal("2245")
-  setAchiImg({
-    first: Achifirst,
-    middle: UnknownAchi,
-    last: UnknownAchi
-  })
-} else if (sumDistance === 0) {
-
-  setAchiImg({
-    first: UnknownAchi,
-    middle: UnknownAchi,
-    last: UnknownAchi
-  })
-}
-  return (
-    null
-  )
-
-}
 
 
 const leftDistance = parseInt(nextGoal,10).toFixed(2)-parseFloat(sumDistance).toFixed(2)
+const leftDistanceFixed = leftDistance.toFixed(2)
 const progressData = [
   {completed: Math.ceil(((nextGoal-leftDistance)/nextGoal)*100)},
 ];
@@ -103,7 +103,7 @@ const progressData = [
 <div>
   <div>
     <h1 className="achievementTitleTop">So far we have done: </h1>
-    <h2 className="achievementTitleTop">{parseFloat(sumDistance).toFixed(2)}Kms Together, we only need {leftDistance} Kms to unlock the next milestone!</h2>
+    <h2 className="achievementTitleTop">{parseFloat(sumDistance).toFixed(2)}Kms Together, we only need {leftDistanceFixed} Kms to unlock the next milestone!</h2>
     </div>
 
      <div className="progressbar">
@@ -116,16 +116,18 @@ const progressData = [
 
     <div>
     {sumDistance ?
-    <div className="achievementContainer" onLoad={() => RevealAchi()}>
-        <h1 className="mainAchTitle">Achievements</h1>
+    <div className="achievementContainer">
+        <h1  className="mainAchTitle">Achievements</h1>
         <div className="achievementTitle"><p className="mainTitle">420km</p> <br></br><div className="subTitle">Let's get from Debrecen to Bratislava!</div><br></br><Achievement active={achiActive.firstAchi} src={achiImg.first}/></div>
         <div className="achievementTitle"><p className="mainTitle">2245km </p><br></br> <div className="subTitle">Let's get around Hungary!</div><br></br><Achievement active={achiActive.secondAchi} src={achiImg.middle}/></div>
         <div className="achievementTitle"><p className="mainTitle">6400km </p><br></br> <div className="subTitle">Let's get over the Great Wall of China!</div><br></br><Achievement active={achiActive.thirdAchi} src={achiImg.last}/></div>
         <div style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={achiActive.thirdAchi} src={UnknownAchi}/></div>
         <br></br>
+
         </div>
 
         : null}
+
 
   </div>
     </div>

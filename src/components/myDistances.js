@@ -15,7 +15,7 @@ const currentUser = props.currUser
 
   useEffect(() => {
 
-    axios.post('http://localhost:8080/api/getuserdata', {
+    axios.post('https://runzybackend.com/api/getuserdata', {
       email: props.email,
       user: currentUser
 
@@ -28,15 +28,15 @@ const currentUser = props.currUser
     }, []);
 
 const SumKilometer = (props) => {
-  const prasedKm = parseFloat(props.sumkm,4)
-  setSumKM(prasedKm)
+  const parsedKm = parseFloat(props.sumkm,4)
+  setSumKM(parsedKm.toFixed(2))
   return null
 }
 
     function dataMapping(item) {
 
       return (<>
-      <Distances key={item.id} kilometers={item.kilometers} who={item.who} mode={item.activity_type}/> <SumKilometer sumkm={item.sumkilometer}/>
+      <Distances  who={currentUser} email={props.email} id={item.id} key={item.id} kilometers={item.kilometers} who={item.who} mode={item.activity_type}/> <SumKilometer sumkm={item.sumkilometer}/>
       </>)
 
     }
@@ -50,6 +50,7 @@ const SumKilometer = (props) => {
         <th className="classTh headColor1">Name</th>
 <th className="classTh modeClass headColor2">Activity Type</th>
 <th className="classTh headColor3">Kms</th>
+
 
 </tr>
 </thead>
