@@ -17,7 +17,7 @@ swal.fire({
   cancelButtonText: "No!"
 }).then((result) => {
   if (result.value) {
-    axios.delete('https://runzybackend.com/api/distance', {
+    axios.delete('http://localhost:8080/api/distance', {
       params: {
       email: entries.email,
       who: entries.who,

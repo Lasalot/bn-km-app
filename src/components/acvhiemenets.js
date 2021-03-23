@@ -27,7 +27,7 @@ const [achiActive, setAchiActive] = useState({
 
 //Get data about all distances (in KM) then set achievements accordingly
 useEffect(() => {
-  axios.get('https://runzybackend.com/api/getoveralldistance', {
+  axios.get('http://localhost:8080/api/getoveralldistance', {
     params: {
       email: props.email
     }
