@@ -39,6 +39,7 @@ class Navbar extends Component {
         myDistancesActive: "",
         upladFormActive: "",
         mobileNavActive: "",
+        monthlyTracker:""
     };
     setTeamTracker = () => {
         this.props.teamtracker();
@@ -46,7 +47,8 @@ class Navbar extends Component {
             teamTracker: "active",
             homeActive: "",
             myDistancesActive: "",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:"",
         });
     };
     setHome = () => {
@@ -55,7 +57,8 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "active",
             myDistancesActive: "",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:"",
         });
     };
 
@@ -65,7 +68,8 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "",
             myDistancesActive: "active",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:"",
         });
     }
     setUploadForm = () => {
@@ -74,7 +78,8 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "",
             myDistancesActive: "",
-            upladFormActive: "active"
+            upladFormActive: "active",
+            monthlyTracker:"",
         });
     }
     setTeamTrackerM = () => {
@@ -84,7 +89,8 @@ class Navbar extends Component {
             teamTracker: "active",
             homeActive: "",
             myDistancesActive: "",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:""
         });
     };
     setHomeM = () => {
@@ -94,7 +100,8 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "active",
             myDistancesActive: "",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:""
         });
     };
 
@@ -105,7 +112,8 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "",
             myDistancesActive: "active",
-            upladFormActive: ""
+            upladFormActive: "",
+            monthlyTracker:""
         });
     }
     setUploadFormM = () => {
@@ -115,8 +123,32 @@ class Navbar extends Component {
             teamTracker: "",
             homeActive: "",
             myDistancesActive: "",
-            upladFormActive: "active"
+            upladFormActive: "active",
+            monthlyTracker:""
         });
+    }
+
+    setMonthlyTracker = () => {
+        this.props.isMonthlyActive();
+        this.setState({
+            teamTracker: "",
+            homeActive: "",
+            myDistancesActive: "",
+            upladFormActive: "",
+            monthlyTracker:"active"
+        });
+    }
+
+    setMonthlyTrackerM = () => {
+        MobileNavbar();
+        this.props.isMonthlyActive();
+        this.setState({
+            teamTracker: "",
+            homeActive: "",
+            myDistancesActive: "",
+            upladFormActive: "",
+            monthlyTracker:"active"
+        })
     }
 setMobile = () => {
 
@@ -144,6 +176,9 @@ this.setState({
                 </MobileNavButton>
                 <MobileNavButton type="button" onClick={this.setTeamTrackerM} active={this.state.teamTracker}>
                     Team Tracker
+                </MobileNavButton>
+                <MobileNavButton type="button" onClick={this.setMonthlyTrackerM} active={this.state.monthlyTracker}>
+                    Monthly Tracker
                 </MobileNavButton>
                 <MobileNavButton type="button" onClick={this.setMyDistancesM}  active={this.state.myDistancesActive}>
                     My Profile
@@ -177,6 +212,9 @@ this.setState({
         </NavButton>
         <NavButton type="button" onClick={this.setTeamTracker} active={this.state.teamTracker}>
             Team Tracker
+        </NavButton>
+        <NavButton type="button" onClick={this.setMonthlyTracker} active={this.state.monthlyTracker}>
+            Monthly Tracker
         </NavButton>
         <NavButton type="button" onClick={this.setMyDistances}  active={this.state.myDistancesActive}>
             My Profile

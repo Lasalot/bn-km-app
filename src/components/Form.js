@@ -14,6 +14,7 @@ class Form extends Component {
   constructor(props){
     super(props)
     this.state = {
+      currentKms:"",
       countedKm: null,
       runActive:"Active",
       walkActive: "",
@@ -28,6 +29,9 @@ class Form extends Component {
       }
     };
   }
+
+
+
 
 
 
@@ -131,7 +135,7 @@ return true;
     })
     if (this.state.type.mode === "Walk"){
       this.setState({
-        countedKm:(((this.state.meters*0.62)/1000)*10).toFixed(3),
+        countedKm:((((this.state.meters*0.62)/1000)*10)).toFixed(3),
       })
     } else (
 
@@ -146,6 +150,15 @@ return true;
   submitForm = (e) => {
 
     e.preventDefault();
+    // Fetch OverallSUM before the post requst fires//
+    let url = new URL("http://localhost:8080/api/getoveralldistance")
+    let params = {email: this.props.email}
+    url.search = new URLSearchParams(params).toString()
+    fetch(url)
+.then( (response) => {
+ return response.json()
+}).then(data => this.setState({currentKms: data}))
+////////////////////////////////////////////////////////////////////////////
     if (!this.state.meters &&
       !this.state.time &&
       !this.state.type) {
@@ -189,6 +202,7 @@ swal.fire({
             const user = this.props.currUser
             if(result.value){
               if(this.state.type.mode === "Walk"){
+                console.log(this.state.currentKms)
                 const data = new FormData();
                 data.append('file', this.state.file);
 
@@ -197,6 +211,7 @@ swal.fire({
                 steps: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
+                currentKms: this.state.currentKms,
                 email: email
                 });
                 axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);

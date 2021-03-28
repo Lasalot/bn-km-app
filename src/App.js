@@ -7,6 +7,7 @@ import swal from "sweetalert2";
 import "./App.css";
 import Achievements from "./components/acvhiemenets";
 import Form from "./components/Form";
+import MonthlyTracker from "./components/monthlyTracker";
 import MyDistances from "./components/myDistances";
 import Navbar from "./components/Navbar";
 import OverallDistances from "./components/overallDistances";
@@ -78,6 +79,7 @@ setHome("active")
 setForm("")
 setMyDistances("")
 setTeamTrackerActive("")
+setMonthlyTracker("")
 }
 
 const FormActive = () => {
@@ -85,6 +87,7 @@ const FormActive = () => {
 setForm("active")
 setMyDistances("")
 setTeamTrackerActive("")
+setMonthlyTracker("")
 }
 
 const MyDistancesActive = () => {
@@ -92,6 +95,7 @@ const MyDistancesActive = () => {
   setForm("")
   setMyDistances("active")
   setTeamTrackerActive("")
+  setMonthlyTracker("")
 }
 
 const TeamTrackerActive = () => {
@@ -99,6 +103,15 @@ const TeamTrackerActive = () => {
   setForm("")
   setMyDistances("")
   setTeamTrackerActive("active")
+  setMonthlyTracker("")
+}
+
+const MonthlyTrackerActive = () => {
+  setHome("")
+  setForm("")
+  setMyDistances("")
+  setTeamTrackerActive("")
+  setMonthlyTracker("active")
 }
 
 
@@ -109,6 +122,7 @@ const TeamTrackerActive = () => {
   const [form,setForm] = useState("")
   const [myDistances,setMyDistances] = useState("")
   const [teamTracker, setTeamTrackerActive] = useState("")
+  const [monthlyTracker, setMonthlyTracker] = useState("")
 
 
 
@@ -145,10 +159,19 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
 
     </>)
   } else if (teamTracker === "active") {
+
     return (
       <>
  <OverallDistances email={auth.currentUser.email}/>
+
       </>
+    )
+  }
+  else if (monthlyTracker === "active") {
+    return(
+    <>
+    <MonthlyTracker email={auth.currentUser.email}/>
+    </>
     )
   }
 } else {
@@ -169,7 +192,7 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
       <div>
 
       </div>
-      {user ?  <Navbar isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
+      {user ?  <Navbar isMonthlyActive={MonthlyTrackerActive} isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
       <section>
       {user ? <Components/>
        : <SignIn/>}
