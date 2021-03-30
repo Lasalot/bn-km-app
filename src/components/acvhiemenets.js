@@ -11,14 +11,18 @@ function Achievements(props){
 const [sumDistance, setSumDistance] = useState("0")
 const [nextGoal, setNextGoal] = useState("420")
 const [achiImg, setAchiImg] = useState({
-  first: UnknownAchi,
-  middle:UnknownAchi,
-  last:UnknownAchi
+  firstAchiImg: UnknownAchi,
+  secondAchiImg:UnknownAchi,
+  thirdAchiImg:UnknownAchi,
+  fourthAchiImg: UnknownAchi,
+  fifthAchiImg: UnknownAchi
 })
 const [achiActive, setAchiActive] = useState({
   firstAchi: "",
   secondAchi:"",
-  thirdAchi:""
+  thirdAchi:"",
+  fourthAchi:"",
+  fifthAchi:""
 })
 
 
@@ -37,7 +41,46 @@ useEffect(() => {
     {setSumDistance(parseFloat(res.data))}
 
   });
-  if(sumDistance >= 6400) {
+
+  if(sumDistance >= 40075) {
+
+    setNextGoal("100000")
+  setAchiActive({
+    firstAchi:"Active",
+    secondAchi:"Active",
+    thirdAchi:"Active",
+    fourthAchi:"Active",
+    fifthAchi:"Active",
+  })
+
+    setAchiImg({
+      firstAchiImg: Achifirst,
+      secondAchiImg: Achisecond,
+      thirdAchiImg: Achithird,
+      fourthAchiImg:"idemegkellkep",
+      fifthAchiImg:"megideiskellkep"
+    })
+  }
+
+ else if(sumDistance >= 8914) {
+
+    setNextGoal("40075")
+  setAchiActive({
+    firstAchi:"Active",
+    secondAchi:"Active",
+    thirdAchi:"Active",
+    fourthAchi:"Active",
+  })
+
+    setAchiImg({
+      firstAchiImg: Achifirst,
+      secondAchiImg: Achisecond,
+      thirdAchiImg: Achithird,
+      fourthAchiImg: "idemegkellkep"
+    })
+  }
+
+ else if(sumDistance >= 6400) {
     console.log("6400")
     setNextGoal("12000")
   setAchiActive({
@@ -47,9 +90,11 @@ useEffect(() => {
   })
 
     setAchiImg({
-      first: Achifirst,
-      middle: Achisecond,
-      last: Achithird
+      firstAchiImg: Achifirst,
+      secondAchiImg: Achisecond,
+      thirdAchiImg: Achithird,
+      fourthAchiImg: UnknownAchi,
+      fifthAchiImg: UnknownAchi
     })
   } else if (sumDistance >= 2245) {
     console.log("2245")
@@ -59,9 +104,11 @@ useEffect(() => {
     })
     setNextGoal("6400")
     setAchiImg({
-      first: Achifirst,
-      middle: Achisecond,
-      last: UnknownAchi
+      firstAchiImg: Achifirst,
+      secondAchiImg: Achisecond,
+      thirdAchiImg: UnknownAchi,
+      fourthAchiImg: UnknownAchi,
+      fifthAchiImg: UnknownAchi
     })
 
   } else if (sumDistance >= 420) {
@@ -71,16 +118,20 @@ useEffect(() => {
     })
     setNextGoal("2245")
     setAchiImg({
-      first: Achifirst,
-      middle: UnknownAchi,
-      last: UnknownAchi
+      firstAchiImg: Achifirst,
+      secondAchiImg: UnknownAchi,
+      thirdAchiImg: UnknownAchi,
+      fourthAchiImg: UnknownAchi,
+      fifthAchiImg: UnknownAchi
     })
   } else if (sumDistance === 0) {
   console.log(sumDistance)
     setAchiImg({
-      first: UnknownAchi,
-      middle: UnknownAchi,
-      last: UnknownAchi
+      firstAchiImg: UnknownAchi,
+      secondAchiImg: UnknownAchi,
+      thirdAchiImg: UnknownAchi,
+      fourthAchiImg: UnknownAchi,
+      fifthAchiImg: UnknownAchi
     })
   }
 
@@ -118,9 +169,11 @@ const progressData = [
     {sumDistance ?
     <div className="achievementContainer">
         <h1  className="mainAchTitle">Achievements</h1>
-        <div className="achievementTitle"><p className="mainTitle">420km</p> <br></br><div className="subTitle">Let's get from Debrecen to Bratislava!</div><br></br><Achievement active={achiActive.firstAchi} src={achiImg.first}/></div>
-        <div className="achievementTitle"><p className="mainTitle">2245km </p><br></br> <div className="subTitle">Let's get around Hungary!</div><br></br><Achievement active={achiActive.secondAchi} src={achiImg.middle}/></div>
-        <div className="achievementTitle"><p className="mainTitle">6400km </p><br></br> <div className="subTitle">Let's get over the Great Wall of China!</div><br></br><Achievement active={achiActive.thirdAchi} src={achiImg.last}/></div>
+        <div className="achievementTitle"><p className="mainTitle">420km</p> <br></br><div className="subTitle">Let's get from Debrecen to Bratislava!</div><br></br><Achievement active={achiActive.firstAchi} src={achiImg.firstAchiImg}/></div>
+        <div className="achievementTitle"><p className="mainTitle">2245km </p><br></br> <div className="subTitle">Let's get around Hungary!</div><br></br><Achievement active={achiActive.secondAchi} src={achiImg.secondAchiImg}/></div>
+        <div className="achievementTitle"><p className="mainTitle">6400km </p><br></br> <div className="subTitle">Let's get over the Great Wall of China!</div><br></br><Achievement active={achiActive.thirdAchi} src={achiImg.thirdAchiImg}/></div>
+        <div className="achievementTitle"><p className="mainTitle">8914km </p><br></br> <div className="subTitle">Let's go to Tokyio - can we do it before the Olimpics start?</div><br></br><Achievement active={achiActive.fourthAchi} src={achiImg.fourthAchiImg}/></div>
+        <div className="achievementTitle"><p className="mainTitle">40075km </p><br></br> <div className="subTitle">Let's get around the Equator!</div><br></br><Achievement active={achiActive.fifthAchi} src={achiImg.fifthAchiImg}/></div>
         <div style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={achiActive.thirdAchi} src={UnknownAchi}/></div>
         <br></br>
 
