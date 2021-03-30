@@ -13,7 +13,7 @@ const [ready, setReady] = useState(false)
 
   useEffect(() => {
 
-    axios.get('http://localhost:8080/api/getalldistance', {
+    axios.get('http://localhost:8100/api/getalldistance', {
       params: {
         email: props.email
       }

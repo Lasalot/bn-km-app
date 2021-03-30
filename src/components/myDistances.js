@@ -15,7 +15,7 @@ const currentUser = props.currUser
 
   useEffect(() => {
 
-    axios.post('http://localhost:8080/api/getuserdata', {
+    axios.post('http://localhost:8100/api/getuserdata', {
       email: props.email,
       user: currentUser
 

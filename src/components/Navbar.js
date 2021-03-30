@@ -39,7 +39,11 @@ class Navbar extends Component {
         myDistancesActive: "",
         upladFormActive: "",
         mobileNavActive: "",
-        monthlyTracker:""
+        monthlyTracker:"",
+        isAdmin: false,
+        secretActive:"",
+        display:"none"
+
     };
     setTeamTracker = () => {
         this.props.teamtracker();
@@ -49,6 +53,7 @@ class Navbar extends Component {
             myDistancesActive: "",
             upladFormActive: "",
             monthlyTracker:"",
+            secretActive:""
         });
     };
     setHome = () => {
@@ -59,6 +64,7 @@ class Navbar extends Component {
             myDistancesActive: "",
             upladFormActive: "",
             monthlyTracker:"",
+            secretActive:""
         });
     };
 
@@ -70,6 +76,7 @@ class Navbar extends Component {
             myDistancesActive: "active",
             upladFormActive: "",
             monthlyTracker:"",
+            secretActive:""
         });
     }
     setUploadForm = () => {
@@ -80,6 +87,7 @@ class Navbar extends Component {
             myDistancesActive: "",
             upladFormActive: "active",
             monthlyTracker:"",
+            secretActive:""
         });
     }
     setTeamTrackerM = () => {
@@ -90,7 +98,8 @@ class Navbar extends Component {
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: "",
-            monthlyTracker:""
+            monthlyTracker:"",
+            secretActive:""
         });
     };
     setHomeM = () => {
@@ -101,7 +110,8 @@ class Navbar extends Component {
             homeActive: "active",
             myDistancesActive: "",
             upladFormActive: "",
-            monthlyTracker:""
+            monthlyTracker:"",
+            secretActive:""
         });
     };
 
@@ -113,7 +123,8 @@ class Navbar extends Component {
             homeActive: "",
             myDistancesActive: "active",
             upladFormActive: "",
-            monthlyTracker:""
+            monthlyTracker:"",
+            secretActive:""
         });
     }
     setUploadFormM = () => {
@@ -124,7 +135,8 @@ class Navbar extends Component {
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: "active",
-            monthlyTracker:""
+            monthlyTracker:"",
+            secretActive:""
         });
     }
 
@@ -135,7 +147,8 @@ class Navbar extends Component {
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: "",
-            monthlyTracker:"active"
+            monthlyTracker:"active",
+            secretActive:""
         });
     }
 
@@ -147,7 +160,35 @@ class Navbar extends Component {
             homeActive: "",
             myDistancesActive: "",
             upladFormActive: "",
-            monthlyTracker:"active"
+            monthlyTracker:"active",
+            secretActive:""
+        })
+    }
+
+    setSecretActiveM = () => {
+        MobileNavbar();
+        this.props.isSecretActive();
+        this.setState({
+            teamTracker: "",
+            homeActive: "",
+            myDistancesActive: "",
+            upladFormActive: "",
+            monthlyTracker:"",
+            secretActive:"active",
+
+        })
+    }
+
+    setSecretActive = () => {
+        this.props.isSecretActive();
+        this.setState({
+            teamTracker: "",
+            homeActive: "",
+            myDistancesActive: "",
+            upladFormActive: "",
+            monthlyTracker:"",
+            secretActive:"active",
+
         })
     }
 setMobile = () => {
@@ -155,6 +196,13 @@ setMobile = () => {
 this.setState({
     mobileNavActive: "active"
 });
+
+}
+
+componentDidMount(){
+    if(this.props.currUserName === "Laszlo Takacs" || this.props.currUserName === "Boglarka Angalet" || this.props.currUserName === "Anna Abel"  || this.props.currUserName === "Mark Bacsko") {
+       this.setState({isAdmin: true, display:"block"})
+    }
 
 }
 
@@ -185,6 +233,9 @@ this.setState({
                  </MobileNavButton>
                 <MobileNavButton type="button" onClick={this.setUploadFormM}  active={this.props.isFormActive}>
                     Upload
+                </MobileNavButton>
+                <MobileNavButton type="button" onClick={this.setSecretActiveM}  active={this.props.secretActive}>
+                    Admin Area
                 </MobileNavButton>
                 <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
                     Sign Out
@@ -221,6 +272,9 @@ this.setState({
         </NavButton>
         <NavButton className="homeClassNav" type="button" onClick={this.setUploadForm}  active={this.props.isFormActive}>
            Upload
+        </NavButton>
+        <NavButton style={{display:this.state.display}} type="button" onClick={this.setSecretActive}  active={this.props.secretActive}>
+           Admin Area
         </NavButton>
         <NavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
             Sign Out

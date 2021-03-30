@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import swal from "sweetalert2";
 import "./App.css";
 import Achievements from "./components/acvhiemenets";
+import AdminArea from "./components/adminArea";
 import Form from "./components/Form";
 import MonthlyTracker from "./components/monthlyTracker";
 import MyDistances from "./components/myDistances";
@@ -114,6 +115,15 @@ const MonthlyTrackerActive = () => {
   setMonthlyTracker("active")
 }
 
+const AdminAreaActive = () => {
+  setHome("")
+  setForm("")
+  setMyDistances("")
+  setTeamTrackerActive("")
+  setMonthlyTracker("")
+  setAdminArea("active")
+}
+
 
 
 
@@ -123,6 +133,7 @@ const MonthlyTrackerActive = () => {
   const [myDistances,setMyDistances] = useState("")
   const [teamTracker, setTeamTrackerActive] = useState("")
   const [monthlyTracker, setMonthlyTracker] = useState("")
+  const [adminArea, setAdminArea] = useState("")
 
 
 
@@ -167,6 +178,15 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
       </>
     )
   }
+  else if (adminArea === "active" && auth.currentUser.displayName === "Laszlo Takacs" || auth.currentUser.displayName === "Boglarka Angalet" || auth.currentUser.displayName === "Mark Bacsko" || auth.currentUser.displayName === "Anna Abel" ) {
+    return (
+      <>
+      <AdminArea email={auth.currentUser.email}/>
+
+      </>
+    )
+  }
+
   else if (monthlyTracker === "active") {
     return(
     <>
@@ -192,7 +212,7 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
       <div>
 
       </div>
-      {user ?  <Navbar isMonthlyActive={MonthlyTrackerActive} isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
+      {user ?  <Navbar isSecretActive={AdminAreaActive} currUserEmail={auth.currentUser.email} currUserName={auth.currentUser.displayName} isMonthlyActive={MonthlyTrackerActive} isHomeActive={home} isFormActive={form} home={HomeActive} form={FormActive} mydistances={MyDistancesActive} teamtracker={TeamTrackerActive}  logOut={SignOut}/> : null }
       <section>
       {user ? <Components/>
        : <SignIn/>}

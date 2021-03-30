@@ -17,7 +17,7 @@ const [data, setData] = useState({
 
 //Get the sum amount of Acitivity Types for the current month
 useEffect(() => {
-  axios.get("http://localhost:8080/api/monthlytracker/sumactivity", {
+  axios.get("http://localhost:8100/api/monthlytracker/sumactivity", {
     params :{
       email: props.email
     }

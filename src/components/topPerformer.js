@@ -9,7 +9,7 @@ export default function TopPerformer(props) {
   })
   // Get the name and number for the top performer, always a new query, it gives back the current data based on DB
 useEffect(() => {
-  axios.get("http://localhost:8080/api/monthlytracker/topperformer", {
+  axios.get("http://localhost:8100/api/monthlytracker/topperformer", {
     params :{
       email: props.email
     }

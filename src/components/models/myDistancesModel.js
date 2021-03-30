@@ -17,7 +17,7 @@ swal.fire({
   cancelButtonText: "No!"
 }).then((result) => {
   if (result.value) {
-    axios.delete('http://localhost:8080/api/distance', {
+    axios.delete('http://localhost:8100/api/distance', {
       params: {
       email: entries.email,
       who: entries.who,

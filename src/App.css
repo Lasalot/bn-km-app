@@ -28,9 +28,9 @@ html {
   margin-top: 1rem;
   width: 15%;
 }
-.welcomeMessage{
+.welcomeMessage {
   text-align: right;
-  color: rgba(255,255,255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
   font-weight: 200;
   margin-top: 0;
 }
@@ -40,14 +40,14 @@ label {
   color: white;
 }
 
-.navDivMobileMain{
+.navDivMobileMain {
   display: none;
 }
-.navDivMobile{
+.navDivMobile {
   display: none;
 }
 .classTh {
-  background-color: rgba(255,255,255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   width: 5%;
   height: 2rem;
   padding-top: 0.5rem;
@@ -58,7 +58,7 @@ label {
   font-size: 1rem;
   text-align: center;
 }
-.NavDiv{
+.NavDiv {
   margin: auto;
   border-radius: 0;
   background-color: #151515;
@@ -67,74 +67,78 @@ label {
 }
 
 @media screen and (min-width: 1921px) {
-.rollerFix{
- font-size: 0.7rem !important;
- margin-top: 2px !important;
-
-}}
-@media screen and (max-width: 481px){
-.rollerFix{
-  font-size: 0.9rem !important;
-}}
-button:focus {outline:0;}
-button{border:none;}
-.hiddenButton{
-  background-color:transparent;
-  width:51%;
-  height:100%;
+  .rollerFix {
+    font-size: 0.7rem !important;
+    margin-top: 2px !important;
+  }
+}
+@media screen and (max-width: 481px) {
+  .rollerFix {
+    font-size: 0.9rem !important;
+  }
+}
+button:focus {
+  outline: 0;
+}
+button {
+  border: none;
+}
+.hiddenButton {
+  background-color: transparent;
+  width: 51%;
+  height: 100%;
   position: fixed;
   right: 0;
   top: 0;
-  margin-top:0;
+  margin-top: 0;
   z-index: 100;
 }
-.mobileDivBig{
-  width:100%;
-  background-color:red;
+.mobileDivBig {
+  width: 100%;
+  background-color: red;
 }
-.logOut{
+.logOut {
   position: absolute;
   bottom: 0px;
-  background-color: rgba(255, 0, 0, 0.05)  !important;
+  background-color: rgba(255, 0, 0, 0.05) !important;
   font-weight: 600 !important;
   padding-bottom: 1rem;
 }
-.loggedInDiv{
+.loggedInDiv {
   text-align: left;
   font-weight: 200;
-  color: rgba(255,255,255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
   width: 12rem;
 }
-.loggedInDivDesktop{
+.loggedInDivDesktop {
   text-align: left;
   font-weight: 200;
-  color: rgba(255,255,255, 0.3) ;
+  color: rgba(255, 255, 255, 0.3);
   width: 15rem;
   height: 3rem;
-  background-color: rgba(255,255,255, 0.05) ;
+  background-color: rgba(255, 255, 255, 0.05);
 }
-.loggedInUserDesktop{
+.loggedInUserDesktop {
   color: rgba(255, 255, 255, 0.2);
   font-size: 0.7rem;
   display: inline-block;
   text-align: right;
   margin-top: -1rem;
 }
-.loggedInUser{
+.loggedInUser {
   color: rgba(255, 255, 255, 0.2);
   font-size: 0.7rem;
   display: inline-block;
   text-align: right;
   margin-bottom: 0;
-
 }
-.testNameFix{
+.testNameFix {
   width: 8rem;
   position: relative;
   right: 0.2rem;
   display: inline-block;
 }
-.loggedInUserName{
+.loggedInUserName {
   display: inline-block;
   color: rgba(255, 255, 255, 0.6);
   margin-top: -1rem;
@@ -143,51 +147,51 @@ button{border:none;}
   font-size: 1rem;
   word-break: keep-all;
 }
-.backDiv{
-  width:25%;
+.backDiv {
+  width: 25%;
   text-align: left;
   display: inline-block;
   color: rgba(255, 255, 255, 0.2);
 }
-.loginUserDiv{
+.loginUserDiv {
   width: 75%;
   text-align: right;
   display: inline-block;
-  height:2.5rem;
+  height: 2.5rem;
 }
-.backDivDesktop{
-  width:4rem;
+.backDivDesktop {
+  width: 4rem;
   padding-left: 0.5rem;
   text-align: left;
   display: inline-block;
   color: rgba(255, 255, 255, 0.2);
 }
-.loginUserDivDesktop{
-  width:10rem;
+.loginUserDivDesktop {
+  width: 10rem;
   text-align: right;
   display: inline-block;
 }
-.brandingDesktop{
+.brandingDesktop {
   font-weight: 200;
   font-size: 0.6rem;
   margin: auto;
-margin-bottom: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
   color: rgba(255, 255, 255, 0.2);
 }
-.brandingContainerDesktop{
+.brandingContainerDesktop {
   position: absolute;
   bottom: 2.8rem;
   width: 15rem;
   text-align: center;
 }
-.brandingMobile{
+.brandingMobile {
   font-weight: 200;
   font-size: 0.6rem;
   margin: auto;
   padding-bottom: 1rem;
   color: rgba(255, 255, 255, 0.2);
 }
-.brandingContainerMobile{
+.brandingContainerMobile {
   position: absolute;
   bottom: 3rem;
   width: 11rem;
@@ -201,37 +205,37 @@ margin-bottom: 0.5rem !important;
   .classTh {
     min-width: 5rem !important;
   }
-  .achievementTitleTop{
+  .achievementTitleTop {
     font-size: 1rem !important;
   }
-  .userLogo{
+  .userLogo {
     margin-top: 1rem;
     width: 50%;
   }
-  .NavDiv{
+  .NavDiv {
     width: 90%;
-    padding:0.5rem;
+    padding: 0.5rem;
     padding-top: 0rem !important;
-    display:none;
+    display: none;
   }
-  .navDivMobileMain{
+  .navDivMobileMain {
     display: block;
     margin: none;
     position: fixed;
     top: 0;
     text-align: left;
   }
-  .navDivMobile{
+  .navDivMobile {
     display: none;
-    background-color:#151515;
+    background-color: #151515;
     position: fixed;
     height: 100%;
     overflow: hidden;
     text-align: left;
     top: 0;
   }
-  .dropDownButton{
-    background-color: rgba(255,255,255, 0.01);
+  .dropDownButton {
+    background-color: rgba(255, 255, 255, 0.01);
     margin-top: 0;
     text-align: center;
     padding: 0.2rem;
@@ -241,20 +245,20 @@ margin-bottom: 0.5rem !important;
     margin: 0;
     font-weight: 600;
   }
-  .menuSymbol{
-    display:inline-block;
-    font-weight:500;
+  .menuSymbol {
+    display: inline-block;
+    font-weight: 500;
     font-size: 2rem;
     margin: 0;
   }
-  .menuText{
-    position:relative;
+  .menuText {
+    position: relative;
     top: -0.4rem;
     left: 0.2rem;
     display: inline-block;
   }
-  .dropDownButtonBack{
-    background-color: rgba(255,255,255, 0.1);
+  .dropDownButtonBack {
+    background-color: rgba(255, 255, 255, 0.1);
     margin-top: 0;
     text-align: left;
     width: 100%;
@@ -262,36 +266,36 @@ margin-bottom: 0.5rem !important;
     height: 2.5rem;
     border-radius: 0;
   }
-  .achievementTitle{
+  .achievementTitle {
     font-family: "Mulish", sans-serif;
     font-weight: 300;
-    display:block !important;
+    display: block !important;
     width: 30%;
-    text-align:center;
+    text-align: center;
     margin: auto;
     position: relative;
     z-index: -1;
   }
 }
 
-.navDivMobile{
+.navDivMobile {
   display: none;
   z-index: 1;
 }
-.brokenShit{
+.brokenShit {
   display: none !important;
 }
 .dark {
-  background-color: rgba(255,255,255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 .dark2 {
-  background-color: rgba(255,255,255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
 }
 .dark3 {
-  background-color: rgba(255,255,255, 0.07) !important;
+  background-color: rgba(255, 255, 255, 0.07) !important;
 }
 .classTd {
-  background-color: rgba(255,255,255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
   width: 5%;
   height: 2rem;
   padding-top: 1%;
@@ -339,42 +343,42 @@ body {
   color: #29bc64 !important;
   border-color: #29bc64 !important;
 }
-.achievementTitleTop{
+.achievementTitleTop {
   font-family: "Mulish", sans-serif;
   font-weight: 400;
-  display:inline-block;
+  display: inline-block;
   font-size: 1.3rem;
   margin-left: 0.3rem;
 }
-.achievementTitle{
+.achievementTitle {
   font-family: "Mulish", sans-serif;
   font-weight: 300;
-  display:inline-block;
+  display: inline-block;
   width: 30%;
-  color: rgba(255,255,255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
   text-align: left;
 }
-.achievementContainer{
-  width:90%;
-  background-color: rgba(255,255,255, 0.1);
-  margin:auto;
+.achievementContainer {
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: auto;
   margin-top: 1rem;
   padding-top: 0.5rem;
-  border-radius:10px;
+  border-radius: 10px;
   text-align: center;
 }
-.mainTitle{
+.mainTitle {
   font-size: 1.5rem;
-font-weight: 600;
-color:rgba(255,255,255, 0.7);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
 }
-.mainAchTitle{
+.mainAchTitle {
   font-weight: 200;
   font-size: 2.5rem;
   margin-top: -0.5rem;
   margin-bottom: 0.4rem;
 }
-.subTitle{
+.subTitle {
   margin-top: -2.8rem;
   padding-left: 0.2rem;
   font-size: 0.7rem;
@@ -385,35 +389,35 @@ table {
   color: black;
   margin: auto;
 }
-.loadingDiv{
+.loadingDiv {
   width: 90%;
   height: 2rem;
   border-radius: 50px;
-  background-color: rgba(255,255,255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
   margin: auto;
 }
-.sumDistanceContainer{
+.sumDistanceContainer {
   width: 100%;
   height: 3rem;
   text-align: center;
-  color: rgba(255,255,255, 0.3);
+  color: rgba(255, 255, 255, 0.3);
   margin-top: 2rem;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
-.sumDistance{
+.sumDistance {
   border-radius: 5px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   width: 6rem;
   height: 3rem;
   margin: auto;
   padding-top: 0.8rem;
   margin-top: 0.5rem;
-  color: rgba(255,255,255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
   font-size: 1.5rem;
 }
-.progressbar{
-  text-align:center;
+.progressbar {
+  text-align: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -432,37 +436,37 @@ p {
   top: 0.65rem !important;
 }}*/
 
-.fillerDiv{
+.fillerDiv {
   height: 100%;
-  background: rgb(232,69,69) !important;
-background: linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(242,247,0,1) 100%) !important;
-  border-radius : inherit;
+  background: rgb(232, 69, 69) !important;
+  background: linear-gradient(90deg, rgba(232, 69, 69, 1) 0%, rgba(242, 247, 0, 1) 100%) !important;
+  border-radius: inherit;
   text-align: right;
   position: relative;
   z-index: -1;
   background-image: url("./img/uploadImg.jpg");
 }
-.uploadTitle{
+.uploadTitle {
   color: white;
-  width:100%;
+  width: 100%;
   height: 100%;
   margin: none;
 }
 
-.headColor1{
-  background: rgb(232,69,69);
-background: linear-gradient(90deg, rgba(232,69,69,1) 0%, rgba(235,121,49,1) 100%);
+.headColor1 {
+  background: rgb(232, 69, 69);
+  background: linear-gradient(90deg, rgba(232, 69, 69, 1) 0%, rgba(235, 121, 49, 1) 100%);
 }
-.headColor2{
-  background: rgb(235,121,49);
-background: linear-gradient(90deg, rgba(235,121,49,1) 0%, rgba(239,188,23,1) 100%);
+.headColor2 {
+  background: rgb(235, 121, 49);
+  background: linear-gradient(90deg, rgba(235, 121, 49, 1) 0%, rgba(239, 188, 23, 1) 100%);
 }
-.headColor3{
-  background: rgb(239,188,23);
-background: linear-gradient(90deg, rgba(239,188,23,1) 0%, rgba(242,247,0,1) 100%);
-color: black;
+.headColor3 {
+  background: rgb(239, 188, 23);
+  background: linear-gradient(90deg, rgba(239, 188, 23, 1) 0%, rgba(242, 247, 0, 1) 100%);
+  color: black;
 }
 
 h5 {
-  color:white
+  color: white;
 }

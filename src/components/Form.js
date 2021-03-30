@@ -151,7 +151,7 @@ return true;
 
     e.preventDefault();
     // Fetch OverallSUM before the post requst fires//
-    let url = new URL("http://localhost:8080/api/getoveralldistance")
+    let url = new URL("http://localhost:8100/api/getoveralldistance")
     let params = {email: this.props.email}
     url.search = new URLSearchParams(params).toString()
     fetch(url)
@@ -207,14 +207,14 @@ swal.fire({
                 data.append('file', this.state.file);
 
 
-                axios.post(`http://localhost:8080/api/distance`, {
+                axios.post(`http://localhost:8100/api/distance`, {
                 steps: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 currentKms: this.state.currentKms,
                 email: email
                 });
-                axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
+                axios.post(`http://localhost:8100/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
@@ -242,14 +242,14 @@ swal.fire({
               const data = new FormData();
               data.append('file', this.state.file);
 
-                axios.post('http://localhost:8080/api/distance', {
+                axios.post('http://localhost:8100/api/distance', {
                 meters: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
                 email: email
 
               });
-              axios.post(`http://localhost:8080/api/upload?email=${email}&user=${user}`, data);
+              axios.post(`http://localhost:8100/api/upload?email=${email}&user=${user}`, data);
               setTimeout(() => {
                 swal.fire({
                   title: "Success!",
