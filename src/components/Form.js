@@ -246,6 +246,7 @@ swal.fire({
                 meters: this.state.meters,
                 who: this.props.currUser,
                 activity_type: this.state.type.mode,
+                currentKms: this.state.currentKms,
                 email: email
 
               });
