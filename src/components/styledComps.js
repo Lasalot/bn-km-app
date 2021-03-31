@@ -18,7 +18,7 @@ const loadingBarDiv = styled.div`
       `
 
 const Input = styled.input`
-background-color: rgba(255,255,255, 0.04);
+background-color: rgba(var(--elements),var(--elements),var(--elements), 0.04);
 margin-top: 0.1rem !important;
   margin:auto;
   @media screen and (max-width: 1130px){
@@ -51,8 +51,8 @@ const StyledInput = styled(Input)`
 `;
 
 const Label = styled.label`
-background-color: rgba(255,255,255, 0.1);
-  color: white;
+background-color: rgba(var(--elements),var(--elements),var(--elements), 0.1);
+  color: var(--text);
   @media screen and (max-width: 1130px){
     width: 93.8%;
     border-radius: 5px 5px 0px 0px;
@@ -104,7 +104,7 @@ const OptionButtonR = styled.button`
   margin-bottom: 0.6rem;
   width: 23%;
   height: 4rem;
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.12);")};
   color: ${(props) => (props.active ? "white" : "white")};
   @media screen and (max-width: 1130px){
     width: 23%;
@@ -116,7 +116,7 @@ const OptionButtonR = styled.button`
   }
   :hover {
     cursor: pointer;
-    background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
+    background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.3);")};
     color: white;
   };
   :focus {
@@ -139,8 +139,8 @@ display: inline-block;
   margin-bottom: 0.5rem;
   width: 40%;
   height: 4rem;
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
-  color: white;
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.12);")};
+  color: var(--text);
   padding: 10px;
   @media screen and (max-width: 1130px){
     width: 60% !important;
@@ -166,9 +166,7 @@ display: inline-block;
   :active {
     outline:none;
   }
-  border: 5px solid;
-  border-image-source: linear-gradient(90deg, rgba(232,69,69,1), rgba(242,247,0,1));
-  border-image-slice: 1;
+
   border-radius: 5px;
   font-size: 1.5rem;
 `
@@ -183,8 +181,8 @@ const OptionButton = styled.button`
   margin-bottom: 0.5rem;
   width: 21.5%;
   height: 4rem;
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.12);")};
-  color: ${(props) => (props.active ? "white" : "white")};
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.12);")};
+  color: ${(props) => (props.active ? "var(--option)" : "var(--option)")};
   padding: 10px;
   @media screen and (max-width: 1130px){
     width: 23%;
@@ -195,7 +193,7 @@ const OptionButton = styled.button`
   }
   :hover {
     cursor: pointer;
-    background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.5);" : "rgba(255,255,255, 0.3);")};
+    background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.3);")};
     color: white;
   };
   :focus {
@@ -265,20 +263,27 @@ margin-left: auto;
   margin-bottom: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: rgba(255,255,255, 0.05);
+  background-color: rgba(var(--elements),var(--elements),var(--elements), 0.05);
   border-radius: 10px;
   @media screen and (max-width: 1130px){
     width:95%;
   }
+  @media screen and (min-width: 1131px){
+    margin-left: 33%;
+  }
+  @media screen and (min-width: 1921px){
+    margin-left: auto;
+  }
+  box-shadow: var(--shadow);
   `
 const InputContainer = styled.div`
-width: 45%;
+width: 50%;
 margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background-color: rgba(255,255,255, 0.05);
+  background-color: rgba(var(--elements),var(--elements),var(--elements), 0.05);
   border-radius: 10px;
   @media screen and (max-width: 1130px){
     width:95% !important;
@@ -286,6 +291,13 @@ margin-left: auto;
   @media screen and (max-width: 1530px){
     width:60%;
   }
+  @media screen and (min-width: 1131px){
+    margin-left: 34.5%;
+  }
+  @media screen and (min-width: 1921px){
+    margin-left: auto !important;
+  }
+  box-shadow: var(--shadow);
 `;
 
 const NavBar = styled.div`
@@ -307,8 +319,8 @@ top: 0;
 text-align: left
 `
  const NavButton = styled.button`
-  color: ${(props) => (props.active ? "#939393" : "#666666")};
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.03)" : "rgba(255,255,255, 0);")};
+  color: ${(props) => (props.active ? "var(--selectColor)" : "#666666")};
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.03)" : "rgba(var(--elements),var(--elements),var(--elements), 0);")};
  width: 15rem;
  display: block;
  height: 3rem;
@@ -318,7 +330,7 @@ border: none;
  margin-top: 0;
  border-radius: 0;
  text-align: left;
- font-weight: ${(props) => (props.active ? "400" : "200")};
+ font-weight: ${(props) => (props.active ? "600" : "200")};
  :hover{
    cursor:pointer;
    font-family: "Mulish", sans-serif;
@@ -336,8 +348,8 @@ border: none;
   font-size: 1rem;
  `;
  const MobileNavButton = styled.button`
-  color: ${(props) => (props.active ? "#939393" : "#666666")};
-  background-color: ${(props) => (props.active ? "rgba(255,255,255, 0.03)" : "rgba(255,255,255, 0);")};
+ color: ${(props) => (props.active ? "var(--selectColor)" : "#666666")};
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.03)" : "rgba(var(--elements),var(--elements),var(--elements), 0);")};
  width: 35rem;
  display: block;
  height: 2rem;
@@ -348,7 +360,7 @@ border: none;
  border-radius: 0;
  text-align: left;
  border: none;
- font-weight: ${(props) => (props.active ? "400" : "200")};
+ font-weight: ${(props) => (props.active ? "600" : "200")};
  :hover{
    cursor:pointer;
    font-family: "Mulish", sans-serif;
@@ -380,7 +392,8 @@ border: none;
    width: 95%;
  }
  width: 90%;
- background-color: rgba(255,255,255, 0.01);
+ background-color: rgba(var(--elements),var(--elements),var(--elements), 0.01);
+ margin-bottom: 1rem;
  `
 const TableHead = styled.thead`
 background-color: blue;

@@ -28,6 +28,6 @@ setData({
 const sumKm = parseFloat(data.topPerformerDistance)
 
 return (
-  <h1>Currently the top performer of this month is <i style={{fontSize:"30px"}}>{data.topPerformerName}</i> with the distance of {sumKm.toFixed(2)}Kms</h1>
+  <c className="topPerf">Currently the top performer of this month is <i style={{fontSize:"1.5rem"}}>{data.topPerformerName}</i> with the distance of {sumKm.toFixed(2)}Kms</c>
 )
 }

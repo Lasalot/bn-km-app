@@ -49,15 +49,15 @@ function dataMapping(item) {
 
   return(
     <div>
-      {data.gotData ? <TopPerformer  email={props.email}/> : <h1>There is no displayable data yet</h1>}
+      
       <InputContainerAch>
       <h1>Top activities in this month (team overall)</h1>
       <Table>
         <thead>
         <tr className="classTr">
         <th className="classTh headColor1">Place</th>
-        <th className="classTh headColor1">Activity</th>
-<th className="classTh modeClass headColor2">Overall sum in this month</th>
+        <th className="classTh headColor2">Activity</th>
+<th className="classTh modeClass headColor3">Overall sum in this month</th>
 
 </tr>
 </thead>
@@ -65,6 +65,7 @@ function dataMapping(item) {
         {data.gotData ? <> {data.activityTypes.map(dataMapping)}</> : null }
 </tbody>
         </Table>
+        {data.gotData ? <TopPerformer  email={props.email}/> : <h3>There is no displayable data yet</h3>}
         </InputContainerAch>
     </div>
   )

@@ -3,6 +3,55 @@ import { UserName } from "../App";
 import { MobileNav, MobileNavButton, NavBar, NavButton } from "./styledComps";
 
 var widthVar = 50;
+var marker = 0;
+function changeColor(){
+    var r = document.querySelector(':root');
+    var currentLocation = document.getElementById("darkModeSw").style.left;
+    
+    if (marker == 1){
+changeBack();
+    }
+    else{
+    r.style.setProperty('--elements', '0');
+    r.style.setProperty('--background', '#fdfdfd');
+    r.style.setProperty('--text', '#3a3a3a');
+    r.style.setProperty('--navBarColour', '#e8e8e8');
+    r.style.setProperty('--option', '#000000');
+    r.style.setProperty('--shadow', '17px 17px 42px -9px rgba(0,0,0,0.26)');
+    r.style.setProperty('--selectColor', '#000000');
+    r.style.setProperty('--opacity', '0.05');
+    r.style.setProperty('--opacity2', '1');
+    r.style.setProperty('--buttonOn', '#2d2d2d29');
+    r.style.setProperty('--switchColor', '#ffffff');
+    marker++;
+    document.getElementById("darkModeSw").style.left = "-0.1rem";
+    document.getElementById("darkModeSw1").style.left = "-0.1rem";
+    }
+    
+   // if(currentLocation != "0.8rem"){
+        
+    //}
+};
+function changeBack(){
+    var r = document.querySelector(':root');
+    var currentLocation = document.getElementById("darkModeSw").style.left;
+    r.style.setProperty('--elements', '255');
+    r.style.setProperty('--background', '#121212');
+    r.style.setProperty('--text', '#ffffff');
+    r.style.setProperty('--navBarColour', '#151515');
+    r.style.setProperty('--option', '#ffffff');
+    r.style.setProperty('--shadow', 'none');
+    r.style.setProperty('--selectColor', '#666666');
+    r.style.setProperty('--opacity', '0.1');
+    r.style.setProperty('--opacity2', '0.2');
+    r.style.setProperty('--buttonOn', '#c0c0c096');
+    r.style.setProperty('--switchColor', '#353535');
+    marker = 0;
+    document.getElementById("darkModeSw").style.left = "0.8rem";
+    document.getElementById("darkModeSw1").style.left = "0.8rem";
+    
+    
+}
 function MobileNavbar(){
     var currentStyle = document.getElementById("testDiv").style.display;
     if (currentStyle === "block"){
@@ -18,6 +67,7 @@ function MobileNavbar(){
       }
       widthVar = 50;
       document.getElementById("menuButton").style.display = "none";
+      
 };
 }
 
@@ -237,6 +287,9 @@ componentDidMount(){
                 <MobileNavButton type="button" onClick={this.setSecretActiveM}  active={this.state.secretActive}>
                     Admin Area
                 </MobileNavButton>
+                <MobileNavButton className="darkMode" type="button" onClick={changeColor}>
+    <p className="darkModeText">Dark Mode</p> <div className="darkModeSwitchContainer"><h1 className="darkModeSwitch" id="darkModeSw1">•</h1></div>
+        </MobileNavButton>
                 <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
                     Sign Out
                 </MobileNavButton>
@@ -275,6 +328,9 @@ componentDidMount(){
         </NavButton>
         <NavButton style={{display:this.state.display}} type="button" onClick={this.setSecretActive}  active={this.state.secretActive}>
            Admin Area
+        </NavButton>
+        <NavButton className="darkMode" type="button" onClick={changeColor}>
+    <p className="darkModeText">Dark Mode</p> <div className="darkModeSwitchContainer"><h1 className="darkModeSwitch" id="darkModeSw">•</h1></div>
         </NavButton>
         <NavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
             Sign Out

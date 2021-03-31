@@ -172,7 +172,7 @@ const progressData = [
         <div className="achievementTitle"><p className="mainTitle">420km</p> <br></br><div className="subTitle">Let's get from Debrecen to Bratislava!</div><br></br><Achievement active={achiActive.firstAchi} src={achiImg.firstAchiImg}/></div>
         <div className="achievementTitle"><p className="mainTitle">2245km </p><br></br> <div className="subTitle">Let's get around Hungary!</div><br></br><Achievement active={achiActive.secondAchi} src={achiImg.secondAchiImg}/></div>
         <div className="achievementTitle"><p className="mainTitle">6400km </p><br></br> <div className="subTitle">Let's get over the Great Wall of China!</div><br></br><Achievement active={achiActive.thirdAchi} src={achiImg.thirdAchiImg}/></div>
-        <div className="achievementTitle"><p className="mainTitle">8914km </p><br></br> <div className="subTitle">Let's go to Tokyio - can we do it before the Olimpics start?</div><br></br><Achievement active={achiActive.fourthAchi} src={achiImg.fourthAchiImg}/></div>
+        <div className="achievementTitle"><p className="mainTitle">8914km </p><br></br> <div className="subTitle">Let's go to Tokyo - Can we do it before the Olympics start?</div><br></br><Achievement active={achiActive.fourthAchi} src={achiImg.fourthAchiImg}/></div>
         <div className="achievementTitle"><p className="mainTitle">40075km </p><br></br> <div className="subTitle">Let's get around the Equator!</div><br></br><Achievement active={achiActive.fifthAchi} src={achiImg.fifthAchiImg}/></div>
         <div style={{display:"none" }} className="achievementTitle brokenShit"> Leave it here or the whole thing will be broken<Achievement active={achiActive.thirdAchi} src={UnknownAchi}/></div>
         <br></br>

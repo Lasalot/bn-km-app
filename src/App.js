@@ -212,7 +212,6 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
   return (
 
     <div className="App">
-      <h1 className="welcomeMessage">Track the Kilometers!</h1>
       <img  className="userLogo" alt="logo" src={Logo} />
       <div>
 
