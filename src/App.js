@@ -81,6 +81,7 @@ setForm("")
 setMyDistances("")
 setTeamTrackerActive("")
 setMonthlyTracker("")
+setAdminArea("")
 }
 
 const FormActive = () => {
@@ -89,6 +90,7 @@ setForm("active")
 setMyDistances("")
 setTeamTrackerActive("")
 setMonthlyTracker("")
+setAdminArea("")
 }
 
 const MyDistancesActive = () => {
@@ -97,6 +99,7 @@ const MyDistancesActive = () => {
   setMyDistances("active")
   setTeamTrackerActive("")
   setMonthlyTracker("")
+  setAdminArea("")
 }
 
 const TeamTrackerActive = () => {
@@ -105,6 +108,7 @@ const TeamTrackerActive = () => {
   setMyDistances("")
   setTeamTrackerActive("active")
   setMonthlyTracker("")
+  setAdminArea("")
 }
 
 const MonthlyTrackerActive = () => {
@@ -113,6 +117,7 @@ const MonthlyTrackerActive = () => {
   setMyDistances("")
   setTeamTrackerActive("")
   setMonthlyTracker("active")
+  setAdminArea("")
 }
 
 const AdminAreaActive = () => {
