@@ -278,7 +278,6 @@ button {
     padding-top: 0rem !important;
     display: none;
   }
-  
   .navDivMobileMain {
     display: block;
     margin: none;
@@ -295,6 +294,16 @@ button {
     overflow: hidden;
     text-align: left;
     top: 0;
+  }
+  .darkModeSwitchContainer{
+right: -2rem;
+outline:none;
+  border:none;
+  outline: 0;
+  }
+  .darkMode{
+    outline:none;
+  border:none;
   }
   .dropDownButton {
     background-color: rgba(var(--elements), var(--elements), var(--elements), 0.01);
