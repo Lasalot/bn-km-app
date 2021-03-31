@@ -234,7 +234,7 @@ componentDidMount(){
                 <MobileNavButton type="button" onClick={this.setUploadFormM}  active={this.props.isFormActive}>
                     Upload
                 </MobileNavButton>
-                <MobileNavButton type="button" onClick={this.setSecretActiveM}  active={this.props.secretActive}>
+                <MobileNavButton type="button" onClick={this.setSecretActiveM}  active={this.state.secretActive}>
                     Admin Area
                 </MobileNavButton>
                 <MobileNavButton className="logOut" type="button" onClick={() => this.props.logOut()} >
@@ -273,7 +273,7 @@ componentDidMount(){
         <NavButton className="homeClassNav" type="button" onClick={this.setUploadForm}  active={this.props.isFormActive}>
            Upload
         </NavButton>
-        <NavButton style={{display:this.state.display}} type="button" onClick={this.setSecretActive}  active={this.props.secretActive}>
+        <NavButton style={{display:this.state.display}} type="button" onClick={this.setSecretActive}  active={this.state.secretActive}>
            Admin Area
         </NavButton>
         <NavButton className="logOut" type="button" onClick={() => this.props.logOut()} >

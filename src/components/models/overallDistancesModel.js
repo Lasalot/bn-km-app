@@ -6,7 +6,7 @@ function OverallDistancesModel(entries) {
   return (
 
 <tr className="classTrBody">
-<td className="classTd">{entries.who}</td>
+<td className="classTd">{entries.row_id}. {entries.who}</td>
 <td className="classTd dark">{entries.mode}</td>
 <td className="classTd dark2">{kilometers}km</td>
 

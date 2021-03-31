@@ -178,7 +178,7 @@ if (filteredEmailBn.length > 0  || filteredEmailWs.length > 0) {
       </>
     )
   }
-  else if (adminArea === "active" && auth.currentUser.displayName === "Laszlo Takacs" || auth.currentUser.displayName === "Boglarka Angalet" || auth.currentUser.displayName === "Mark Bacsko" || auth.currentUser.displayName === "Anna Abel" ) {
+  else if ((adminArea === "active" && auth.currentUser.displayName === "Laszlo Takacs") || (adminArea === "active" && auth.currentUser.displayName === "Boglarka Angalet") || (adminArea === "active" && auth.currentUser.displayName === "Mark Bacsko") || (adminArea === "active" && auth.currentUser.displayName === "Anna Abel") ) {
     return (
       <>
       <AdminArea email={auth.currentUser.email}/>

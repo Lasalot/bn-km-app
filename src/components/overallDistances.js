@@ -26,11 +26,16 @@ const [ready, setReady] = useState(false)
     }, []);
 
     function dataMapping(item) {
-      return <OverallDistancesModel key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} mode={item.activity_type}/>
+      return <OverallDistancesModel row_id={item.row_num}  key={item.id} kilometers={item.kilometers} steps={item.steps} who={item.who} mode={item.activity_type}/>
     }
+
+
 
     return (
       <InputContainerAch>
+      <h1>Latest company wide entries</h1>
+
+
       <Table>
         <thead>
         <tr className="classTr">

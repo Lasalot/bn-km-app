@@ -9,17 +9,16 @@ const [data, setData] = useState({
 
   activityTypes:"",
   gotData: false,
-  noPerformer: "We have got no one yet"
+  noPerformer: "We have got no one yet",
+  emailData: props.email
 
 })
 
 
-
-//Get the sum amount of Acitivity Types for the current month
-useEffect(() => {
+function fetchData() {
   axios.get("http://localhost:8100/api/monthlytracker/sumactivity", {
     params :{
-      email: props.email
+      email: data.emailData
     }
 
   }).then(res => {
@@ -36,12 +35,14 @@ else (
 
 
   })
-},[])
+}
+//Get the sum amount of Acitivity Types for the current month
+useEffect(fetchData,[])
 
 function dataMapping(item) {
   return (
     <>
-    <ActivitySum rowNumber={item.row_num} key={item.row_num} kilometers={item.sumActivity} activity_type={item.activity_type}/>
+    <ActivitySum  key={item.row_num} rowNumber={item.row_num} key={item.row_num} kilometers={item.sumActivity} activity_type={item.activity_type}/>
     </>
   )
 }
