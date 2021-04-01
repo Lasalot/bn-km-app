@@ -90,7 +90,10 @@ font-size: 2rem;
 font-family: "Mulish", sans-serif;
   font-weight: 300;
   margin-bottom: 2rem;
+
 `
+
+
 const OptionButtonR = styled.button`
   display: inline-block;
   position: relative;
@@ -253,6 +256,42 @@ font-family: "Mulish", sans-serif;
   font-weight: 600;
 `
 
+const PhysioLabel = styled.label`
+  display: inline-block;
+  font-family: "Mulish", sans-serif;
+  font-weight: 200;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-bottom: 0.5rem;
+  width: 21.5%;
+
+  background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.12);")};
+  color: ${(props) => (props.active ? "var(--option)" : "var(--option)")};
+  padding: 10px;
+  @media screen and (max-width: 1130px){
+    width: 23%;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+  }
+  :hover {
+    cursor: pointer;
+    background-color: ${(props) => (props.active ? "rgba(var(--elements),var(--elements),var(--elements), 0.5);" : "rgba(var(--elements),var(--elements),var(--elements), 0.3);")};
+    color: white;
+  };
+  :focus {
+    outline:none;
+  };
+  :active {
+    outline:none;
+  }
+  border: none;
+  font-size: 1rem;
+`;
+
 const LabelPadding = styled(Label)`
 
 `
@@ -412,5 +451,5 @@ transition: transform .2s;
 `
 
 
-export { StyledSpan, Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
+export { PhysioLabel, StyledSpan, Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
 

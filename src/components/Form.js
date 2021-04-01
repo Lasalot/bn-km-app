@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { Component } from "react";
 import swal from "sweetalert2";
+import Physio from "./physyotheraphy";
 import {
-  Input,
-  InputContainer, Label,
-  LabelPadding, OptionButton, SendButton, UploadLabel
+    Input,
+    InputContainer, Label,
+    LabelPadding, OptionButton, SendButton, UploadLabel
 } from "./styledComps";
-
 
 
 
@@ -356,6 +356,11 @@ swal.fire({
 
         </form>
         </InputContainer>
+      <InputContainer>
+      <h1>Extra activities</h1>
+      <Physio email={this.props.email} user={this.props.currUser} />
+      </InputContainer>
+
 
 
       </>

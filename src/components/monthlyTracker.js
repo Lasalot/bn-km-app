@@ -49,7 +49,7 @@ function dataMapping(item) {
 
   return(
     <div>
-      
+
       <InputContainerAch>
       <h1>Top activities in this month (team overall)</h1>
       <Table>
