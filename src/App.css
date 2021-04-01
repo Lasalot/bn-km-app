@@ -129,28 +129,34 @@ button {
   text-align: left;
   height: 2rem;
   color:var(--text);
+  padding-bottom: 0.2rem;
 }
 
 .unCollapsedText{
 display: inline-block;
-position: relative;
-left: -80%;
 font-weight: 200;
 }
 
 .unCollapsedButtonDiv{
   display: inline-block;
-  position: relative;
   width: 100%;
   height: 2rem;
   margin-top: 0;
-  
   text-align: right;
+  
+}
+@media screen and (max-width: 1395px){
+  .arrow{
+    margin-left:70% !important;
+  }
 }
 .arrow{
   display: inline-block;
   position: relative;
   right: 1rem;
+  margin-left:77%;
+  margin-top: 0;
+  margin-bottom:0;
 }
 .unCollapsedButton{
   width:100%;
@@ -162,10 +168,6 @@ font-weight: 200;
   margin-top: 0rem;
   background-color: var(--elements);
   
-}
-.arrow{
-  width: 1rem;
-  margin: 0 !important;
 }
 .collapsed{
   margin-top: 3rem;
@@ -345,10 +347,9 @@ font-weight: 200;
     top: 0;
     
   }
-  .unCollapsedText{
-    left: -50%;
-    
-    }
+.arrow{
+  margin-left:45% !important;
+}
   .darkModeSwitchContainer{
 right: -2rem;
 outline:none;
@@ -407,7 +408,8 @@ outline:none;
   .userLogo{
     margin-left: 18%;
   }
-}
+  }
+
 @media screen and (min-width: 1921px){
   .userLogo{
     margin-left: 3% !important;
