@@ -135,6 +135,8 @@ button {
 .unCollapsedText{
 display: inline-block;
 font-weight: 200;
+width: 50%;
+text-align: left;
 }
 
 .unCollapsedButtonDiv{
@@ -145,18 +147,14 @@ font-weight: 200;
   text-align: right;
   
 }
-@media screen and (max-width: 1395px){
-  .arrow{
-    margin-left:70% !important;
-  }
-}
 .arrow{
   display: inline-block;
   position: relative;
   right: 1rem;
-  margin-left:77%;
+  width: 50%;
   margin-top: 0;
   margin-bottom:0;
+  text-align: right;
 }
 .unCollapsedButton{
   width:100%;
@@ -347,9 +345,6 @@ font-weight: 200;
     top: 0;
     
   }
-.arrow{
-  margin-left:45% !important;
-}
   .darkModeSwitchContainer{
 right: -2rem;
 outline:none;
