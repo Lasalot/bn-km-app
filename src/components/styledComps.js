@@ -338,7 +338,30 @@ margin-left: auto;
   }
   box-shadow: var(--shadow);
 `;
-
+const InputContainerCollapsed = styled.div`
+width: 50%;
+margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  background-color: rgba(var(--elements),var(--elements),var(--elements), 0.05);
+  border-radius: 10px;
+  transition: all 0.5s;
+  overflow: hidden;
+  @media screen and (max-width: 1130px){
+    width:95% !important;
+  }
+  @media screen and (max-width: 1530px){
+    width:60%;
+  }
+  @media screen and (min-width: 1131px){
+    margin-left: 34.5%;
+  }
+  @media screen and (min-width: 1921px){
+    margin-left: auto !important;
+  }
+  box-shadow: 0;
+`;
 const NavBar = styled.div`
 width: 20%;
 height: 100%;
@@ -451,5 +474,5 @@ transition: transform .2s;
 `
 
 
-export { PhysioLabel, StyledSpan, Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton };
+export { PhysioLabel, StyledSpan, Achievement, Input, Label, OptionButton, SendButton, InputContainer, StyledInput, LabelPadding, SignOutButton, RoundPicture, NavBar, NavButton, Table, TableHead, loadingBarDiv, UploadLabel, OptionButtonR, InputContainerAch, UploadMainButton, MobileNav, MobileNavButton, InputContainerCollapsed };
 

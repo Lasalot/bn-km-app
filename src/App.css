@@ -124,6 +124,55 @@ button {
   font-weight: 600 !important;
   padding-bottom: 1rem;
 }
+.unCollapsed{
+  width: 100%;
+  text-align: left;
+  height: 2rem;
+  color:var(--text);
+}
+
+.unCollapsedText{
+display: inline-block;
+position: relative;
+left: -80%;
+font-weight: 200;
+}
+
+.unCollapsedButtonDiv{
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 2rem;
+  margin-top: 0;
+  
+  text-align: right;
+}
+.arrow{
+  display: inline-block;
+  position: relative;
+  right: 1rem;
+}
+.unCollapsedButton{
+  width:100%;
+  display: inline-block;
+  text-align: right;
+  height: 4rem;
+  font-size: 1.5rem;
+  transition:all 0.5s;
+  margin-top: 0rem;
+  background-color: var(--elements);
+  
+}
+.arrow{
+  width: 1rem;
+  margin: 0 !important;
+}
+.collapsed{
+  margin-top: 3rem;
+  display: block;
+  text-align: center;
+  transition: all 0.5s;
+}
 .darkMode{position: absolute;
   bottom: 6rem;
   background-color:none;
@@ -404,7 +453,7 @@ body {
 }
 .swal2-title,
 .swal2-content {
-  color: var(--text) !important;
+  color: #ffffff !important;
 }
 
 .swal2-success-circular-line-right,

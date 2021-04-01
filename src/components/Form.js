@@ -5,10 +5,27 @@ import Physio from "./physyotheraphy";
 import {
     Input,
     InputContainer, Label,
-    LabelPadding, OptionButton, SendButton, UploadLabel
+    LabelPadding, OptionButton, SendButton, UploadLabel, InputContainerCollapsed
 } from "./styledComps";
 
-
+function showCollapsed(){
+  var collapsedHeight = document.getElementById("inputContainerCollapsed").style.height;
+  if(document.getElementById("inputContainerCollapsed").style.height === "10rem"){
+    hideCollapsed();
+  }
+  else{
+  document.getElementById("inputContainerCollapsed").style.height = "10rem";
+  //document.getElementById("collapsed").style.display = "block";
+  //document.getElementById("unCollapsedText").style.fontWeight = "400";
+  document.getElementById("arrow").innerHTML = "▲";
+  }
+}
+function hideCollapsed(){
+  document.getElementById("inputContainerCollapsed").style.height = "2rem";
+  //document.getElementById("collapsed").style.display = "none";
+ // document.getElementById("unCollapsedText").style.fontWeight = "200";
+  document.getElementById("arrow").innerHTML = "▼";
+}
 
 class Form extends Component {
   constructor(props){
@@ -312,6 +329,14 @@ swal.fire({
   render() {
     return (
       <>
+<InputContainerCollapsed id="inputContainerCollapsed" style={{height:"2rem"}}>
+<div className="unCollapsed">
+  <div className="unCollapsedButtonDiv"><button className="unCollapsedButton" id = "unCollapsedButton" onClick={showCollapsed}><div className="unCollapsedText" id="unCollapsedText">Extra activities</div><p className="arrow" id="arrow">▼</p></button></div>
+<div className="collapsed" id="collapsed">
+      <Physio email={this.props.email} user={this.props.currUser} />
+      </div>
+      </div>
+      </InputContainerCollapsed>
 
       <InputContainer>
         <form onSubmit={this.submitForm}>
@@ -356,10 +381,7 @@ swal.fire({
 
         </form>
         </InputContainer>
-      <InputContainer>
-      <h1>Extra activities</h1>
-      <Physio email={this.props.email} user={this.props.currUser} />
-      </InputContainer>
+      
 
 
 
