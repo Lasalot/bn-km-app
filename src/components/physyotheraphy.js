@@ -15,7 +15,7 @@ const [data, setData] = useState("")
 useEffect(sendData, [])
 
 function sendData(){
-  let url = new URL("http://localhost:8100/api/getoveralldistance")
+  let url = new URL("https://runzybackend.com/api/getoveralldistance")
         let params = {email: email}
         url.search = new URLSearchParams(params).toString()
          fetch(url)
@@ -41,7 +41,7 @@ function eventHandler(){
       const user = props.user
       if(result.value){
         console.log(data)
-        axios.post('http://localhost:8100/api/distance', {
+        axios.post('https://runzybackend.com/api/distance', {
                 meters: physioValue,
                 who: user,
                 activity_type: "Physiotherapy",

@@ -10,7 +10,7 @@ export default function AdminArea(props) {
   const[ready, setReady] = useState(false)
   useEffect(() => {
 
-    axios.get('http://localhost:8100/api/getalldistance/overall', {
+    axios.get('https://runzybackend.com/api/getalldistance/overall', {
       params: {
         email: props.email
       }

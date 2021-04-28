@@ -16,16 +16,18 @@ const [data, setData] = useState({
 
 
 function fetchData() {
-  axios.get("http://localhost:8100/api/monthlytracker/sumactivity", {
+  axios.get("https://runzybackend.com/api/monthlytracker/sumactivity", {
     params :{
       email: data.emailData
     }
 
   }).then(res => {
+
 if(res.data.length === 0) {
   console.log("got no data")
 }
 else (
+
   setData({
     activityTypes:res.data,
     gotData: true

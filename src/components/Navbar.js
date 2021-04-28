@@ -6,8 +6,6 @@ var widthVar = 50;
 var marker = 0;
 function changeColor(){
     var r = document.querySelector(':root');
-    var currentLocation = document.getElementById("darkModeSw").style.left;
-    
     if (marker == 1){
 changeBack();
     }
@@ -27,14 +25,12 @@ changeBack();
     document.getElementById("darkModeSw").style.left = "-0.1rem";
     document.getElementById("darkModeSw1").style.left = "-0.1rem";
     }
-    
    // if(currentLocation != "0.8rem"){
-        
     //}
 };
 function changeBack(){
     var r = document.querySelector(':root');
-    var currentLocation = document.getElementById("darkModeSw").style.left;
+
     r.style.setProperty('--elements', '255');
     r.style.setProperty('--background', '#121212');
     r.style.setProperty('--text', '#ffffff');
@@ -49,8 +45,8 @@ function changeBack(){
     marker = 0;
     document.getElementById("darkModeSw").style.left = "0.8rem";
     document.getElementById("darkModeSw1").style.left = "0.8rem";
-    
-    
+
+
 }
 function MobileNavbar(){
     var currentStyle = document.getElementById("testDiv").style.display;
@@ -67,7 +63,7 @@ function MobileNavbar(){
       }
       widthVar = 50;
       document.getElementById("menuButton").style.display = "none";
-      
+
 };
 }
 
@@ -250,6 +246,7 @@ this.setState({
 }
 
 componentDidMount(){
+    console.log("Valami")
     if(this.props.currUserName === "Laszlo Takacs" || this.props.currUserName === "Boglarka Angalet" || this.props.currUserName === "Anna Abel"  || this.props.currUserName === "Mark Bacsko") {
        this.setState({isAdmin: true, display:"block"})
     }
