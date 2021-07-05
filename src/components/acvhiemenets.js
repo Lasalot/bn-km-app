@@ -110,7 +110,7 @@ useEffect(() => {
  else if(sumDistance >= 6400) {
    //3. achi
     console.log("6400")
-    setNextGoal("12000")
+    setNextGoal("8914")
   setAchiActive({
     firstAchi:"Active",
     secondAchi:"Active",
