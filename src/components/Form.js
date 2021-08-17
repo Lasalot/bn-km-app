@@ -153,9 +153,17 @@ return true;
     })
     if (this.state.type.mode === "Walk"){
       this.setState({
-        countedKm:((((this.state.meters*0.62)/1000)*10)).toFixed(3),
+        countedKm:(((((this.state.meters*0.62)/1000)*10))*4).toFixed(3),
       })
-    } else (
+    } 
+    else if (this.state.type.mode === "Run") (
+
+      this.setState({
+        countedKm:(((this.state.meters/1000)*10)*4).toFixed(3),
+      })
+
+    )
+    else (
 
       this.setState({
         countedKm:((this.state.meters/1000)*10).toFixed(3),
@@ -342,7 +350,7 @@ swal.fire({
       <InputContainer>
         <form onSubmit={this.submitForm}>
 
-
+        <h3 style={{"color":"white"}}>Please note that Running and Walking has a 4x multiplier from now on!</h3>
         <LabelPadding>How?</LabelPadding>
           <OptionButton type="button" onClick={this.setRun} active={this.state.runActive}>
           Run
