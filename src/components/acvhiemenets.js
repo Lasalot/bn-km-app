@@ -82,7 +82,7 @@ useEffect(() => {
       firstAchiImg: Achifirst,
       secondAchiImg: Achisecond,
       thirdAchiImg: Achithird,
-      fourthAchiImg: Achififth,
+      fourthAchiImg: Achifourth,
       fifthAchiImg: UnknownAchi
     })
   }
